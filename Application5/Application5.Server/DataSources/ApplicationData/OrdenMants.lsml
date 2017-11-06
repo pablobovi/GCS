@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="OrdenMant">
+    <EntityType.Attributes>
+      <CreatedModifiedPropertiesEnabled />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <NavigationProperty
+        Name="Tecnicoes"
+        Association="OrdenMant_Tecnico"
+        FromEnd="OrdenMant"
+        ToEnd="Tecnico" />
+      <NavigationProperty
+        Name="Labs"
+        Association="OrdenMant_Lab"
+        FromEnd="OrdenMant"
+        ToEnd="Lab" />
+      <NavigationProperty
+        Name="Pedidoes"
+        Association="OrdenMant_Pedido"
+        FromEnd="OrdenMant"
+        ToEnd="Pedido" />
+      <EntityProperty
+        Name="CreatedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="ApplicationData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="OrdenMants"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="OrdenMant" />
+    <QueryOperation
+      Name="OrdenMants_Single"
+      ReturnType="OrdenMant">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="OrdenMants" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="OrdenMants_SingleOrDefault"
+      ReturnType="OrdenMant">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="OrdenMants" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="OrdenMant_Tecnicoes"
+      Association="OrdenMant_Tecnico">
+      <AssociationSetEnd
+        Name="OrdenMant"
+        EntitySet="OrdenMants" />
+      <AssociationSetEnd
+        Name="Tecnico"
+        EntitySet="Tecnicoes" />
+    </AssociationSet>
+    <AssociationSet
+      Name="OrdenMant_Labs"
+      Association="OrdenMant_Lab">
+      <AssociationSetEnd
+        Name="OrdenMant"
+        EntitySet="OrdenMants" />
+      <AssociationSetEnd
+        Name="Lab"
+        EntitySet="Labs" />
+    </AssociationSet>
+    <AssociationSet
+      Name="OrdenMant_Pedidoes"
+      Association="OrdenMant_Pedido">
+      <AssociationSetEnd
+        Name="OrdenMant"
+        EntitySet="OrdenMants" />
+      <AssociationSetEnd
+        Name="Pedido"
+        EntitySet="Pedidoes" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association
+    Name="OrdenMant_Tecnico">
+    <AssociationEnd
+      Name="OrdenMant"
+      Multiplicity="One"
+      EntityType="OrdenMant">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Tecnico"
+      Multiplicity="Many"
+      EntityType="Tecnico" />
+  </Association>
+  <DataService
+    Name="ApplicationDataMapping">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <AssociationSetMapping
+      AssociationSet="OrdenMant_Tecnicoes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="OrdenMant_Tecnicoes" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[OrdenMant_Tecnicoes]/Members[OrdenMant]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[OrdenMant_Tecnicoes]/Members[Tecnico]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OrdenMant_Tecnico" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="OrdenMant_Labs">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="OrdenMant_Labs" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[OrdenMant_Labs]/Members[OrdenMant]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[OrdenMant_Labs]/Members[Lab]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OrdenMant_Lab" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="OrdenMant_Pedidoes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="OrdenMant_Pedidoes" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[OrdenMant_Pedidoes]/Members[OrdenMant]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[OrdenMant_Pedidoes]/Members[Pedido]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OrdenMant_Pedido" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+  <Association
+    Name="OrdenMant_Lab">
+    <AssociationEnd
+      Name="OrdenMant"
+      Multiplicity="One"
+      EntityType="OrdenMant">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Lab"
+      Multiplicity="Many"
+      EntityType="Lab" />
+  </Association>
+  <Association
+    Name="OrdenMant_Pedido">
+    <AssociationEnd
+      Name="OrdenMant"
+      Multiplicity="One"
+      EntityType="OrdenMant">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Pedido"
+      Multiplicity="Many"
+      EntityType="Pedido" />
+  </Association>
+</ServiceApplication>
