@@ -41,6 +41,24 @@
         FromEnd="Tecnico"
         ToEnd="OrdenMant" />
       <EntityProperty
+        Name="Legajo"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Apellido"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
         PropertyType=":Person?">
@@ -194,6 +212,10 @@
       <EntitySetMapping.Attributes>
         <SsdlForeignKeyProperty
           Name="OrdenMant_Tecnico"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="Id"
           Nullable="False"
           Type="int" />
       </EntitySetMapping.Attributes>

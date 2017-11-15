@@ -37,20 +37,20 @@
   </GlobalAttributeGroup>
   <Application.Commands>
     <ApplicationCommand
-      Name="ScreenCommandShowCreateNewOrdenMant"
-      Target="!module/Methods[ShowCreateNewOrdenMant]" />
+      Name="ScreenCommandShowEditableTecnicoesGrid"
+      Target="!module/Methods[ShowEditableTecnicoesGrid]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
       Name="Tasks"
-      DefaultItem="!module/NavigationItems[Tasks]/Children[CreateNewOrdenMant]">
+      DefaultItem="!module/NavigationItems[Tasks]/Children[EditableTecnicoesGrid]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="Tasks" />
       </ApplicationNavigationGroup.Attributes>
       <ApplicationNavigationLink
-        Name="CreateNewOrdenMant"
-        Command="!module/Commands[ScreenCommandShowCreateNewOrdenMant]" />
+        Name="EditableTecnicoesGrid"
+        Command="!module/Commands[ScreenCommandShowEditableTecnicoesGrid]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">

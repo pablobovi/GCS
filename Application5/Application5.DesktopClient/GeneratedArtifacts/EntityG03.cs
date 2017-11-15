@@ -212,29 +212,6 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.Tecnico> Tecnicoes
-        {
-            get
-            {
-                return global::LightSwitchApplication.OrdenMant.DetailsClass.GetValue(this, global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties.Tecnicoes);
-            }
-        }
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.Tecnico> TecnicoesQuery
-        {
-            get
-            {
-                return global::LightSwitchApplication.OrdenMant.DetailsClass.GetQuery(this, global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties.Tecnicoes);
-            }
-        }
-
-        /// <summary>
-        /// No Modeled Description Available
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.Lab> Labs
         {
             get
@@ -275,6 +252,30 @@ namespace LightSwitchApplication
                 return global::LightSwitchApplication.OrdenMant.DetailsClass.GetQuery(this, global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties.Pedidoes);
             }
         }
+
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::LightSwitchApplication.Tecnico Tecnico
+        {
+            get
+            {
+                return global::LightSwitchApplication.OrdenMant.DetailsClass.GetValue(this, global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties.Tecnico);
+            }
+            set
+            {
+                global::LightSwitchApplication.OrdenMant.DetailsClass.SetValue(this, global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties.Tecnico, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Tecnico_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Tecnico_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Tecnico_Changed();
 
         #endregion
     
@@ -406,14 +407,6 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Tecnico> Tecnicoes
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties.Tecnicoes) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Tecnico>;
-                    }
-                }
-                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Lab> Labs
                 {
                     get
@@ -430,6 +423,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Tecnico> Tecnico
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties.Tecnico) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Tecnico>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -442,9 +443,9 @@ namespace LightSwitchApplication
                 new string ModifiedBy { get; }
                 new global::System.Nullable<global::System.DateTimeOffset> Modified { get; }
                 new byte[] RowVersion { get; set; }
-                new global::System.Collections.IEnumerable Tecnicoes { get; }
                 new global::System.Collections.IEnumerable Labs { get; }
                 new global::System.Collections.IEnumerable Pedidoes { get; }
+                new global::Microsoft.LightSwitch.Internal.IEntityImplementation Tecnico { get; set; }
             }
             #pragma warning restore 109
     
@@ -661,26 +662,6 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Tecnico>.Entry
-                    Tecnicoes = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Tecnico>.Entry(
-                        "Tecnicoes",
-                        global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties._Tecnicoes_Stub,
-                        global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties._Tecnicoes_GetReferencedEntities,
-                        global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties._Tecnicoes_GetEntityCollection);
-                private static void _Tecnicoes_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.OrdenMant.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Tecnico>.Data> c, global::LightSwitchApplication.OrdenMant.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Tecnicoes, sf);
-                }
-                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Tecnico> _Tecnicoes_GetReferencedEntities(global::LightSwitchApplication.OrdenMant.DetailsClass d)
-                {
-                    return d.GetReferencedEntities<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass>(global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties.Tecnicoes, ref d._Tecnicoes);
-                }
-                private static global::System.Collections.IEnumerable _Tecnicoes_GetEntityCollection(global::LightSwitchApplication.OrdenMant.DetailsClass d)
-                {
-                    return d.ImplementationEntity.Tecnicoes;
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Lab>.Entry
                     Labs = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Lab>.Entry(
                         "Labs",
@@ -720,6 +701,53 @@ namespace LightSwitchApplication
                     return d.ImplementationEntity.Pedidoes;
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Tecnico>.Entry
+                    Tecnico = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Tecnico>.Entry(
+                        "Tecnico",
+                        global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties._Tecnico_Stub,
+                        global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties._Tecnico_ComputeIsReadOnly,
+                        global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties._Tecnico_Validate,
+                        global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties._Tecnico_GetCoreImplementationValue,
+                        global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties._Tecnico_GetImplementationValue,
+                        global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties._Tecnico_SetImplementationValue,
+                        global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties._Tecnico_Refresh,
+                        global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties._Tecnico_OnValueChanged);
+                private static void _Tecnico_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.OrdenMant.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Tecnico>.Data> c, global::LightSwitchApplication.OrdenMant.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Tecnico, sf);
+                }
+                private static bool _Tecnico_ComputeIsReadOnly(global::LightSwitchApplication.OrdenMant e)
+                {
+                    bool result = false;
+                    e.Tecnico_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _Tecnico_Validate(global::LightSwitchApplication.OrdenMant e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Tecnico_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _Tecnico_GetCoreImplementationValue(global::LightSwitchApplication.OrdenMant.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Tecnico;
+                }
+                private static global::LightSwitchApplication.Tecnico _Tecnico_GetImplementationValue(global::LightSwitchApplication.OrdenMant.DetailsClass d)
+                {
+                    return d.GetImplementationValue<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass>(global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties.Tecnico, ref d._Tecnico);
+                }
+                private static void _Tecnico_SetImplementationValue(global::LightSwitchApplication.OrdenMant.DetailsClass d, global::LightSwitchApplication.Tecnico v)
+                {
+                    d.SetImplementationValue(global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties.Tecnico, ref d._Tecnico, (i, ev) => i.Tecnico = ev, v);
+                }
+                private static void _Tecnico_Refresh(global::LightSwitchApplication.OrdenMant.DetailsClass d)
+                {
+                    d.RefreshNavigationProperty(global::LightSwitchApplication.OrdenMant.DetailsClass.PropertySetProperties.Tecnico, ref d._Tecnico);
+                }
+                private static void _Tecnico_OnValueChanged(global::LightSwitchApplication.OrdenMant e)
+                {
+                    e.Tecnico_Changed();
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -741,13 +769,13 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, byte[]>.Data _RowVersion;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Tecnico>.Data _Tecnicoes;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Lab>.Data _Labs;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Pedido>.Data _Pedidoes;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.OrdenMant, global::LightSwitchApplication.OrdenMant.DetailsClass, global::LightSwitchApplication.Tecnico>.Data _Tecnico;
             
         }
     

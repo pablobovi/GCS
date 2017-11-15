@@ -234,32 +234,6 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("RowVersion");
         }
         
-        global::System.Collections.IEnumerable global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Tecnicoes
-        {
-            get
-            {
-                return this.Tecnicoes;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Tecnico> __Tecnicoes
-        {
-            get
-            {
-                if (this.___Tecnicoes == null)
-                {
-                    this.___Tecnicoes = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Tecnico>(
-                        this,
-                        "Tecnicoes",
-                        () => this._Tecnicoes,
-                        e => global::System.Object.Equals(e.OrdenMant_Tecnico, this.Id));
-                }
-                return this.___Tecnicoes;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Tecnico> ___Tecnicoes;
-        
         global::System.Collections.IEnumerable global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Labs
         {
             get
@@ -311,6 +285,38 @@ namespace LightSwitchApplication.Implementation
         }
         
         private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Pedido> ___Pedidoes;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Tecnico
+        {
+            get
+            {
+                return this.Tecnico;
+            }
+            set
+            {
+                this.Tecnico = (global::LightSwitchApplication.Implementation.Tecnico)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Tecnico> __Tecnico
+        {
+            get
+            {
+                if (this.___Tecnico == null)
+                {
+                    this.___Tecnico = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Tecnico>(
+                        this,
+                        "Tecnico",
+                        new string[] { "Id" },
+                        e => global::System.Object.Equals(e.Id, this.Id),
+                        () => this._Tecnico,
+                        e => this._Tecnico = e);
+                }
+                return this.___Tecnico;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Tecnico> ___Tecnico;
         
     }
     #endregion
@@ -415,15 +421,10 @@ namespace LightSwitchApplication.Implementation
     public partial class Tecnico :
         global::LightSwitchApplication.Tecnico.DetailsClass.IImplementation
     {
-        partial void OnOrdenMant_TecnicoChanged()
-        {
-            this.___OnPropertyChanged("OrdenMant_Tecnico");
-            this.___OnPropertyChanged("OrdenMant");
-        }
-        
         partial void OnIdChanged()
         {
             this.___OnPropertyChanged("Id");
+            this.___OnPropertyChanged("OrdenMant");
         }
         
         partial void OnNombreChanged()
@@ -477,8 +478,8 @@ namespace LightSwitchApplication.Implementation
                     this.___OrdenMant = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.OrdenMant>(
                         this,
                         "OrdenMant",
-                        new string[] { "OrdenMant_Tecnico" },
-                        e => global::System.Object.Equals(e.Id, this.OrdenMant_Tecnico),
+                        new string[] { "Id" },
+                        e => global::System.Object.Equals(e.Id, this.Id),
                         () => this._OrdenMant,
                         e => this._OrdenMant = e);
                 }

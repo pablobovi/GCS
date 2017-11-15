@@ -131,6 +131,54 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string Legajo
+        {
+            get
+            {
+                return global::LightSwitchApplication.Tecnico.DetailsClass.GetValue(this, global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties.Legajo);
+            }
+            set
+            {
+                global::LightSwitchApplication.Tecnico.DetailsClass.SetValue(this, global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties.Legajo, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Legajo_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Legajo_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Legajo_Changed();
+
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string Apellido
+        {
+            get
+            {
+                return global::LightSwitchApplication.Tecnico.DetailsClass.GetValue(this, global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties.Apellido);
+            }
+            set
+            {
+                global::LightSwitchApplication.Tecnico.DetailsClass.SetValue(this, global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties.Apellido, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Apellido_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Apellido_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Apellido_Changed();
+
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public string CreatedBy
         {
             get
@@ -353,6 +401,22 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string> Legajo
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties.Legajo) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string> Apellido
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties.Apellido) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string> CreatedBy
                 {
                     get
@@ -409,6 +473,8 @@ namespace LightSwitchApplication
             {
                 new int Id { get; set; }
                 new string Nombre { get; set; }
+                new string Legajo { get; set; }
+                new string Apellido { get; set; }
                 new string CreatedBy { get; }
                 new global::System.Nullable<global::System.DateTimeOffset> Created { get; }
                 new string ModifiedBy { get; }
@@ -496,6 +562,80 @@ namespace LightSwitchApplication
                 private static void _Nombre_OnValueChanged(global::LightSwitchApplication.Tecnico e)
                 {
                     e.Nombre_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string>.Entry
+                    Legajo = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string>.Entry(
+                        "Legajo",
+                        global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties._Legajo_Stub,
+                        global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties._Legajo_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties._Legajo_Validate,
+                        global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties._Legajo_GetImplementationValue,
+                        global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties._Legajo_SetImplementationValue,
+                        global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties._Legajo_OnValueChanged);
+                private static void _Legajo_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Tecnico.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string>.Data> c, global::LightSwitchApplication.Tecnico.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Legajo, sf);
+                }
+                private static bool _Legajo_ComputeIsReadOnly(global::LightSwitchApplication.Tecnico e)
+                {
+                    bool result = false;
+                    e.Legajo_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _Legajo_Validate(global::LightSwitchApplication.Tecnico e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Legajo_Validate(r);
+                }
+                private static string _Legajo_GetImplementationValue(global::LightSwitchApplication.Tecnico.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Legajo;
+                }
+                private static void _Legajo_SetImplementationValue(global::LightSwitchApplication.Tecnico.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.Legajo = v;
+                }
+                private static void _Legajo_OnValueChanged(global::LightSwitchApplication.Tecnico e)
+                {
+                    e.Legajo_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string>.Entry
+                    Apellido = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string>.Entry(
+                        "Apellido",
+                        global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties._Apellido_Stub,
+                        global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties._Apellido_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties._Apellido_Validate,
+                        global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties._Apellido_GetImplementationValue,
+                        global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties._Apellido_SetImplementationValue,
+                        global::LightSwitchApplication.Tecnico.DetailsClass.PropertySetProperties._Apellido_OnValueChanged);
+                private static void _Apellido_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Tecnico.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string>.Data> c, global::LightSwitchApplication.Tecnico.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Apellido, sf);
+                }
+                private static bool _Apellido_ComputeIsReadOnly(global::LightSwitchApplication.Tecnico e)
+                {
+                    bool result = false;
+                    e.Apellido_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _Apellido_Validate(global::LightSwitchApplication.Tecnico e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Apellido_Validate(r);
+                }
+                private static string _Apellido_GetImplementationValue(global::LightSwitchApplication.Tecnico.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Apellido;
+                }
+                private static void _Apellido_SetImplementationValue(global::LightSwitchApplication.Tecnico.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.Apellido = v;
+                }
+                private static void _Apellido_OnValueChanged(global::LightSwitchApplication.Tecnico e)
+                {
+                    e.Apellido_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -721,6 +861,12 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string>.Data _Nombre;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string>.Data _Legajo;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string>.Data _Apellido;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Tecnico, global::LightSwitchApplication.Tecnico.DetailsClass, string>.Data _CreatedBy;

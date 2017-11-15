@@ -27,11 +27,6 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <NavigationProperty
-        Name="Tecnicoes"
-        Association="OrdenMant_Tecnico"
-        FromEnd="OrdenMant"
-        ToEnd="Tecnico" />
-      <NavigationProperty
         Name="Labs"
         Association="OrdenMant_Lab"
         FromEnd="OrdenMant"
@@ -41,6 +36,11 @@
         Association="OrdenMant_Pedido"
         FromEnd="OrdenMant"
         ToEnd="Pedido" />
+      <NavigationProperty
+        Name="Tecnico"
+        Association="OrdenMant_Tecnico"
+        FromEnd="OrdenMant"
+        ToEnd="Tecnico" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -185,16 +185,6 @@
       </QueryOperationParameter>
     </QueryOperation>
     <AssociationSet
-      Name="OrdenMant_Tecnicoes"
-      Association="OrdenMant_Tecnico">
-      <AssociationSetEnd
-        Name="OrdenMant"
-        EntitySet="OrdenMants" />
-      <AssociationSetEnd
-        Name="Tecnico"
-        EntitySet="Tecnicoes" />
-    </AssociationSet>
-    <AssociationSet
       Name="OrdenMant_Labs"
       Association="OrdenMant_Lab">
       <AssociationSetEnd
@@ -214,49 +204,22 @@
         Name="Pedido"
         EntitySet="Pedidoes" />
     </AssociationSet>
+    <AssociationSet
+      Name="OrdenMant_Tecnicoes"
+      Association="OrdenMant_Tecnico">
+      <AssociationSetEnd
+        Name="OrdenMant"
+        EntitySet="OrdenMants" />
+      <AssociationSetEnd
+        Name="Tecnico"
+        EntitySet="Tecnicoes" />
+    </AssociationSet>
   </EntityContainer>
-  <Association
-    Name="OrdenMant_Tecnico">
-    <AssociationEnd
-      Name="OrdenMant"
-      Multiplicity="One"
-      EntityType="OrdenMant">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="Tecnico"
-      Multiplicity="Many"
-      EntityType="Tecnico" />
-  </Association>
   <DataService
     Name="ApplicationDataMapping">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
-    <AssociationSetMapping
-      AssociationSet="OrdenMant_Tecnicoes">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="OrdenMant_Tecnicoes" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[OrdenMant_Tecnicoes]/Members[OrdenMant]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[OrdenMant_Tecnicoes]/Members[Tecnico]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="OrdenMant_Tecnico" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
     <AssociationSetMapping
       AssociationSet="OrdenMant_Labs">
       <AssociationSetMapping.Attributes>
@@ -299,6 +262,27 @@
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="OrdenMant_Tecnicoes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="OrdenMant_Tecnicoes" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[OrdenMant_Tecnicoes]/Members[OrdenMant]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[OrdenMant_Tecnicoes]/Members[Tecnico]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
   <Association
     Name="OrdenMant_Lab">
@@ -331,5 +315,20 @@
       Name="Pedido"
       Multiplicity="Many"
       EntityType="Pedido" />
+  </Association>
+  <Association
+    Name="OrdenMant_Tecnico">
+    <AssociationEnd
+      Name="OrdenMant"
+      Multiplicity="One"
+      EntityType="OrdenMant">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Tecnico"
+      EntityType="Tecnico" />
   </Association>
 </ServiceApplication>

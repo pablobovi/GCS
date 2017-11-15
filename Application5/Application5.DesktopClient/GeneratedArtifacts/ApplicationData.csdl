@@ -38,9 +38,9 @@
     <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
     <Property Name="Modified" Type="Edm.DateTimeOffset" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
-    <NavigationProperty Name="Tecnicoes" Relationship="LightSwitchApplication.OrdenMant_Tecnico" ToRole="Tecnico" FromRole="OrdenMant" />
     <NavigationProperty Name="Labs" Relationship="LightSwitchApplication.OrdenMant_Lab" ToRole="Lab" FromRole="OrdenMant" />
     <NavigationProperty Name="Pedidoes" Relationship="LightSwitchApplication.OrdenMant_Pedido" ToRole="Pedido" FromRole="OrdenMant" />
+    <NavigationProperty Name="Tecnico" Relationship="LightSwitchApplication.OrdenMant_Tecnico" ToRole="Tecnico" FromRole="OrdenMant" />
   </EntityType>
   <EntityType Name="Pedido">
     <Key>
@@ -62,9 +62,8 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" />
     <Property Name="Nombre" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="OrdenMant_Tecnico" Type="Edm.Int32" Nullable="false" />
     <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
     <Property Name="Created" Type="Edm.DateTimeOffset" />
     <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
@@ -95,18 +94,6 @@
       </Principal>
       <Dependent Role="WorkStation">
         <PropertyRef Name="Lab_WorkStation" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="OrdenMant_Tecnico">
-    <End Role="OrdenMant" Type="LightSwitchApplication.OrdenMant" Multiplicity="1" />
-    <End Role="Tecnico" Type="LightSwitchApplication.Tecnico" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="OrdenMant">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Tecnico">
-        <PropertyRef Name="OrdenMant_Tecnico" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -146,6 +133,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="OrdenMant_Tecnico">
+    <End Role="OrdenMant" Type="LightSwitchApplication.OrdenMant" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Tecnico" Type="LightSwitchApplication.Tecnico" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="OrdenMant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tecnico">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
     <EntitySet Name="Componentes" EntityType="LightSwitchApplication.Componente" />
     <EntitySet Name="Labs" EntityType="LightSwitchApplication.Lab" />
@@ -156,10 +157,6 @@
     <AssociationSet Name="Lab_WorkStation" Association="LightSwitchApplication.Lab_WorkStation">
       <End Role="Lab" EntitySet="Labs" />
       <End Role="WorkStation" EntitySet="WorkStations" />
-    </AssociationSet>
-    <AssociationSet Name="OrdenMant_Tecnico" Association="LightSwitchApplication.OrdenMant_Tecnico">
-      <End Role="OrdenMant" EntitySet="OrdenMants" />
-      <End Role="Tecnico" EntitySet="Tecnicoes" />
     </AssociationSet>
     <AssociationSet Name="OrdenMant_Lab" Association="LightSwitchApplication.OrdenMant_Lab">
       <End Role="OrdenMant" EntitySet="OrdenMants" />
@@ -172,6 +169,10 @@
     <AssociationSet Name="WorkStation_Componente" Association="LightSwitchApplication.WorkStation_Componente">
       <End Role="WorkStation" EntitySet="WorkStations" />
       <End Role="Componente" EntitySet="Componentes" />
+    </AssociationSet>
+    <AssociationSet Name="OrdenMant_Tecnico" Association="LightSwitchApplication.OrdenMant_Tecnico">
+      <End Role="OrdenMant" EntitySet="OrdenMants" />
+      <End Role="Tecnico" EntitySet="Tecnicoes" />
     </AssociationSet>
     <FunctionImport Name="Microsoft_LightSwitch_GetCanInformation" ReturnType="Edm.String" m:HttpMethod="GET">
       <Parameter Name="dataServiceMembers" Type="Edm.String" Mode="In" />

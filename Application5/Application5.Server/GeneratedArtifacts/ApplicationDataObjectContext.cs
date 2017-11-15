@@ -19,11 +19,11 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "OrdenMant_Tecnico", "OrdenMant", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.OrdenMant), "Tecnico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Tecnico), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Lab_WorkStation", "Lab", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.Lab), "WorkStation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.WorkStation), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "OrdenMant_Lab", "OrdenMant", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.OrdenMant), "Lab", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Lab), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "OrdenMant_Pedido", "OrdenMant", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.OrdenMant), "Pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Pedido), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "WorkStation_Componente", "WorkStation", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.WorkStation), "Componente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Componente), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Lab_WorkStation", "Lab", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.Lab), "WorkStation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.WorkStation), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "OrdenMant_Tecnico", "OrdenMant", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.OrdenMant), "Tecnico", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LightSwitchApplication.Implementation.Tecnico), true)]
 
 #endregion
 
@@ -75,6 +75,54 @@ namespace LightSwitchApplication.Implementation
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<Componente> Componentes
+        {
+            get
+            {
+                if ((_Componentes == null))
+                {
+                    _Componentes = base.CreateObjectSet<Componente>("Componentes");
+                }
+                return _Componentes;
+            }
+        }
+        private ObjectSet<Componente> _Componentes;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Lab> Labs
+        {
+            get
+            {
+                if ((_Labs == null))
+                {
+                    _Labs = base.CreateObjectSet<Lab>("Labs");
+                }
+                return _Labs;
+            }
+        }
+        private ObjectSet<Lab> _Labs;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<OrdenMant> OrdenMants
+        {
+            get
+            {
+                if ((_OrdenMants == null))
+                {
+                    _OrdenMants = base.CreateObjectSet<OrdenMant>("OrdenMants");
+                }
+                return _OrdenMants;
+            }
+        }
+        private ObjectSet<OrdenMant> _OrdenMants;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<Pedido> Pedidoes
         {
             get
@@ -107,22 +155,6 @@ namespace LightSwitchApplication.Implementation
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Lab> Labs
-        {
-            get
-            {
-                if ((_Labs == null))
-                {
-                    _Labs = base.CreateObjectSet<Lab>("Labs");
-                }
-                return _Labs;
-            }
-        }
-        private ObjectSet<Lab> _Labs;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<WorkStation> WorkStations
         {
             get
@@ -135,42 +167,34 @@ namespace LightSwitchApplication.Implementation
             }
         }
         private ObjectSet<WorkStation> _WorkStations;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<Componente> Componentes
-        {
-            get
-            {
-                if ((_Componentes == null))
-                {
-                    _Componentes = base.CreateObjectSet<Componente>("Componentes");
-                }
-                return _Componentes;
-            }
-        }
-        private ObjectSet<Componente> _Componentes;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<OrdenMant> OrdenMants
-        {
-            get
-            {
-                if ((_OrdenMants == null))
-                {
-                    _OrdenMants = base.CreateObjectSet<OrdenMant>("OrdenMants");
-                }
-                return _OrdenMants;
-            }
-        }
-        private ObjectSet<OrdenMant> _OrdenMants;
 
         #endregion
 
         #region AddTo Methods
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Componentes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToComponentes(Componente componente)
+        {
+            base.AddObject("Componentes", componente);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Labs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToLabs(Lab lab)
+        {
+            base.AddObject("Labs", lab);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the OrdenMants EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToOrdenMants(OrdenMant ordenMant)
+        {
+            base.AddObject("OrdenMants", ordenMant);
+        }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the Pedidoes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
@@ -189,35 +213,11 @@ namespace LightSwitchApplication.Implementation
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the Labs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToLabs(Lab lab)
-        {
-            base.AddObject("Labs", lab);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the WorkStations EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToWorkStations(WorkStation workStation)
         {
             base.AddObject("WorkStations", workStation);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Componentes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToComponentes(Componente componente)
-        {
-            base.AddObject("Componentes", componente);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the OrdenMants EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToOrdenMants(OrdenMant ordenMant)
-        {
-            base.AddObject("OrdenMants", ordenMant);
         }
 
         #endregion
@@ -955,28 +955,6 @@ namespace LightSwitchApplication.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "OrdenMant_Tecnico", "Tecnico")]
-        public EntityCollection<Tecnico> Tecnicoes
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Tecnico>("LightSwitchApplication.OrdenMant_Tecnico", "Tecnico");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Tecnico>("LightSwitchApplication.OrdenMant_Tecnico", "Tecnico", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "OrdenMant_Lab", "Lab")]
         public EntityCollection<Lab> Labs
         {
@@ -1011,6 +989,44 @@ namespace LightSwitchApplication.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Pedido>("LightSwitchApplication.OrdenMant_Pedido", "Pedido", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "OrdenMant_Tecnico", "Tecnico")]
+        public Tecnico Tecnico
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tecnico>("LightSwitchApplication.OrdenMant_Tecnico", "Tecnico").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tecnico>("LightSwitchApplication.OrdenMant_Tecnico", "Tecnico").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Tecnico> TecnicoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tecnico>("LightSwitchApplication.OrdenMant_Tecnico", "Tecnico");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Tecnico>("LightSwitchApplication.OrdenMant_Tecnico", "Tecnico", value);
                 }
             }
         }
@@ -1359,14 +1375,12 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="nombre">Initial value of the Nombre property.</param>
-        /// <param name="ordenMant_Tecnico">Initial value of the OrdenMant_Tecnico property.</param>
         /// <param name="rowVersion">Initial value of the RowVersion property.</param>
-        public static Tecnico CreateTecnico(global::System.Int32 id, global::System.String nombre, global::System.Int32 ordenMant_Tecnico, global::System.Byte[] rowVersion)
+        public static Tecnico CreateTecnico(global::System.Int32 id, global::System.String nombre, global::System.Byte[] rowVersion)
         {
             Tecnico tecnico = new Tecnico();
             tecnico.Id = id;
             tecnico.Nombre = nombre;
-            tecnico.OrdenMant_Tecnico = ordenMant_Tecnico;
             tecnico.RowVersion = rowVersion;
             return tecnico;
         }
@@ -1425,30 +1439,6 @@ namespace LightSwitchApplication.Implementation
         private global::System.String _Nombre;
         partial void OnNombreChanging(global::System.String value);
         partial void OnNombreChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 OrdenMant_Tecnico
-        {
-            get
-            {
-                return _OrdenMant_Tecnico;
-            }
-            set
-            {
-                OnOrdenMant_TecnicoChanging(value);
-                ReportPropertyChanging("OrdenMant_Tecnico");
-                _OrdenMant_Tecnico = value;
-                ReportPropertyChanged("OrdenMant_Tecnico");
-                OnOrdenMant_TecnicoChanged();
-            }
-        }
-        private global::System.Int32 _OrdenMant_Tecnico;
-        partial void OnOrdenMant_TecnicoChanging(global::System.Int32 value);
-        partial void OnOrdenMant_TecnicoChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
