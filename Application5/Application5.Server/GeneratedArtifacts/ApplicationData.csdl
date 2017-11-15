@@ -1,5 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Componente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lab_WorkStation" Type="Edm.Int32" Nullable="false" />
+    <Property Name="nombre" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="codigo" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="tipo" Type="Edm.Int16" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Lab" Relationship="LightSwitchApplication.Lab_Componente" ToRole="Lab" FromRole="Componente" />
+  </EntityType>
   <EntityType Name="Lab">
     <Key>
       <PropertyRef Name="Id" />
@@ -36,6 +52,7 @@
     <Property Name="CantPC" Type="Edm.Int32" Nullable="false" />
     <Property Name="CantLabs" Type="Edm.Int32" Nullable="false" />
     <Property Name="OrdenMant_Pedido" Type="Edm.Int32" Nullable="false" />
+    <Property Name="software" Type="Edm.String" MaxLength="255" />
     <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
     <Property Name="Created" Type="Edm.DateTimeOffset" />
     <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
@@ -57,22 +74,6 @@
     <Property Name="Modified" Type="Edm.DateTimeOffset" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="OrdenMant" Relationship="LightSwitchApplication.OrdenMant_Tecnico" ToRole="OrdenMant" FromRole="Tecnico" />
-  </EntityType>
-  <EntityType Name="Componente">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Lab_WorkStation" Type="Edm.Int32" Nullable="false" />
-    <Property Name="nombre" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="codigo" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="tipo" Type="Edm.Int16" Nullable="false" />
-    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
-    <Property Name="Created" Type="Edm.DateTimeOffset" />
-    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
-    <Property Name="Modified" Type="Edm.DateTimeOffset" />
-    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
-    <NavigationProperty Name="Lab" Relationship="LightSwitchApplication.Lab_Componente" ToRole="Lab" FromRole="Componente" />
   </EntityType>
   <Association Name="Lab_Componente">
     <End Role="Lab" Type="LightSwitchApplication.Lab" Multiplicity="1" />
@@ -113,11 +114,11 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="Componentes" EntityType="LightSwitchApplication.Componente" />
     <EntitySet Name="Labs" EntityType="LightSwitchApplication.Lab" />
     <EntitySet Name="OrdenMants" EntityType="LightSwitchApplication.OrdenMant" />
     <EntitySet Name="Pedidoes" EntityType="LightSwitchApplication.Pedido" />
     <EntitySet Name="Tecnicoes" EntityType="LightSwitchApplication.Tecnico" />
-    <EntitySet Name="Componentes" EntityType="LightSwitchApplication.Componente" />
     <AssociationSet Name="Lab_Componente" Association="LightSwitchApplication.Lab_Componente">
       <End Role="Lab" EntitySet="Labs" />
       <End Role="Componente" EntitySet="Componentes" />

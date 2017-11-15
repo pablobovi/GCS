@@ -45,6 +45,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowEditableLabsGrid"
       Target="!module/Methods[ShowEditableLabsGrid]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowEditablePedidoesGrid"
+      Target="!module/Methods[ShowEditablePedidoesGrid]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -63,6 +66,9 @@
       <ApplicationNavigationLink
         Name="EditableLabsGrid"
         Command="!module/Commands[ScreenCommandShowEditableLabsGrid]" />
+      <ApplicationNavigationLink
+        Name="EditablePedidoesGrid"
+        Command="!module/Commands[ScreenCommandShowEditablePedidoesGrid]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">

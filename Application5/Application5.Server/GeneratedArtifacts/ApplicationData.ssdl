@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="ApplicationDataStore">
+    <EntitySet Name="Componentes" EntityType="ApplicationDataStore.Componente" store:Type="Tables" Schema="dbo" Table="Componentes" />
     <EntitySet Name="Labs" EntityType="ApplicationDataStore.Lab" store:Type="Tables" Schema="dbo" Table="Labs" />
     <EntitySet Name="OrdenMants" EntityType="ApplicationDataStore.OrdenMant" store:Type="Tables" Schema="dbo" Table="OrdenMants" />
     <EntitySet Name="Pedidoes" EntityType="ApplicationDataStore.Pedido" store:Type="Tables" Schema="dbo" Table="Pedidoes" />
     <EntitySet Name="Tecnicoes" EntityType="ApplicationDataStore.Tecnico" store:Type="Tables" Schema="dbo" Table="Tecnicoes" />
-    <EntitySet Name="Componentes" EntityType="ApplicationDataStore.Componente" store:Type="Tables" Schema="dbo" Table="Componentes" />
     <AssociationSet Name="Lab_Componente" Association="ApplicationDataStore.Lab_Componente">
       <End Role="Lab" EntitySet="Labs" />
       <End Role="Componente" EntitySet="Componentes" />
@@ -19,6 +19,21 @@
       <End Role="Tecnico" EntitySet="Tecnicoes" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Componente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="codigo" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="tipo" Type="smallint" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Lab_WorkStation" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Lab">
     <Key>
       <PropertyRef Name="Id" />
@@ -51,6 +66,7 @@
     <Property Name="NombreSolic" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="CantPC" Type="int" Nullable="false" />
     <Property Name="CantLabs" Type="int" Nullable="false" />
+    <Property Name="software" Type="nvarchar" MaxLength="255" />
     <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
     <Property Name="Created" Type="datetimeoffset" />
     <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
@@ -71,21 +87,6 @@
     <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
     <Property Name="Modified" Type="datetimeoffset" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
-  </EntityType>
-  <EntityType Name="Componente">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="nvarchar" Nullable="false" MaxLength="255" />
-    <Property Name="codigo" Type="nvarchar" Nullable="false" MaxLength="255" />
-    <Property Name="tipo" Type="smallint" Nullable="false" />
-    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
-    <Property Name="Created" Type="datetimeoffset" />
-    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
-    <Property Name="Modified" Type="datetimeoffset" />
-    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
-    <Property Name="Lab_WorkStation" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="Lab_Componente">
     <End Role="Lab" Type="ApplicationDataStore.Lab" Multiplicity="1">

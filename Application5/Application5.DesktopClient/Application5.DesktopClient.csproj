@@ -242,6 +242,7 @@
     <LightSwitchModel Include="Screens\EditableTecnicoesGrid.lsml" />
     <LightSwitchModel Include="Screens\CreateNewComponente.lsml" />
     <LightSwitchModel Include="Screens\EditableLabsGrid.lsml" />
+    <LightSwitchModel Include="Screens\EditablePedidoesGrid.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\ApplicationData\" />

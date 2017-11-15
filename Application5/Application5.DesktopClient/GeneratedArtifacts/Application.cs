@@ -37,21 +37,6 @@ namespace LightSwitchApplication
         }
 
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void EditableTecnicoesGrid_CanRun(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void EditableTecnicoesGrid_Run(ref bool handled);
-    
-        /// <summary>
-        /// Opens the ShowEditableTecnicoesGrid screen.  If the screen is already opened, it is activated and shown.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void ShowEditableTecnicoesGrid()
-        {
-            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowEditableTecnicoesGrid);
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void CreateNewComponente_CanRun(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void CreateNewComponente_Run(ref bool handled);
@@ -81,6 +66,36 @@ namespace LightSwitchApplication
             ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowEditableLabsGrid);
         }
         
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EditableTecnicoesGrid_CanRun(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EditableTecnicoesGrid_Run(ref bool handled);
+    
+        /// <summary>
+        /// Opens the ShowEditableTecnicoesGrid screen.  If the screen is already opened, it is activated and shown.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void ShowEditableTecnicoesGrid()
+        {
+            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowEditableTecnicoesGrid);
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EditablePedidoesGrid_CanRun(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EditablePedidoesGrid_Run(ref bool handled);
+    
+        /// <summary>
+        /// Opens the ShowEditablePedidoesGrid screen.  If the screen is already opened, it is activated and shown.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void ShowEditablePedidoesGrid()
+        {
+            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowEditablePedidoesGrid);
+        }
+        
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -90,8 +105,8 @@ namespace LightSwitchApplication
 
             static DetailsClass()
             {
-                var initializeCommandEntry = global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowEditableTecnicoesGrid;
-                var initializeMethodEntry = global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowEditableTecnicoesGrid;
+                var initializeCommandEntry = global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowCreateNewComponente;
+                var initializeMethodEntry = global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowCreateNewComponente;
             }
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -140,12 +155,14 @@ namespace LightSwitchApplication
             {
                 switch (screenName)
                 {
-                    case "EditableTecnicoesGrid":
-                        return global::LightSwitchApplication.EditableTecnicoesGrid.CreateInstance();
                     case "CreateNewComponente":
                         return global::LightSwitchApplication.CreateNewComponente.CreateInstance();
                     case "EditableLabsGrid":
                         return global::LightSwitchApplication.EditableLabsGrid.CreateInstance();
+                    case "EditableTecnicoesGrid":
+                        return global::LightSwitchApplication.EditableTecnicoesGrid.CreateInstance();
+                    case "EditablePedidoesGrid":
+                        return global::LightSwitchApplication.EditablePedidoesGrid.CreateInstance();
                 }
             
                 return base.CreateScreen(screenName, args);
@@ -167,15 +184,6 @@ namespace LightSwitchApplication
                 : global::Microsoft.LightSwitch.Details.Framework.Client.ClientApplicationCommandSet<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>
             {
 
-                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowEditableTecnicoesGrid
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowEditableTecnicoesGrid);
-                    }
-                }
-
                 public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowCreateNewComponente
                 {
                     get
@@ -194,6 +202,24 @@ namespace LightSwitchApplication
                     }
                 }
 
+                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowEditableTecnicoesGrid
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowEditableTecnicoesGrid);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowEditablePedidoesGrid
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowEditablePedidoesGrid);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -202,15 +228,6 @@ namespace LightSwitchApplication
             public sealed class MethodSet
                 : global::Microsoft.LightSwitch.Details.Framework.Client.ClientApplicationMethodSet<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>
             {
-
-                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowEditableTecnicoesGrid
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowEditableTecnicoesGrid);
-                    }
-                }
 
                 public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowCreateNewComponente
                 {
@@ -230,6 +247,24 @@ namespace LightSwitchApplication
                     }
                 }
 
+                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowEditableTecnicoesGrid
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowEditableTecnicoesGrid);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowEditablePedidoesGrid
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowEditablePedidoesGrid);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -245,20 +280,6 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal sealed class CommandSetProperties
             {
-
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowEditableTecnicoesGrid = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowEditableTecnicoesGrid",
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowEditableTecnicoesGrid_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowEditableTecnicoesGrid_CreateExecutableObject);
-                private static void _ShowEditableTecnicoesGrid_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
-                {
-                    c(d, ref d._ShowEditableTecnicoesGridCommand, sf);
-                }
-                private static global::Microsoft.LightSwitch.IExecutable _ShowEditableTecnicoesGrid_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
-                {
-                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowEditableTecnicoesGrid.CreateInvocation(new object[0]);
-                }
 
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
                     ShowCreateNewComponente = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
@@ -288,6 +309,34 @@ namespace LightSwitchApplication
                     return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowEditableLabsGrid.CreateInvocation(new object[0]);
                 }
 
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
+                    ShowEditableTecnicoesGrid = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowEditableTecnicoesGrid",
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowEditableTecnicoesGrid_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowEditableTecnicoesGrid_CreateExecutableObject);
+                private static void _ShowEditableTecnicoesGrid_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ShowEditableTecnicoesGridCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _ShowEditableTecnicoesGrid_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowEditableTecnicoesGrid.CreateInvocation(new object[0]);
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
+                    ShowEditablePedidoesGrid = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowEditablePedidoesGrid",
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowEditablePedidoesGrid_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowEditablePedidoesGrid_CreateExecutableObject);
+                private static void _ShowEditablePedidoesGrid_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ShowEditablePedidoesGridCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _ShowEditablePedidoesGrid_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowEditablePedidoesGrid.CreateInvocation(new object[0]);
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -296,32 +345,6 @@ namespace LightSwitchApplication
             internal sealed class MethodSetProperties
             {
 
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowEditableTecnicoesGrid = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowEditableTecnicoesGrid",
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditableTecnicoesGrid_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditableTecnicoesGrid_CanInvoke,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditableTecnicoesGrid_InvokeMethod);
-                private static void _ShowEditableTecnicoesGrid_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
-                {
-                    c(d, ref d._ShowEditableTecnicoesGridMethod, sf);
-                }
-                private static global::System.Exception _ShowEditableTecnicoesGrid_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
-                {
-                    bool result = true;
-                    d.Application.EditableTecnicoesGrid_CanRun(ref result);
-                    return result ? null : ex;
-                }
-                private static void _ShowEditableTecnicoesGrid_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
-                {
-                    bool handled = false;
-                    d.Application.EditableTecnicoesGrid_Run(ref handled);
-                    if (!handled)
-                    {
-                        d.ShowScreen("LightSwitchApplication.Application5.DesktopClient:EditableTecnicoesGrid", () => global::LightSwitchApplication.EditableTecnicoesGrid.CreateInstance(), args);
-                    }
-                }
- 
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
                     ShowCreateNewComponente = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
                         "ShowCreateNewComponente",
@@ -374,19 +397,75 @@ namespace LightSwitchApplication
                     }
                 }
  
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
+                    ShowEditableTecnicoesGrid = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowEditableTecnicoesGrid",
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditableTecnicoesGrid_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditableTecnicoesGrid_CanInvoke,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditableTecnicoesGrid_InvokeMethod);
+                private static void _ShowEditableTecnicoesGrid_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ShowEditableTecnicoesGridMethod, sf);
+                }
+                private static global::System.Exception _ShowEditableTecnicoesGrid_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Application.EditableTecnicoesGrid_CanRun(ref result);
+                    return result ? null : ex;
+                }
+                private static void _ShowEditableTecnicoesGrid_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    bool handled = false;
+                    d.Application.EditableTecnicoesGrid_Run(ref handled);
+                    if (!handled)
+                    {
+                        d.ShowScreen("LightSwitchApplication.Application5.DesktopClient:EditableTecnicoesGrid", () => global::LightSwitchApplication.EditableTecnicoesGrid.CreateInstance(), args);
+                    }
+                }
+ 
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
+                    ShowEditablePedidoesGrid = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowEditablePedidoesGrid",
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditablePedidoesGrid_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditablePedidoesGrid_CanInvoke,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditablePedidoesGrid_InvokeMethod);
+                private static void _ShowEditablePedidoesGrid_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ShowEditablePedidoesGridMethod, sf);
+                }
+                private static global::System.Exception _ShowEditablePedidoesGrid_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Application.EditablePedidoesGrid_CanRun(ref result);
+                    return result ? null : ex;
+                }
+                private static void _ShowEditablePedidoesGrid_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    bool handled = false;
+                    d.Application.EditablePedidoesGrid_Run(ref handled);
+                    if (!handled)
+                    {
+                        d.ShowScreen("LightSwitchApplication.Application5.DesktopClient:EditablePedidoesGrid", () => global::LightSwitchApplication.EditablePedidoesGrid.CreateInstance(), args);
+                    }
+                }
+ 
             }
-
-            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowEditableTecnicoesGridMethod;
 
             private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowCreateNewComponenteMethod;
 
             private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowEditableLabsGridMethod;
 
-            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowEditableTecnicoesGridCommand;
+            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowEditableTecnicoesGridMethod;
+
+            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowEditablePedidoesGridMethod;
 
             private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowCreateNewComponenteCommand;
 
             private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowEditableLabsGridCommand;
+
+            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowEditableTecnicoesGridCommand;
+
+            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowEditablePedidoesGridCommand;
 
         }
     }

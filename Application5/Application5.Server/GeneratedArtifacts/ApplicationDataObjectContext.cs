@@ -73,6 +73,22 @@ namespace LightSwitchApplication.Implementation
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<Componente> Componentes
+        {
+            get
+            {
+                if ((_Componentes == null))
+                {
+                    _Componentes = base.CreateObjectSet<Componente>("Componentes");
+                }
+                return _Componentes;
+            }
+        }
+        private ObjectSet<Componente> _Componentes;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<Lab> Labs
         {
             get
@@ -133,26 +149,18 @@ namespace LightSwitchApplication.Implementation
             }
         }
         private ObjectSet<Tecnico> _Tecnicoes;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<Componente> Componentes
-        {
-            get
-            {
-                if ((_Componentes == null))
-                {
-                    _Componentes = base.CreateObjectSet<Componente>("Componentes");
-                }
-                return _Componentes;
-            }
-        }
-        private ObjectSet<Componente> _Componentes;
 
         #endregion
 
         #region AddTo Methods
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Componentes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToComponentes(Componente componente)
+        {
+            base.AddObject("Componentes", componente);
+        }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the Labs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
@@ -184,14 +192,6 @@ namespace LightSwitchApplication.Implementation
         public void AddToTecnicoes(Tecnico tecnico)
         {
             base.AddObject("Tecnicoes", tecnico);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Componentes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToComponentes(Componente componente)
-        {
-            base.AddObject("Componentes", componente);
         }
 
         #endregion
@@ -1184,6 +1184,30 @@ namespace LightSwitchApplication.Implementation
         private global::System.Int32 _OrdenMant_Pedido;
         partial void OnOrdenMant_PedidoChanging(global::System.Int32 value);
         partial void OnOrdenMant_PedidoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String software
+        {
+            get
+            {
+                return _software;
+            }
+            set
+            {
+                OnsoftwareChanging(value);
+                ReportPropertyChanging("software");
+                _software = value;
+                ReportPropertyChanged("software");
+                OnsoftwareChanged();
+            }
+        }
+        private global::System.String _software;
+        partial void OnsoftwareChanging(global::System.String value);
+        partial void OnsoftwareChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

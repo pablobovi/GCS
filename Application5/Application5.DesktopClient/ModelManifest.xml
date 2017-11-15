@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
-    <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Properties\Client.lsml" Checksum="20F0F64E60E10ABCF5E56A6C1AF89FCFBA28A1D10BC13D982E2FB3ACF3DD1697" />
+    <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Properties\Client.lsml" Checksum="05B0BAF8B7606DACE53518195967DC77113313555096419F914AFFCB40F52599" />
     <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Properties\Proxies.lsml" Checksum="052BC8FBDFB06158992263B790EFD470B357DAD722ECA962C174EA8966A87107" />
-    <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Screens\EditableTecnicoesGrid.lsml" Checksum="3E36FBDED8D462EF24FF27358BF37B8BA4526DB5CB669AC75F2101BAF2D9030F" />
     <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Screens\CreateNewComponente.lsml" Checksum="B5F13E94EA4609F63183D88ED8A7C00EAA2E3EDC1936895DE45DC3813A9E1483" />
     <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Screens\EditableLabsGrid.lsml" Checksum="C50ACCE8BAB0B041F01D3C2BB937663DC0EF7AFF243B9F036717B3E2C9A43E7A" />
+    <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Screens\EditableTecnicoesGrid.lsml" Checksum="3E36FBDED8D462EF24FF27358BF37B8BA4526DB5CB669AC75F2101BAF2D9030F" />
+    <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Screens\EditablePedidoesGrid.lsml" Checksum="E6A278E78FC0218D17A9D6184F18074985F5090957F98F19116616DFF02853F1" />
   </Documents>
 </ModelDocumentManifest>
