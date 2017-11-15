@@ -1,57 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="ApplicationDataStore">
-    <EntitySet Name="Componentes" EntityType="ApplicationDataStore.Componente" store:Type="Tables" Schema="dbo" Table="Componentes" />
     <EntitySet Name="Labs" EntityType="ApplicationDataStore.Lab" store:Type="Tables" Schema="dbo" Table="Labs" />
     <EntitySet Name="OrdenMants" EntityType="ApplicationDataStore.OrdenMant" store:Type="Tables" Schema="dbo" Table="OrdenMants" />
     <EntitySet Name="Pedidoes" EntityType="ApplicationDataStore.Pedido" store:Type="Tables" Schema="dbo" Table="Pedidoes" />
     <EntitySet Name="Tecnicoes" EntityType="ApplicationDataStore.Tecnico" store:Type="Tables" Schema="dbo" Table="Tecnicoes" />
-    <EntitySet Name="WorkStations" EntityType="ApplicationDataStore.WorkStation" store:Type="Tables" Schema="dbo" Table="WorkStations" />
-    <AssociationSet Name="Lab_WorkStation" Association="ApplicationDataStore.Lab_WorkStation">
+    <EntitySet Name="Componentes" EntityType="ApplicationDataStore.Componente" store:Type="Tables" Schema="dbo" Table="Componentes" />
+    <AssociationSet Name="Lab_Componente" Association="ApplicationDataStore.Lab_Componente">
       <End Role="Lab" EntitySet="Labs" />
-      <End Role="WorkStation" EntitySet="WorkStations" />
-    </AssociationSet>
-    <AssociationSet Name="OrdenMant_Lab" Association="ApplicationDataStore.OrdenMant_Lab">
-      <End Role="OrdenMant" EntitySet="OrdenMants" />
-      <End Role="Lab" EntitySet="Labs" />
+      <End Role="Componente" EntitySet="Componentes" />
     </AssociationSet>
     <AssociationSet Name="OrdenMant_Pedido" Association="ApplicationDataStore.OrdenMant_Pedido">
       <End Role="OrdenMant" EntitySet="OrdenMants" />
       <End Role="Pedido" EntitySet="Pedidoes" />
-    </AssociationSet>
-    <AssociationSet Name="WorkStation_Componente" Association="ApplicationDataStore.WorkStation_Componente">
-      <End Role="WorkStation" EntitySet="WorkStations" />
-      <End Role="Componente" EntitySet="Componentes" />
     </AssociationSet>
     <AssociationSet Name="OrdenMant_Tecnico" Association="ApplicationDataStore.OrdenMant_Tecnico">
       <End Role="OrdenMant" EntitySet="OrdenMants" />
       <End Role="Tecnico" EntitySet="Tecnicoes" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="Componente">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
-    <Property Name="Created" Type="datetimeoffset" />
-    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
-    <Property Name="Modified" Type="datetimeoffset" />
-    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
-    <Property Name="WorkStation_Componente" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="Lab">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="CantPc" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
     <Property Name="Created" Type="datetimeoffset" />
     <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
     <Property Name="Modified" Type="datetimeoffset" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
-    <Property Name="OrdenMant_Lab" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="OrdenMant">
     <Key>
@@ -93,11 +72,14 @@
     <Property Name="Modified" Type="datetimeoffset" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
   </EntityType>
-  <EntityType Name="WorkStation">
+  <EntityType Name="Componente">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="codigo" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="tipo" Type="smallint" Nullable="false" />
     <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
     <Property Name="Created" Type="datetimeoffset" />
     <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
@@ -105,31 +87,17 @@
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="Lab_WorkStation" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="Lab_WorkStation">
+  <Association Name="Lab_Componente">
     <End Role="Lab" Type="ApplicationDataStore.Lab" Multiplicity="1">
       <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
     </End>
-    <End Role="WorkStation" Type="ApplicationDataStore.WorkStation" Multiplicity="*" />
+    <End Role="Componente" Type="ApplicationDataStore.Componente" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Lab">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="WorkStation">
+      <Dependent Role="Componente">
         <PropertyRef Name="Lab_WorkStation" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="OrdenMant_Lab">
-    <End Role="OrdenMant" Type="ApplicationDataStore.OrdenMant" Multiplicity="1">
-      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
-    </End>
-    <End Role="Lab" Type="ApplicationDataStore.Lab" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="OrdenMant">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Lab">
-        <PropertyRef Name="OrdenMant_Lab" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -144,20 +112,6 @@
       </Principal>
       <Dependent Role="Pedido">
         <PropertyRef Name="OrdenMant_Pedido" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="WorkStation_Componente">
-    <End Role="WorkStation" Type="ApplicationDataStore.WorkStation" Multiplicity="1">
-      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
-    </End>
-    <End Role="Componente" Type="ApplicationDataStore.Componente" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="WorkStation">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Componente">
-        <PropertyRef Name="WorkStation_Componente" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

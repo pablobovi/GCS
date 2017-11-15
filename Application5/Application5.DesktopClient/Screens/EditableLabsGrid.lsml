@@ -5,7 +5,7 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="EditableTecnicoesGrid">
+    Name="EditableLabsGrid">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
@@ -21,33 +21,46 @@
           <ContentItem
             Name="grid"
             Kind="Collection"
-            DataType="CollectionView$Tecnico">
+            DataType="CollectionView$Lab">
             <ContentItem.DataSource>
               <ScreenExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="EditableTecnicoesGrid/Properties[Tecnicoes]" />
+                    Member="EditableLabsGrid/Properties[Labs]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
             <ContentItem
               Name="RowTemplate"
               Kind="Details"
-              DataType="Tecnico">
+              DataType="Lab">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression />
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
-                Name="Nombre"
+                Name="CantPc"
+                Kind="Value"
+                DataType=":Int32">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Lab/Properties[CantPc]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="nombre"
                 Kind="Value"
                 DataType=":String">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Tecnico/Properties[Nombre]" />
+                        Member="Lab/Properties[nombre]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -61,7 +74,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Tecnico/Properties[CreatedBy]" />
+                        Member="Lab/Properties[CreatedBy]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -75,7 +88,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Tecnico/Properties[Created]" />
+                        Member="Lab/Properties[Created]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -89,7 +102,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Tecnico/Properties[ModifiedBy]" />
+                        Member="Lab/Properties[ModifiedBy]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -103,33 +116,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Tecnico/Properties[Modified]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Legajo"
-                Kind="Value"
-                DataType=":String">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Tecnico/Properties[Legajo]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Apellido"
-                Kind="Value"
-                DataType=":String">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Tecnico/Properties[Apellido]" />
+                        Member="Lab/Properties[Modified]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -137,13 +124,13 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="Tecnicoes_AddAndEditNew"
+                Name="Labs_AddAndEditNew"
                 Kind="Command">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditableTecnicoesGrid/Properties[Tecnicoes]" />
+                        Member="EditableLabsGrid/Properties[Labs]" />
                       <CallExpression
                         Target="AddAndEditNew" />
                     </ChainExpression>
@@ -151,13 +138,13 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="Tecnicoes_EditSelected"
+                Name="Labs_EditSelected"
                 Kind="Command">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditableTecnicoesGrid/Properties[Tecnicoes]" />
+                        Member="EditableLabsGrid/Properties[Labs]" />
                       <CallExpression
                         Target="EditSelected" />
                     </ChainExpression>
@@ -165,13 +152,13 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="Tecnicoes_DeleteSelected"
+                Name="Labs_DeleteSelected"
                 Kind="Command">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditableTecnicoesGrid/Properties[Tecnicoes]" />
+                        Member="EditableLabsGrid/Properties[Labs]" />
                       <CallExpression
                         Target="DeleteSelected" />
                     </ChainExpression>
@@ -211,7 +198,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="EditableTecnicoesGrid/Methods[Save]" />
+                    Target="EditableLabsGrid/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -223,7 +210,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="EditableTecnicoesGrid/Methods[Refresh]" />
+                    Target="EditableLabsGrid/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -263,20 +250,20 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="Tecnicoes"
+        Name="Labs"
         PageSize="45"
-        PropertyType="CollectionView$Tecnico">
+        PropertyType="CollectionView$Lab">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="TecnicoesQuery"
-            ReturnType="Tecnico*">
+            Name="LabsQuery"
+            ReturnType="Lab*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="ApplicationData/Members[Tecnicoes]" />
+                  Member="ApplicationData/Members[Labs]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -284,7 +271,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="EditableTecnicoesGrid/Properties[Tecnicoes]/Query" />
+              Target="EditableLabsGrid/Properties[Labs]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -292,10 +279,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowEditableTecnicoesGrid">
+      Name="ShowEditableLabsGrid">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="EditableTecnicoesGrid" />
+          TargetScreen="EditableLabsGrid" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

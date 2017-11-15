@@ -204,7 +204,6 @@
     <LightSwitchModel Include="DataSources\ApplicationData\Pedidoes.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\Tecnicoes.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\Labs.lsml" />
-    <LightSwitchModel Include="DataSources\ApplicationData\WorkStations.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\Componentes.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\OrdenMants.lsml" />
     <None Include="Web.Debug.config">

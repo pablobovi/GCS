@@ -10,84 +10,6 @@
 namespace LightSwitchApplication.Implementation
 {
     
-    #region Componente
-    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class Componente :
-        global::LightSwitchApplication.Componente.DetailsClass.IImplementation
-    {
-        partial void OnWorkStation_ComponenteChanged()
-        {
-            this.___OnPropertyChanged("WorkStation_Componente");
-            this.___OnPropertyChanged("WorkStation");
-        }
-        
-        partial void OnIdChanged()
-        {
-            this.___OnPropertyChanged("Id");
-        }
-        
-        partial void OnCreatedByChanged()
-        {
-            this.___OnPropertyChanged("CreatedBy");
-        }
-        
-        partial void OnCreatedChanged()
-        {
-            this.___OnPropertyChanged("Created");
-        }
-        
-        partial void OnModifiedByChanged()
-        {
-            this.___OnPropertyChanged("ModifiedBy");
-        }
-        
-        partial void OnModifiedChanged()
-        {
-            this.___OnPropertyChanged("Modified");
-        }
-        
-        partial void OnRowVersionChanged()
-        {
-            this.___OnPropertyChanged("RowVersion");
-        }
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Componente.DetailsClass.IImplementation.WorkStation
-        {
-            get
-            {
-                return this.WorkStation;
-            }
-            set
-            {
-                this.WorkStation = (global::LightSwitchApplication.Implementation.WorkStation)value;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.WorkStation> __WorkStation
-        {
-            get
-            {
-                if (this.___WorkStation == null)
-                {
-                    this.___WorkStation = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.WorkStation>(
-                        this,
-                        "WorkStation",
-                        new string[] { "WorkStation_Componente" },
-                        e => global::System.Object.Equals(e.Id, this.WorkStation_Componente),
-                        () => this._WorkStation,
-                        e => this._WorkStation = e);
-                }
-                return this.___WorkStation;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.WorkStation> ___WorkStation;
-        
-    }
-    #endregion
-    
     #region Lab
     [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
@@ -95,12 +17,6 @@ namespace LightSwitchApplication.Implementation
     public partial class Lab :
         global::LightSwitchApplication.Lab.DetailsClass.IImplementation
     {
-        partial void OnOrdenMant_LabChanged()
-        {
-            this.___OnPropertyChanged("OrdenMant_Lab");
-            this.___OnPropertyChanged("OrdenMant");
-        }
-        
         partial void OnIdChanged()
         {
             this.___OnPropertyChanged("Id");
@@ -111,6 +27,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("CantPc");
         }
         
+        partial void OnnombreChanged()
+        {
+            this.___OnPropertyChanged("nombre");
+        }
+        
         partial void OnCreatedByChanged()
         {
             this.___OnPropertyChanged("CreatedBy");
@@ -136,63 +57,31 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("RowVersion");
         }
         
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Lab.DetailsClass.IImplementation.OrdenMant
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Lab.DetailsClass.IImplementation.Componente
         {
             get
             {
-                return this.OrdenMant;
-            }
-            set
-            {
-                this.OrdenMant = (global::LightSwitchApplication.Implementation.OrdenMant)value;
+                return this.Componente;
             }
         }
         
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.OrdenMant> __OrdenMant
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Componente> __Componente
         {
             get
             {
-                if (this.___OrdenMant == null)
+                if (this.___Componente == null)
                 {
-                    this.___OrdenMant = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.OrdenMant>(
+                    this.___Componente = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Componente>(
                         this,
-                        "OrdenMant",
-                        new string[] { "OrdenMant_Lab" },
-                        e => global::System.Object.Equals(e.Id, this.OrdenMant_Lab),
-                        () => this._OrdenMant,
-                        e => this._OrdenMant = e);
-                }
-                return this.___OrdenMant;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.OrdenMant> ___OrdenMant;
-        
-        global::System.Collections.IEnumerable global::LightSwitchApplication.Lab.DetailsClass.IImplementation.WorkStations
-        {
-            get
-            {
-                return this.WorkStations;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.WorkStation> __WorkStations
-        {
-            get
-            {
-                if (this.___WorkStations == null)
-                {
-                    this.___WorkStations = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.WorkStation>(
-                        this,
-                        "WorkStations",
-                        () => this._WorkStations,
+                        "Componente",
+                        () => this._Componente,
                         e => global::System.Object.Equals(e.Lab_WorkStation, this.Id));
                 }
-                return this.___WorkStations;
+                return this.___Componente;
             }
         }
         
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.WorkStation> ___WorkStations;
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Componente> ___Componente;
         
     }
     #endregion
@@ -233,32 +122,6 @@ namespace LightSwitchApplication.Implementation
         {
             this.___OnPropertyChanged("RowVersion");
         }
-        
-        global::System.Collections.IEnumerable global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Labs
-        {
-            get
-            {
-                return this.Labs;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Lab> __Labs
-        {
-            get
-            {
-                if (this.___Labs == null)
-                {
-                    this.___Labs = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Lab>(
-                        this,
-                        "Labs",
-                        () => this._Labs,
-                        e => global::System.Object.Equals(e.OrdenMant_Lab, this.Id));
-                }
-                return this.___Labs;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Lab> ___Labs;
         
         global::System.Collections.IEnumerable global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Pedidoes
         {
@@ -432,6 +295,16 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Nombre");
         }
         
+        partial void OnLegajoChanged()
+        {
+            this.___OnPropertyChanged("Legajo");
+        }
+        
+        partial void OnApellidoChanged()
+        {
+            this.___OnPropertyChanged("Apellido");
+        }
+        
         partial void OnCreatedByChanged()
         {
             this.___OnPropertyChanged("CreatedBy");
@@ -492,12 +365,12 @@ namespace LightSwitchApplication.Implementation
     }
     #endregion
     
-    #region WorkStation
+    #region Componente
     [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class WorkStation :
-        global::LightSwitchApplication.WorkStation.DetailsClass.IImplementation
+    public partial class Componente :
+        global::LightSwitchApplication.Componente.DetailsClass.IImplementation
     {
         partial void OnLab_WorkStationChanged()
         {
@@ -508,6 +381,21 @@ namespace LightSwitchApplication.Implementation
         partial void OnIdChanged()
         {
             this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnnombreChanged()
+        {
+            this.___OnPropertyChanged("nombre");
+        }
+        
+        partial void OncodigoChanged()
+        {
+            this.___OnPropertyChanged("codigo");
+        }
+        
+        partial void OntipoChanged()
+        {
+            this.___OnPropertyChanged("tipo");
         }
         
         partial void OnCreatedByChanged()
@@ -535,33 +423,7 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("RowVersion");
         }
         
-        global::System.Collections.IEnumerable global::LightSwitchApplication.WorkStation.DetailsClass.IImplementation.Componentes
-        {
-            get
-            {
-                return this.Componentes;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Componente> __Componentes
-        {
-            get
-            {
-                if (this.___Componentes == null)
-                {
-                    this.___Componentes = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Componente>(
-                        this,
-                        "Componentes",
-                        () => this._Componentes,
-                        e => global::System.Object.Equals(e.WorkStation_Componente, this.Id));
-                }
-                return this.___Componentes;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Componente> ___Componentes;
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.WorkStation.DetailsClass.IImplementation.Lab
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Componente.DetailsClass.IImplementation.Lab
         {
             get
             {
@@ -603,10 +465,6 @@ namespace LightSwitchApplication.Implementation
     {
         protected override global::Microsoft.LightSwitch.Internal.IEntityImplementation CreateEntityImplementation<T>()
         {
-            if (typeof(T) == typeof(global::LightSwitchApplication.Componente))
-            {
-                return new global::LightSwitchApplication.Implementation.Componente();
-            }
             if (typeof(T) == typeof(global::LightSwitchApplication.Lab))
             {
                 return new global::LightSwitchApplication.Implementation.Lab();
@@ -623,9 +481,9 @@ namespace LightSwitchApplication.Implementation
             {
                 return new global::LightSwitchApplication.Implementation.Tecnico();
             }
-            if (typeof(T) == typeof(global::LightSwitchApplication.WorkStation))
+            if (typeof(T) == typeof(global::LightSwitchApplication.Componente))
             {
-                return new global::LightSwitchApplication.Implementation.WorkStation();
+                return new global::LightSwitchApplication.Implementation.Componente();
             }
             return null;
         }
@@ -676,10 +534,6 @@ namespace LightSwitchApplication.Implementation
     {
         global::System.Type global::Microsoft.LightSwitch.Internal.ITypeMappingProvider.GetImplementationType(global::System.Type definitionType)
         {
-            if (typeof(global::LightSwitchApplication.Componente) == definitionType)
-            {
-                return typeof(global::LightSwitchApplication.Implementation.Componente);
-            }
             if (typeof(global::LightSwitchApplication.Lab) == definitionType)
             {
                 return typeof(global::LightSwitchApplication.Implementation.Lab);
@@ -696,9 +550,9 @@ namespace LightSwitchApplication.Implementation
             {
                 return typeof(global::LightSwitchApplication.Implementation.Tecnico);
             }
-            if (typeof(global::LightSwitchApplication.WorkStation) == definitionType)
+            if (typeof(global::LightSwitchApplication.Componente) == definitionType)
             {
-                return typeof(global::LightSwitchApplication.Implementation.WorkStation);
+                return typeof(global::LightSwitchApplication.Implementation.Componente);
             }
             return null;
         }

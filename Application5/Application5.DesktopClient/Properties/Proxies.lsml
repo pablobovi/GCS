@@ -31,21 +31,9 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:WorkStation" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
         Target="ServiceInterface:Componente" />
     </EntityType.Attributes>
   </EntityType>
-  <Association>
-    <Association.Attributes>
-      <Proxy
-        Target="ServiceInterface:OrdenMant_Lab" />
-    </Association.Attributes>
-  </Association>
   <Association>
     <Association.Attributes>
       <Proxy
@@ -55,13 +43,7 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:WorkStation_Componente" />
-    </Association.Attributes>
-  </Association>
-  <Association>
-    <Association.Attributes>
-      <Proxy
-        Target="ServiceInterface:Lab_WorkStation" />
+        Target="ServiceInterface:Lab_Componente" />
     </Association.Attributes>
   </Association>
   <EntityType>

@@ -27,11 +27,6 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <NavigationProperty
-        Name="Labs"
-        Association="OrdenMant_Lab"
-        FromEnd="OrdenMant"
-        ToEnd="Lab" />
-      <NavigationProperty
         Name="Pedidoes"
         Association="OrdenMant_Pedido"
         FromEnd="OrdenMant"
@@ -185,16 +180,6 @@
       </QueryOperationParameter>
     </QueryOperation>
     <AssociationSet
-      Name="OrdenMant_Labs"
-      Association="OrdenMant_Lab">
-      <AssociationSetEnd
-        Name="OrdenMant"
-        EntitySet="OrdenMants" />
-      <AssociationSetEnd
-        Name="Lab"
-        EntitySet="Labs" />
-    </AssociationSet>
-    <AssociationSet
       Name="OrdenMant_Pedidoes"
       Association="OrdenMant_Pedido">
       <AssociationSetEnd
@@ -220,27 +205,6 @@
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
-    <AssociationSetMapping
-      AssociationSet="OrdenMant_Labs">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="OrdenMant_Labs" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[OrdenMant_Labs]/Members[OrdenMant]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[OrdenMant_Labs]/Members[Lab]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="OrdenMant_Lab" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
     <AssociationSetMapping
       AssociationSet="OrdenMant_Pedidoes">
       <AssociationSetMapping.Attributes>
@@ -284,22 +248,6 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
   </DataService>
-  <Association
-    Name="OrdenMant_Lab">
-    <AssociationEnd
-      Name="OrdenMant"
-      Multiplicity="One"
-      EntityType="OrdenMant">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="Lab"
-      Multiplicity="Many"
-      EntityType="Lab" />
-  </Association>
   <Association
     Name="OrdenMant_Pedido">
     <AssociationEnd

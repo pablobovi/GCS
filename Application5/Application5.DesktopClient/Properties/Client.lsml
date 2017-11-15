@@ -39,6 +39,12 @@
     <ApplicationCommand
       Name="ScreenCommandShowEditableTecnicoesGrid"
       Target="!module/Methods[ShowEditableTecnicoesGrid]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowCreateNewComponente"
+      Target="!module/Methods[ShowCreateNewComponente]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowEditableLabsGrid"
+      Target="!module/Methods[ShowEditableLabsGrid]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -51,6 +57,12 @@
       <ApplicationNavigationLink
         Name="EditableTecnicoesGrid"
         Command="!module/Commands[ScreenCommandShowEditableTecnicoesGrid]" />
+      <ApplicationNavigationLink
+        Name="CreateNewComponente"
+        Command="!module/Commands[ScreenCommandShowCreateNewComponente]" />
+      <ApplicationNavigationLink
+        Name="EditableLabsGrid"
+        Command="!module/Commands[ScreenCommandShowEditableLabsGrid]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">

@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 14/11/2017 10:29:34 p.m.
+// Generation date: 15/11/2017 07:23:40 p.m.
 namespace LightSwitchApplication.Implementation
 {
     
@@ -60,23 +60,6 @@ namespace LightSwitchApplication.Implementation
             }
             return null;
         }
-        /// <summary>
-        /// There are no comments for Componentes in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<Componente> Componentes
-        {
-            get
-            {
-                if ((this._Componentes == null))
-                {
-                    this._Componentes = base.CreateQuery<Componente>("Componentes");
-                }
-                return this._Componentes;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<Componente> _Componentes;
         /// <summary>
         /// There are no comments for Labs in the schema.
         /// </summary>
@@ -146,30 +129,22 @@ namespace LightSwitchApplication.Implementation
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Tecnico> _Tecnicoes;
         /// <summary>
-        /// There are no comments for WorkStations in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<WorkStation> WorkStations
-        {
-            get
-            {
-                if ((this._WorkStations == null))
-                {
-                    this._WorkStations = base.CreateQuery<WorkStation>("WorkStations");
-                }
-                return this._WorkStations;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<WorkStation> _WorkStations;
-        /// <summary>
         /// There are no comments for Componentes in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToComponentes(Componente componente)
+        public global::System.Data.Services.Client.DataServiceQuery<Componente> Componentes
         {
-            base.AddObject("Componentes", componente);
+            get
+            {
+                if ((this._Componentes == null))
+                {
+                    this._Componentes = base.CreateQuery<Componente>("Componentes");
+                }
+                return this._Componentes;
+            }
         }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<Componente> _Componentes;
         /// <summary>
         /// There are no comments for Labs in the schema.
         /// </summary>
@@ -203,12 +178,12 @@ namespace LightSwitchApplication.Implementation
             base.AddObject("Tecnicoes", tecnico);
         }
         /// <summary>
-        /// There are no comments for WorkStations in the schema.
+        /// There are no comments for Componentes in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToWorkStations(WorkStation workStation)
+        public void AddToComponentes(Componente componente)
         {
-            base.AddObject("WorkStations", workStation);
+            base.AddObject("Componentes", componente);
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private abstract class GeneratedEdmModel
@@ -221,124 +196,96 @@ namespace LightSwitchApplication.Implementation
                 "ices/metadata\" m:DataServiceVersion=\"1.0\" m:MaxDataServiceVersion=\"3.0\"><Schema " +
                 "xmlns:annotation=\"http://schemas.microsoft.com/ado/2009/02/edm/annotation\" Names" +
                 "pace=\"LightSwitchApplication\" Alias=\"Self\" xmlns=\"http://schemas.microsoft.com/a" +
-                "do/2008/09/edm\"><EntityType Name=\"Componente\"><Key><PropertyRef Name=\"Id\" /></Ke" +
-                "y><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGenerate" +
-                "dPattern=\"Identity\" /><Property Name=\"WorkStation_Componente\" Type=\"Edm.Int32\" N" +
-                "ullable=\"false\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /" +
-                "><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy" +
-                "\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTi" +
-                "meOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" Concu" +
-                "rrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProp" +
-                "erty Name=\"WorkStation\" Relationship=\"LightSwitchApplication.WorkStation_Compone" +
-                "nte\" ToRole=\"WorkStation\" FromRole=\"Componente\" /></EntityType><EntityType Name=" +
-                "\"Lab\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" N" +
-                "ullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"Ca" +
-                "ntPc\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"OrdenMant_Lab\" Type=\"E" +
-                "dm.Int32\" Nullable=\"false\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLen" +
-                "gth=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=" +
-                "\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=" +
-                "\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"f" +
-                "alse\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><Nav" +
-                "igationProperty Name=\"OrdenMant\" Relationship=\"LightSwitchApplication.OrdenMant_" +
-                "Lab\" ToRole=\"OrdenMant\" FromRole=\"Lab\" /><NavigationProperty Name=\"WorkStations\"" +
-                " Relationship=\"LightSwitchApplication.Lab_WorkStation\" ToRole=\"WorkStation\" From" +
-                "Role=\"Lab\" /></EntityType><EntityType Name=\"OrdenMant\"><Key><PropertyRef Name=\"I" +
-                "d\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:Stor" +
-                "eGeneratedPattern=\"Identity\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxL" +
-                "ength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Nam" +
-                "e=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Typ" +
-                "e=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=" +
-                "\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><N" +
-                "avigationProperty Name=\"Labs\" Relationship=\"LightSwitchApplication.OrdenMant_Lab" +
-                "\" ToRole=\"Lab\" FromRole=\"OrdenMant\" /><NavigationProperty Name=\"Pedidoes\" Relati" +
-                "onship=\"LightSwitchApplication.OrdenMant_Pedido\" ToRole=\"Pedido\" FromRole=\"Orden" +
-                "Mant\" /><NavigationProperty Name=\"Tecnico\" Relationship=\"LightSwitchApplication." +
-                "OrdenMant_Tecnico\" ToRole=\"Tecnico\" FromRole=\"OrdenMant\" /></EntityType><EntityT" +
-                "ype Name=\"Pedido\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"" +
-                "Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Prope" +
-                "rty Name=\"NombreSolic\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Pro" +
-                "perty Name=\"CantPC\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"CantLabs" +
-                "\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"OrdenMant_Pedido\" Type=\"Ed" +
-                "m.Int32\" Nullable=\"false\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLeng" +
-                "th=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"" +
-                "ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"" +
-                "Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"fa" +
-                "lse\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><Navi" +
-                "gationProperty Name=\"OrdenMant\" Relationship=\"LightSwitchApplication.OrdenMant_P" +
-                "edido\" ToRole=\"OrdenMant\" FromRole=\"Pedido\" /></EntityType><EntityType Name=\"Tec" +
-                "nico\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" N" +
-                "ullable=\"false\" /><Property Name=\"Nombre\" Type=\"Edm.String\" Nullable=\"false\" Max" +
-                "Length=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><P" +
-                "roperty Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" T" +
-                "ype=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeO" +
-                "ffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" Concurre" +
-                "ncyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationPropert" +
-                "y Name=\"OrdenMant\" Relationship=\"LightSwitchApplication.OrdenMant_Tecnico\" ToRol" +
-                "e=\"OrdenMant\" FromRole=\"Tecnico\" /></EntityType><EntityType Name=\"WorkStation\"><" +
-                "Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable" +
-                "=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"Lab_WorkS" +
-                "tation\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"CreatedBy\" Type=\"Edm" +
-                ".String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" />" +
-                "<Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"" +
-                "Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Bina" +
-                "ry\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"C" +
-                "omputed\" /><NavigationProperty Name=\"Componentes\" Relationship=\"LightSwitchAppli" +
-                "cation.WorkStation_Componente\" ToRole=\"Componente\" FromRole=\"WorkStation\" /><Nav" +
-                "igationProperty Name=\"Lab\" Relationship=\"LightSwitchApplication.Lab_WorkStation\"" +
-                " ToRole=\"Lab\" FromRole=\"WorkStation\" /></EntityType><Association Name=\"Lab_WorkS" +
-                "tation\"><End Role=\"Lab\" Type=\"LightSwitchApplication.Lab\" Multiplicity=\"1\" /><En" +
-                "d Role=\"WorkStation\" Type=\"LightSwitchApplication.WorkStation\" Multiplicity=\"*\" " +
-                "/><ReferentialConstraint><Principal Role=\"Lab\"><PropertyRef Name=\"Id\" /></Princi" +
-                "pal><Dependent Role=\"WorkStation\"><PropertyRef Name=\"Lab_WorkStation\" /></Depend" +
-                "ent></ReferentialConstraint></Association><Association Name=\"OrdenMant_Lab\"><End" +
-                " Role=\"OrdenMant\" Type=\"LightSwitchApplication.OrdenMant\" Multiplicity=\"1\" /><En" +
-                "d Role=\"Lab\" Type=\"LightSwitchApplication.Lab\" Multiplicity=\"*\" /><ReferentialCo" +
-                "nstraint><Principal Role=\"OrdenMant\"><PropertyRef Name=\"Id\" /></Principal><Depen" +
-                "dent Role=\"Lab\"><PropertyRef Name=\"OrdenMant_Lab\" /></Dependent></ReferentialCon" +
-                "straint></Association><Association Name=\"OrdenMant_Pedido\"><End Role=\"OrdenMant\"" +
-                " Type=\"LightSwitchApplication.OrdenMant\" Multiplicity=\"1\" /><End Role=\"Pedido\" T" +
-                "ype=\"LightSwitchApplication.Pedido\" Multiplicity=\"*\" /><ReferentialConstraint><P" +
-                "rincipal Role=\"OrdenMant\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"" +
-                "Pedido\"><PropertyRef Name=\"OrdenMant_Pedido\" /></Dependent></ReferentialConstrai" +
-                "nt></Association><Association Name=\"WorkStation_Componente\"><End Role=\"WorkStati" +
-                "on\" Type=\"LightSwitchApplication.WorkStation\" Multiplicity=\"1\" /><End Role=\"Comp" +
-                "onente\" Type=\"LightSwitchApplication.Componente\" Multiplicity=\"*\" /><Referential" +
-                "Constraint><Principal Role=\"WorkStation\"><PropertyRef Name=\"Id\" /></Principal><D" +
-                "ependent Role=\"Componente\"><PropertyRef Name=\"WorkStation_Componente\" /></Depend" +
-                "ent></ReferentialConstraint></Association><Association Name=\"OrdenMant_Tecnico\">" +
-                "<End Role=\"OrdenMant\" Type=\"LightSwitchApplication.OrdenMant\" Multiplicity=\"1\"><" +
-                "OnDelete Action=\"Cascade\" /></End><End Role=\"Tecnico\" Type=\"LightSwitchApplicati" +
-                "on.Tecnico\" Multiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"OrdenM" +
-                "ant\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart1 = "Tecnico\"><PropertyRef Name=\"Id\" /></Dependent></ReferentialConstraint></Associati" +
-                "on><EntityContainer Name=\"ApplicationData\" m:IsDefaultEntityContainer=\"true\"><En" +
-                "titySet Name=\"Componentes\" EntityType=\"LightSwitchApplication.Componente\" /><Ent" +
-                "itySet Name=\"Labs\" EntityType=\"LightSwitchApplication.Lab\" /><EntitySet Name=\"Or" +
-                "denMants\" EntityType=\"LightSwitchApplication.OrdenMant\" /><EntitySet Name=\"Pedid" +
-                "oes\" EntityType=\"LightSwitchApplication.Pedido\" /><EntitySet Name=\"Tecnicoes\" En" +
-                "tityType=\"LightSwitchApplication.Tecnico\" /><EntitySet Name=\"WorkStations\" Entit" +
-                "yType=\"LightSwitchApplication.WorkStation\" /><AssociationSet Name=\"Lab_WorkStati" +
-                "on\" Association=\"LightSwitchApplication.Lab_WorkStation\"><End Role=\"Lab\" EntityS" +
-                "et=\"Labs\" /><End Role=\"WorkStation\" EntitySet=\"WorkStations\" /></AssociationSet>" +
-                "<AssociationSet Name=\"OrdenMant_Lab\" Association=\"LightSwitchApplication.OrdenMa" +
-                "nt_Lab\"><End Role=\"OrdenMant\" EntitySet=\"OrdenMants\" /><End Role=\"Lab\" EntitySet" +
-                "=\"Labs\" /></AssociationSet><AssociationSet Name=\"OrdenMant_Pedido\" Association=\"" +
-                "LightSwitchApplication.OrdenMant_Pedido\"><End Role=\"OrdenMant\" EntitySet=\"OrdenM" +
-                "ants\" /><End Role=\"Pedido\" EntitySet=\"Pedidoes\" /></AssociationSet><AssociationS" +
-                "et Name=\"WorkStation_Componente\" Association=\"LightSwitchApplication.WorkStation" +
-                "_Componente\"><End Role=\"WorkStation\" EntitySet=\"WorkStations\" /><End Role=\"Compo" +
-                "nente\" EntitySet=\"Componentes\" /></AssociationSet><AssociationSet Name=\"OrdenMan" +
-                "t_Tecnico\" Association=\"LightSwitchApplication.OrdenMant_Tecnico\"><End Role=\"Ord" +
-                "enMant\" EntitySet=\"OrdenMants\" /><End Role=\"Tecnico\" EntitySet=\"Tecnicoes\" /></A" +
-                "ssociationSet><FunctionImport Name=\"Microsoft_LightSwitch_GetCanInformation\" Ret" +
-                "urnType=\"Edm.String\" m:HttpMethod=\"GET\"><Parameter Name=\"dataServiceMembers\" Typ" +
-                "e=\"Edm.String\" Mode=\"In\" /></FunctionImport></EntityContainer></Schema></edmx:Da" +
-                "taServices></edmx:Edmx>";
+                "do/2008/09/edm\"><EntityType Name=\"Lab\"><Key><PropertyRef Name=\"Id\" /></Key><Prop" +
+                "erty Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPatter" +
+                "n=\"Identity\" /><Property Name=\"CantPc\" Type=\"Edm.Int32\" Nullable=\"false\" /><Prop" +
+                "erty Name=\"nombre\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Propert" +
+                "y Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" " +
+                "Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLen" +
+                "gth=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name" +
+                "=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotat" +
+                "ion:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"Componente\" Rel" +
+                "ationship=\"LightSwitchApplication.Lab_Componente\" ToRole=\"Componente\" FromRole=\"" +
+                "Lab\" /></EntityType><EntityType Name=\"OrdenMant\"><Key><PropertyRef Name=\"Id\" /><" +
+                "/Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGener" +
+                "atedPattern=\"Identity\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=" +
+                "\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"Mod" +
+                "ifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm" +
+                ".DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false" +
+                "\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><Navigat" +
+                "ionProperty Name=\"Pedidoes\" Relationship=\"LightSwitchApplication.OrdenMant_Pedid" +
+                "o\" ToRole=\"Pedido\" FromRole=\"OrdenMant\" /><NavigationProperty Name=\"Tecnico\" Rel" +
+                "ationship=\"LightSwitchApplication.OrdenMant_Tecnico\" ToRole=\"Tecnico\" FromRole=\"" +
+                "OrdenMant\" /></EntityType><EntityType Name=\"Pedido\"><Key><PropertyRef Name=\"Id\" " +
+                "/></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGe" +
+                "neratedPattern=\"Identity\" /><Property Name=\"NombreSolic\" Type=\"Edm.String\" Nulla" +
+                "ble=\"false\" MaxLength=\"255\" /><Property Name=\"CantPC\" Type=\"Edm.Int32\" Nullable=" +
+                "\"false\" /><Property Name=\"CantLabs\" Type=\"Edm.Int32\" Nullable=\"false\" /><Propert" +
+                "y Name=\"OrdenMant_Pedido\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Cr" +
+                "eatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm." +
+                "DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" " +
+                "/><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersi" +
+                "on\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreG" +
+                "eneratedPattern=\"Computed\" /><NavigationProperty Name=\"OrdenMant\" Relationship=\"" +
+                "LightSwitchApplication.OrdenMant_Pedido\" ToRole=\"OrdenMant\" FromRole=\"Pedido\" />" +
+                "</EntityType><EntityType Name=\"Tecnico\"><Key><PropertyRef Name=\"Id\" /></Key><Pro" +
+                "perty Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Nombre\" Type" +
+                "=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Legajo\" Type=\"E" +
+                "dm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Apellido\" Type=\"Ed" +
+                "m.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" Type=\"Ed" +
+                "m.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /" +
+                "><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=" +
+                "\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Bin" +
+                "ary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"" +
+                "Computed\" /><NavigationProperty Name=\"OrdenMant\" Relationship=\"LightSwitchApplic" +
+                "ation.OrdenMant_Tecnico\" ToRole=\"OrdenMant\" FromRole=\"Tecnico\" /></EntityType><E" +
+                "ntityType Name=\"Componente\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"" +
+                "Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity" +
+                "\" /><Property Name=\"Lab_WorkStation\" Type=\"Edm.Int32\" Nullable=\"false\" /><Proper" +
+                "ty Name=\"nombre\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property " +
+                "Name=\"codigo\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Nam" +
+                "e=\"tipo\" Type=\"Edm.Int16\" Nullable=\"false\" /><Property Name=\"CreatedBy\" Type=\"Ed" +
+                "m.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /" +
+                "><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=" +
+                "\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Bin" +
+                "ary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"" +
+                "Computed\" /><NavigationProperty Name=\"Lab\" Relationship=\"LightSwitchApplication." +
+                "Lab_Componente\" ToRole=\"Lab\" FromRole=\"Componente\" /></EntityType><Association N" +
+                "ame=\"Lab_Componente\"><End Role=\"Lab\" Type=\"LightSwitchApplication.Lab\" Multiplic" +
+                "ity=\"1\" /><End Role=\"Componente\" Type=\"LightSwitchApplication.Componente\" Multip" +
+                "licity=\"*\" /><ReferentialConstraint><Principal Role=\"Lab\"><PropertyRef Name=\"Id\"" +
+                " /></Principal><Dependent Role=\"Componente\"><PropertyRef Name=\"Lab_WorkStation\" " +
+                "/></Dependent></ReferentialConstraint></Association><Association Name=\"OrdenMant" +
+                "_Pedido\"><End Role=\"OrdenMant\" Type=\"LightSwitchApplication.OrdenMant\" Multiplic" +
+                "ity=\"1\" /><End Role=\"Pedido\" Type=\"LightSwitchApplication.Pedido\" Multiplicity=\"" +
+                "*\" /><ReferentialConstraint><Principal Role=\"OrdenMant\"><PropertyRef Name=\"Id\" /" +
+                "></Principal><Dependent Role=\"Pedido\"><PropertyRef Name=\"OrdenMant_Pedido\" /></D" +
+                "ependent></ReferentialConstraint></Association><Association Name=\"OrdenMant_Tecn" +
+                "ico\"><End Role=\"OrdenMant\" Type=\"LightSwitchApplication.OrdenMant\" Multiplicity=" +
+                "\"1\"><OnDelete Action=\"Cascade\" /></End><End Role=\"Tecnico\" Type=\"LightSwitchAppl" +
+                "ication.Tecnico\" Multiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"O" +
+                "rdenMant\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"Tecnico\"><Proper" +
+                "tyRef Name=\"Id\" /></Dependent></ReferentialConstraint></Association><EntityConta" +
+                "iner Name=\"ApplicationData\" m:IsDefaultEntityContainer=\"true\"><EntitySet Name=\"L" +
+                "abs\" EntityType=\"LightSwitchApplication.Lab\" /><EntitySet Name=\"OrdenMants\" Enti" +
+                "tyType=\"LightSwitchApplication.OrdenMant\" /><EntitySet Name=\"Pedidoes\" EntityTyp" +
+                "e=\"LightSwitchApplication.Pedido\" /><EntitySet Name=\"Tecnicoes\" EntityType=\"Ligh" +
+                "tSwitchApplication.Tecnico\" /><EntitySet Name=\"Componentes\" EntityType=\"LightSwi" +
+                "tchApplication.Componente\" /><AssociationSet Name=\"Lab_Componente\" Association=\"" +
+                "LightSwitchApplication.Lab_Componente\"><End Role=\"Lab\" EntitySet=\"Labs\" /><End R" +
+                "ole=\"Componente\" EntitySet=\"Componentes\" /></AssociationSet><AssociationSet Name" +
+                "=\"OrdenMant_Pedido\" Association=\"LightSwitchApplication.OrdenMant_Pedido\"><End R" +
+                "ole=\"OrdenMant\" EntitySet=\"OrdenMants\" /><End Role=\"Pedido\" EntitySet=\"Pedidoes\"" +
+                " /></AssociationSet><AssociationSet Name=\"OrdenMant_Tecnico\" Association=\"LightS" +
+                "witchApplication.OrdenMant_Tecnico\"><End Role=\"OrdenMant\" EntitySet=\"OrdenMants\"" +
+                " /><End Role=\"Tecnico\" EntitySet=\"Tecnicoes\" /></AssociationSet><FunctionImport " +
+                "Name=\"Microsoft_LightSwitch_GetCanInformation\" ReturnType=\"Edm.String\" m:HttpMet" +
+                "hod=\"GET\"><Parameter Name=\"dataServiceMembers\" Type=\"Edm.String\" Mode=\"In\" /></F" +
+                "unctionImport></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {
-                return string.Concat(ModelPart0, ModelPart1);
+                return string.Concat(ModelPart0);
             }
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             public static global::Microsoft.Data.Edm.IEdmModel GetInstance()
@@ -367,278 +314,6 @@ namespace LightSwitchApplication.Implementation
         }
     }
     /// <summary>
-    /// There are no comments for LightSwitchApplication.Componente in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Componentes")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Componente : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Componente object.
-        /// </summary>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="workStation_Componente">Initial value of WorkStation_Componente.</param>
-        /// <param name="rowVersion">Initial value of RowVersion.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Componente CreateComponente(int ID, int workStation_Componente, byte[] rowVersion)
-        {
-            Componente componente = new Componente();
-            componente.Id = ID;
-            componente.WorkStation_Componente = workStation_Componente;
-            componente.RowVersion = rowVersion;
-            return componente;
-        }
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                if (object.Equals(this.Id, value))
-                {
-                    return;
-                }
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _Id;
-        partial void OnIdChanging(int value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property WorkStation_Componente in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int WorkStation_Componente
-        {
-            get
-            {
-                return this._WorkStation_Componente;
-            }
-            set
-            {
-                this.OnWorkStation_ComponenteChanging(value);
-                if (object.Equals(this.WorkStation_Componente, value))
-                {
-                    return;
-                }
-                this._WorkStation_Componente = value;
-                this.OnWorkStation_ComponenteChanged();
-                this.OnPropertyChanged("WorkStation_Componente");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _WorkStation_Componente;
-        partial void OnWorkStation_ComponenteChanging(int value);
-        partial void OnWorkStation_ComponenteChanged();
-        /// <summary>
-        /// There are no comments for Property CreatedBy in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string CreatedBy
-        {
-            get
-            {
-                return this._CreatedBy;
-            }
-            set
-            {
-                this.OnCreatedByChanging(value);
-                if (object.Equals(this.CreatedBy, value))
-                {
-                    return;
-                }
-                this._CreatedBy = value;
-                this.OnCreatedByChanged();
-                this.OnPropertyChanged("CreatedBy");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _CreatedBy;
-        partial void OnCreatedByChanging(string value);
-        partial void OnCreatedByChanged();
-        /// <summary>
-        /// There are no comments for Property Created in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<global::System.DateTimeOffset> Created
-        {
-            get
-            {
-                return this._Created;
-            }
-            set
-            {
-                this.OnCreatedChanging(value);
-                if (object.Equals(this.Created, value))
-                {
-                    return;
-                }
-                this._Created = value;
-                this.OnCreatedChanged();
-                this.OnPropertyChanged("Created");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<global::System.DateTimeOffset> _Created;
-        partial void OnCreatedChanging(global::System.Nullable<global::System.DateTimeOffset> value);
-        partial void OnCreatedChanged();
-        /// <summary>
-        /// There are no comments for Property ModifiedBy in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string ModifiedBy
-        {
-            get
-            {
-                return this._ModifiedBy;
-            }
-            set
-            {
-                this.OnModifiedByChanging(value);
-                if (object.Equals(this.ModifiedBy, value))
-                {
-                    return;
-                }
-                this._ModifiedBy = value;
-                this.OnModifiedByChanged();
-                this.OnPropertyChanged("ModifiedBy");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _ModifiedBy;
-        partial void OnModifiedByChanging(string value);
-        partial void OnModifiedByChanged();
-        /// <summary>
-        /// There are no comments for Property Modified in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<global::System.DateTimeOffset> Modified
-        {
-            get
-            {
-                return this._Modified;
-            }
-            set
-            {
-                this.OnModifiedChanging(value);
-                if (object.Equals(this.Modified, value))
-                {
-                    return;
-                }
-                this._Modified = value;
-                this.OnModifiedChanged();
-                this.OnPropertyChanged("Modified");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<global::System.DateTimeOffset> _Modified;
-        partial void OnModifiedChanging(global::System.Nullable<global::System.DateTimeOffset> value);
-        partial void OnModifiedChanged();
-        /// <summary>
-        /// There are no comments for Property RowVersion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public byte[] RowVersion
-        {
-            get
-            {
-                if ((this._RowVersion != null))
-                {
-                    return ((byte[])(this._RowVersion.Clone()));
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                this.OnRowVersionChanging(value);
-                if (object.Equals(this.RowVersion, value))
-                {
-                    return;
-                }
-                this._RowVersion = value;
-                this.OnRowVersionChanged();
-                this.OnPropertyChanged("RowVersion");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private byte[] _RowVersion;
-        partial void OnRowVersionChanging(byte[] value);
-        partial void OnRowVersionChanged();
-        /// <summary>
-        /// There are no comments for WorkStation in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public WorkStation WorkStation
-        {
-            get
-            {
-                this.@__WorkStation.EnsureValueInitialized();
-                return this._WorkStation;
-            }
-            set
-            {
-                WorkStation previous = this.WorkStation;
-                if ((previous == value))
-                {
-                    return;
-                }
-                if ((previous != null))
-                {
-                    this._WorkStation = null;
-                    this.@__WorkStation.OnValueSet();
-                    previous.Componentes.Remove(this);
-                }
-                if ((this.___Host != null))
-                {
-                    if ((value != null))
-                    {
-                        this.WorkStation_Componente = value.Id;
-                    }
-                    else
-                    {
-                        this.WorkStation_Componente = default(int);
-                    }
-                }
-                this._WorkStation = value;
-                this.@__WorkStation.OnValueSet();
-                if ((value != null))
-                {
-                    value.@__Componentes.Add(this);
-                }
-                this.___OnPropertyChanged("WorkStation");
-                this.OnPropertyChanged("WorkStation");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private WorkStation _WorkStation;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
     /// There are no comments for LightSwitchApplication.Lab in the schema.
     /// </summary>
     /// <KeyProperties>
@@ -653,15 +328,15 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         /// <param name="ID">Initial value of Id.</param>
         /// <param name="cantPc">Initial value of CantPc.</param>
-        /// <param name="ordenMant_Lab">Initial value of OrdenMant_Lab.</param>
+        /// <param name="nombre">Initial value of nombre.</param>
         /// <param name="rowVersion">Initial value of RowVersion.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Lab CreateLab(int ID, int cantPc, int ordenMant_Lab, byte[] rowVersion)
+        public static Lab CreateLab(int ID, int cantPc, string nombre, byte[] rowVersion)
         {
             Lab lab = new Lab();
             lab.Id = ID;
             lab.CantPc = cantPc;
-            lab.OrdenMant_Lab = ordenMant_Lab;
+            lab.nombre = nombre;
             lab.RowVersion = rowVersion;
             return lab;
         }
@@ -718,31 +393,31 @@ namespace LightSwitchApplication.Implementation
         partial void OnCantPcChanging(int value);
         partial void OnCantPcChanged();
         /// <summary>
-        /// There are no comments for Property OrdenMant_Lab in the schema.
+        /// There are no comments for Property nombre in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int OrdenMant_Lab
+        public string nombre
         {
             get
             {
-                return this._OrdenMant_Lab;
+                return this._nombre;
             }
             set
             {
-                this.OnOrdenMant_LabChanging(value);
-                if (object.Equals(this.OrdenMant_Lab, value))
+                this.OnnombreChanging(value);
+                if (object.Equals(this.nombre, value))
                 {
                     return;
                 }
-                this._OrdenMant_Lab = value;
-                this.OnOrdenMant_LabChanged();
-                this.OnPropertyChanged("OrdenMant_Lab");
+                this._nombre = value;
+                this.OnnombreChanged();
+                this.OnPropertyChanged("nombre");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _OrdenMant_Lab;
-        partial void OnOrdenMant_LabChanging(int value);
-        partial void OnOrdenMant_LabChanged();
+        private string _nombre;
+        partial void OnnombreChanging(string value);
+        partial void OnnombreChanged();
         /// <summary>
         /// There are no comments for Property CreatedBy in the schema.
         /// </summary>
@@ -881,71 +556,24 @@ namespace LightSwitchApplication.Implementation
         partial void OnRowVersionChanging(byte[] value);
         partial void OnRowVersionChanged();
         /// <summary>
-        /// There are no comments for OrdenMant in the schema.
+        /// There are no comments for Componente in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public OrdenMant OrdenMant
+        public global::System.Data.Services.Client.DataServiceCollection<Componente> Componente
         {
             get
             {
-                this.@__OrdenMant.EnsureValueInitialized();
-                return this._OrdenMant;
+                this.@__Componente.EnsureValueInitialized();
+                return this._Componente;
             }
             set
             {
-                OrdenMant previous = this.OrdenMant;
-                if ((previous == value))
-                {
-                    return;
-                }
-                if ((previous != null))
-                {
-                    this._OrdenMant = null;
-                    this.@__OrdenMant.OnValueSet();
-                    previous.Labs.Remove(this);
-                }
-                if ((this.___Host != null))
-                {
-                    if ((value != null))
-                    {
-                        this.OrdenMant_Lab = value.Id;
-                    }
-                    else
-                    {
-                        this.OrdenMant_Lab = default(int);
-                    }
-                }
-                this._OrdenMant = value;
-                this.@__OrdenMant.OnValueSet();
-                if ((value != null))
-                {
-                    value.@__Labs.Add(this);
-                }
-                this.___OnPropertyChanged("OrdenMant");
-                this.OnPropertyChanged("OrdenMant");
+                this._Componente = value;
+                this.OnPropertyChanged("Componente");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private OrdenMant _OrdenMant;
-        /// <summary>
-        /// There are no comments for WorkStations in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<WorkStation> WorkStations
-        {
-            get
-            {
-                this.@__WorkStations.EnsureValueInitialized();
-                return this._WorkStations;
-            }
-            set
-            {
-                this._WorkStations = value;
-                this.OnPropertyChanged("WorkStations");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<WorkStation> _WorkStations = new global::System.Data.Services.Client.DataServiceCollection<WorkStation>(null, global::System.Data.Services.Client.TrackingMode.None);
+        private global::System.Data.Services.Client.DataServiceCollection<Componente> _Componente = new global::System.Data.Services.Client.DataServiceCollection<Componente>(null, global::System.Data.Services.Client.TrackingMode.None);
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -1143,25 +771,6 @@ namespace LightSwitchApplication.Implementation
         private byte[] _RowVersion;
         partial void OnRowVersionChanging(byte[] value);
         partial void OnRowVersionChanged();
-        /// <summary>
-        /// There are no comments for Labs in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Lab> Labs
-        {
-            get
-            {
-                this.@__Labs.EnsureValueInitialized();
-                return this._Labs;
-            }
-            set
-            {
-                this._Labs = value;
-                this.OnPropertyChanged("Labs");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Lab> _Labs = new global::System.Data.Services.Client.DataServiceCollection<Lab>(null, global::System.Data.Services.Client.TrackingMode.None);
         /// <summary>
         /// There are no comments for Pedidoes in the schema.
         /// </summary>
@@ -1599,13 +1208,17 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         /// <param name="ID">Initial value of Id.</param>
         /// <param name="nombre">Initial value of Nombre.</param>
+        /// <param name="legajo">Initial value of Legajo.</param>
+        /// <param name="apellido">Initial value of Apellido.</param>
         /// <param name="rowVersion">Initial value of RowVersion.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Tecnico CreateTecnico(int ID, string nombre, byte[] rowVersion)
+        public static Tecnico CreateTecnico(int ID, string nombre, string legajo, string apellido, byte[] rowVersion)
         {
             Tecnico tecnico = new Tecnico();
             tecnico.Id = ID;
             tecnico.Nombre = nombre;
+            tecnico.Legajo = legajo;
+            tecnico.Apellido = apellido;
             tecnico.RowVersion = rowVersion;
             return tecnico;
         }
@@ -1661,6 +1274,58 @@ namespace LightSwitchApplication.Implementation
         private string _Nombre;
         partial void OnNombreChanging(string value);
         partial void OnNombreChanged();
+        /// <summary>
+        /// There are no comments for Property Legajo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Legajo
+        {
+            get
+            {
+                return this._Legajo;
+            }
+            set
+            {
+                this.OnLegajoChanging(value);
+                if (object.Equals(this.Legajo, value))
+                {
+                    return;
+                }
+                this._Legajo = value;
+                this.OnLegajoChanged();
+                this.OnPropertyChanged("Legajo");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Legajo;
+        partial void OnLegajoChanging(string value);
+        partial void OnLegajoChanged();
+        /// <summary>
+        /// There are no comments for Property Apellido in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Apellido
+        {
+            get
+            {
+                return this._Apellido;
+            }
+            set
+            {
+                this.OnApellidoChanging(value);
+                if (object.Equals(this.Apellido, value))
+                {
+                    return;
+                }
+                this._Apellido = value;
+                this.OnApellidoChanged();
+                this.OnPropertyChanged("Apellido");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Apellido;
+        partial void OnApellidoChanging(string value);
+        partial void OnApellidoChanged();
         /// <summary>
         /// There are no comments for Property CreatedBy in the schema.
         /// </summary>
@@ -1857,29 +1522,35 @@ namespace LightSwitchApplication.Implementation
         }
     }
     /// <summary>
-    /// There are no comments for LightSwitchApplication.WorkStation in the schema.
+    /// There are no comments for LightSwitchApplication.Componente in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("WorkStations")]
+    [global::System.Data.Services.Common.EntitySetAttribute("Componentes")]
     [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class WorkStation : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    public partial class Componente : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Create a new WorkStation object.
+        /// Create a new Componente object.
         /// </summary>
         /// <param name="ID">Initial value of Id.</param>
         /// <param name="lab_WorkStation">Initial value of Lab_WorkStation.</param>
+        /// <param name="nombre">Initial value of nombre.</param>
+        /// <param name="codigo">Initial value of codigo.</param>
+        /// <param name="tipo">Initial value of tipo.</param>
         /// <param name="rowVersion">Initial value of RowVersion.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static WorkStation CreateWorkStation(int ID, int lab_WorkStation, byte[] rowVersion)
+        public static Componente CreateComponente(int ID, int lab_WorkStation, string nombre, string codigo, short tipo, byte[] rowVersion)
         {
-            WorkStation workStation = new WorkStation();
-            workStation.Id = ID;
-            workStation.Lab_WorkStation = lab_WorkStation;
-            workStation.RowVersion = rowVersion;
-            return workStation;
+            Componente componente = new Componente();
+            componente.Id = ID;
+            componente.Lab_WorkStation = lab_WorkStation;
+            componente.nombre = nombre;
+            componente.codigo = codigo;
+            componente.tipo = tipo;
+            componente.RowVersion = rowVersion;
+            return componente;
         }
         /// <summary>
         /// There are no comments for Property Id in the schema.
@@ -1933,6 +1604,84 @@ namespace LightSwitchApplication.Implementation
         private int _Lab_WorkStation;
         partial void OnLab_WorkStationChanging(int value);
         partial void OnLab_WorkStationChanged();
+        /// <summary>
+        /// There are no comments for Property nombre in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string nombre
+        {
+            get
+            {
+                return this._nombre;
+            }
+            set
+            {
+                this.OnnombreChanging(value);
+                if (object.Equals(this.nombre, value))
+                {
+                    return;
+                }
+                this._nombre = value;
+                this.OnnombreChanged();
+                this.OnPropertyChanged("nombre");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _nombre;
+        partial void OnnombreChanging(string value);
+        partial void OnnombreChanged();
+        /// <summary>
+        /// There are no comments for Property codigo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string codigo
+        {
+            get
+            {
+                return this._codigo;
+            }
+            set
+            {
+                this.OncodigoChanging(value);
+                if (object.Equals(this.codigo, value))
+                {
+                    return;
+                }
+                this._codigo = value;
+                this.OncodigoChanged();
+                this.OnPropertyChanged("codigo");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _codigo;
+        partial void OncodigoChanging(string value);
+        partial void OncodigoChanged();
+        /// <summary>
+        /// There are no comments for Property tipo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public short tipo
+        {
+            get
+            {
+                return this._tipo;
+            }
+            set
+            {
+                this.OntipoChanging(value);
+                if (object.Equals(this.tipo, value))
+                {
+                    return;
+                }
+                this._tipo = value;
+                this.OntipoChanged();
+                this.OnPropertyChanged("tipo");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private short _tipo;
+        partial void OntipoChanging(short value);
+        partial void OntipoChanged();
         /// <summary>
         /// There are no comments for Property CreatedBy in the schema.
         /// </summary>
@@ -2071,25 +1820,6 @@ namespace LightSwitchApplication.Implementation
         partial void OnRowVersionChanging(byte[] value);
         partial void OnRowVersionChanged();
         /// <summary>
-        /// There are no comments for Componentes in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Componente> Componentes
-        {
-            get
-            {
-                this.@__Componentes.EnsureValueInitialized();
-                return this._Componentes;
-            }
-            set
-            {
-                this._Componentes = value;
-                this.OnPropertyChanged("Componentes");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Componente> _Componentes = new global::System.Data.Services.Client.DataServiceCollection<Componente>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
         /// There are no comments for Lab in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -2111,7 +1841,7 @@ namespace LightSwitchApplication.Implementation
                 {
                     this._Lab = null;
                     this.@__Lab.OnValueSet();
-                    previous.WorkStations.Remove(this);
+                    previous.Componente.Remove(this);
                 }
                 if ((this.___Host != null))
                 {
@@ -2128,7 +1858,7 @@ namespace LightSwitchApplication.Implementation
                 this.@__Lab.OnValueSet();
                 if ((value != null))
                 {
-                    value.@__WorkStations.Add(this);
+                    value.@__Componente.Add(this);
                 }
                 this.___OnPropertyChanged("Lab");
                 this.OnPropertyChanged("Lab");

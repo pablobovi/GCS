@@ -27,10 +27,48 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <NavigationProperty
-        Name="WorkStation"
-        Association="WorkStation_Componente"
+        Name="Lab"
+        Association="Lab_Componente"
         FromEnd="Componente"
-        ToEnd="WorkStation" />
+        ToEnd="Lab" />
+      <EntityProperty
+        Name="nombre"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="codigo"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="tipo"
+        PropertyType=":Int16">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <SupportedValue
+            DisplayName="monitor"
+            Value="0" />
+          <SupportedValue
+            DisplayName="teclado"
+            Value="1" />
+          <SupportedValue
+            DisplayName="gabinete"
+            Value="2" />
+          <SupportedValue
+            DisplayName="mouse"
+            Value="3" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -184,7 +222,7 @@
       EntitySet="Componentes">
       <EntitySetMapping.Attributes>
         <SsdlForeignKeyProperty
-          Name="WorkStation_Componente"
+          Name="Lab_WorkStation"
           Nullable="False"
           Type="int" />
       </EntitySetMapping.Attributes>

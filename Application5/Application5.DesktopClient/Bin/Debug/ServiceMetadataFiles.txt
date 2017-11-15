@@ -3,6 +3,5 @@ Application5.Server.Properties.DataSources.ApplicationData.lsml
 Application5.Server.DataSources.ApplicationData.Pedidoes.lsml
 Application5.Server.DataSources.ApplicationData.Tecnicoes.lsml
 Application5.Server.DataSources.ApplicationData.Labs.lsml
-Application5.Server.DataSources.ApplicationData.WorkStations.lsml
 Application5.Server.DataSources.ApplicationData.Componentes.lsml
 Application5.Server.DataSources.ApplicationData.OrdenMants.lsml

@@ -35,15 +35,19 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="OrdenMant"
-        Association="OrdenMant_Lab"
+        Name="Componente"
+        Association="Lab_Componente"
         FromEnd="Lab"
-        ToEnd="OrdenMant" />
-      <NavigationProperty
-        Name="WorkStations"
-        Association="Lab_WorkStation"
-        FromEnd="Lab"
-        ToEnd="WorkStation" />
+        ToEnd="Componente" />
+      <EntityProperty
+        Name="nombre"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -188,14 +192,14 @@
       </QueryOperationParameter>
     </QueryOperation>
     <AssociationSet
-      Name="Lab_WorkStations"
-      Association="Lab_WorkStation">
+      Name="Lab_Componentes"
+      Association="Lab_Componente">
       <AssociationSetEnd
         Name="Lab"
         EntitySet="Labs" />
       <AssociationSetEnd
-        Name="WorkStation"
-        EntitySet="WorkStations" />
+        Name="Componente"
+        EntitySet="Componentes" />
     </AssociationSet>
   </EntityContainer>
   <DataService
@@ -213,19 +217,19 @@
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
-      AssociationSet="Lab_WorkStations">
+      AssociationSet="Lab_Componentes">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
           Name="Lab_WorkStations" />
         <SsdlAssociationSetEnd
-          End="ApplicationData/Members[Lab_WorkStations]/Members[Lab]">
+          End="ApplicationData/Members[Lab_Componentes]/Members[Lab]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="ApplicationData/Members[Lab_WorkStations]/Members[WorkStation]">
+          End="ApplicationData/Members[Lab_Componentes]/Members[Componente]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Lab_WorkStation" />
@@ -235,7 +239,7 @@
     </AssociationSetMapping>
   </DataService>
   <Association
-    Name="Lab_WorkStation">
+    Name="Lab_Componente">
     <AssociationEnd
       Name="Lab"
       Multiplicity="One"
@@ -246,8 +250,8 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="WorkStation"
+      Name="Componente"
       Multiplicity="Many"
-      EntityType="WorkStation" />
+      EntityType="Componente" />
   </Association>
 </ServiceApplication>

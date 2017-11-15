@@ -1,25 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping CdmEntityContainer="ApplicationData" StorageEntityContainer="ApplicationDataStore">
-    <EntitySetMapping Name="Componentes">
-      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Componente)">
-        <MappingFragment StoreEntitySet="Componentes">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="WorkStation_Componente" ColumnName="WorkStation_Componente" />
-          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="Created" ColumnName="Created" />
-          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-          <ScalarProperty Name="Modified" ColumnName="Modified" />
-          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Labs">
       <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Lab)">
         <MappingFragment StoreEntitySet="Labs">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CantPc" ColumnName="CantPc" />
-          <ScalarProperty Name="OrdenMant_Lab" ColumnName="OrdenMant_Lab" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="Created" ColumnName="Created" />
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
@@ -61,6 +48,8 @@
         <MappingFragment StoreEntitySet="Tecnicoes">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Legajo" ColumnName="Legajo" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="Created" ColumnName="Created" />
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
@@ -69,11 +58,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="WorkStations">
-      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.WorkStation)">
-        <MappingFragment StoreEntitySet="WorkStations">
+    <EntitySetMapping Name="Componentes">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Componente)">
+        <MappingFragment StoreEntitySet="Componentes">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Lab_WorkStation" ColumnName="Lab_WorkStation" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="Created" ColumnName="Created" />
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />

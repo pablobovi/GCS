@@ -19,10 +19,8 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Lab_WorkStation", "Lab", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.Lab), "WorkStation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.WorkStation), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "OrdenMant_Lab", "OrdenMant", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.OrdenMant), "Lab", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Lab), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Lab_Componente", "Lab", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.Lab), "Componente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Componente), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "OrdenMant_Pedido", "OrdenMant", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.OrdenMant), "Pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Pedido), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "WorkStation_Componente", "WorkStation", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.WorkStation), "Componente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Componente), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "OrdenMant_Tecnico", "OrdenMant", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.OrdenMant), "Tecnico", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LightSwitchApplication.Implementation.Tecnico), true)]
 
 #endregion
@@ -71,22 +69,6 @@ namespace LightSwitchApplication.Implementation
         #endregion
     
         #region ObjectSet Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<Componente> Componentes
-        {
-            get
-            {
-                if ((_Componentes == null))
-                {
-                    _Componentes = base.CreateObjectSet<Componente>("Componentes");
-                }
-                return _Componentes;
-            }
-        }
-        private ObjectSet<Componente> _Componentes;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -155,30 +137,22 @@ namespace LightSwitchApplication.Implementation
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<WorkStation> WorkStations
+        public ObjectSet<Componente> Componentes
         {
             get
             {
-                if ((_WorkStations == null))
+                if ((_Componentes == null))
                 {
-                    _WorkStations = base.CreateObjectSet<WorkStation>("WorkStations");
+                    _Componentes = base.CreateObjectSet<Componente>("Componentes");
                 }
-                return _WorkStations;
+                return _Componentes;
             }
         }
-        private ObjectSet<WorkStation> _WorkStations;
+        private ObjectSet<Componente> _Componentes;
 
         #endregion
 
         #region AddTo Methods
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Componentes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToComponentes(Componente componente)
-        {
-            base.AddObject("Componentes", componente);
-        }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the Labs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
@@ -213,11 +187,11 @@ namespace LightSwitchApplication.Implementation
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the WorkStations EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Componentes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToWorkStations(WorkStation workStation)
+        public void AddToComponentes(Componente componente)
         {
-            base.AddObject("WorkStations", workStation);
+            base.AddObject("Componentes", componente);
         }
 
         #endregion
@@ -242,13 +216,19 @@ namespace LightSwitchApplication.Implementation
         /// Create a new Componente object.
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
-        /// <param name="workStation_Componente">Initial value of the WorkStation_Componente property.</param>
+        /// <param name="lab_WorkStation">Initial value of the Lab_WorkStation property.</param>
+        /// <param name="nombre">Initial value of the nombre property.</param>
+        /// <param name="codigo">Initial value of the codigo property.</param>
+        /// <param name="tipo">Initial value of the tipo property.</param>
         /// <param name="rowVersion">Initial value of the RowVersion property.</param>
-        public static Componente CreateComponente(global::System.Int32 id, global::System.Int32 workStation_Componente, global::System.Byte[] rowVersion)
+        public static Componente CreateComponente(global::System.Int32 id, global::System.Int32 lab_WorkStation, global::System.String nombre, global::System.String codigo, global::System.Int16 tipo, global::System.Byte[] rowVersion)
         {
             Componente componente = new Componente();
             componente.Id = id;
-            componente.WorkStation_Componente = workStation_Componente;
+            componente.Lab_WorkStation = lab_WorkStation;
+            componente.nombre = nombre;
+            componente.codigo = codigo;
+            componente.tipo = tipo;
             componente.RowVersion = rowVersion;
             return componente;
         }
@@ -289,24 +269,96 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 WorkStation_Componente
+        public global::System.Int32 Lab_WorkStation
         {
             get
             {
-                return _WorkStation_Componente;
+                return _Lab_WorkStation;
             }
             set
             {
-                OnWorkStation_ComponenteChanging(value);
-                ReportPropertyChanging("WorkStation_Componente");
-                _WorkStation_Componente = value;
-                ReportPropertyChanged("WorkStation_Componente");
-                OnWorkStation_ComponenteChanged();
+                OnLab_WorkStationChanging(value);
+                ReportPropertyChanging("Lab_WorkStation");
+                _Lab_WorkStation = value;
+                ReportPropertyChanged("Lab_WorkStation");
+                OnLab_WorkStationChanged();
             }
         }
-        private global::System.Int32 _WorkStation_Componente;
-        partial void OnWorkStation_ComponenteChanging(global::System.Int32 value);
-        partial void OnWorkStation_ComponenteChanged();
+        private global::System.Int32 _Lab_WorkStation;
+        partial void OnLab_WorkStationChanging(global::System.Int32 value);
+        partial void OnLab_WorkStationChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String nombre
+        {
+            get
+            {
+                return _nombre;
+            }
+            set
+            {
+                OnnombreChanging(value);
+                ReportPropertyChanging("nombre");
+                _nombre = value;
+                ReportPropertyChanged("nombre");
+                OnnombreChanged();
+            }
+        }
+        private global::System.String _nombre;
+        partial void OnnombreChanging(global::System.String value);
+        partial void OnnombreChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String codigo
+        {
+            get
+            {
+                return _codigo;
+            }
+            set
+            {
+                OncodigoChanging(value);
+                ReportPropertyChanging("codigo");
+                _codigo = value;
+                ReportPropertyChanged("codigo");
+                OncodigoChanged();
+            }
+        }
+        private global::System.String _codigo;
+        partial void OncodigoChanging(global::System.String value);
+        partial void OncodigoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int16 tipo
+        {
+            get
+            {
+                return _tipo;
+            }
+            set
+            {
+                OntipoChanging(value);
+                ReportPropertyChanging("tipo");
+                _tipo = value;
+                ReportPropertyChanged("tipo");
+                OntipoChanged();
+            }
+        }
+        private global::System.Int16 _tipo;
+        partial void OntipoChanging(global::System.Int16 value);
+        partial void OntipoChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -439,16 +491,16 @@ namespace LightSwitchApplication.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "WorkStation_Componente", "WorkStation")]
-        public WorkStation WorkStation
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Lab_Componente", "Lab")]
+        public Lab Lab
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<WorkStation>("LightSwitchApplication.WorkStation_Componente", "WorkStation").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Lab>("LightSwitchApplication.Lab_Componente", "Lab").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<WorkStation>("LightSwitchApplication.WorkStation_Componente", "WorkStation").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Lab>("LightSwitchApplication.Lab_Componente", "Lab").Value = value;
             }
         }
         /// <summary>
@@ -456,17 +508,17 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<WorkStation> WorkStationReference
+        public EntityReference<Lab> LabReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<WorkStation>("LightSwitchApplication.WorkStation_Componente", "WorkStation");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Lab>("LightSwitchApplication.Lab_Componente", "Lab");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<WorkStation>("LightSwitchApplication.WorkStation_Componente", "WorkStation", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Lab>("LightSwitchApplication.Lab_Componente", "Lab", value);
                 }
             }
         }
@@ -490,14 +542,14 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="cantPc">Initial value of the CantPc property.</param>
-        /// <param name="ordenMant_Lab">Initial value of the OrdenMant_Lab property.</param>
+        /// <param name="nombre">Initial value of the nombre property.</param>
         /// <param name="rowVersion">Initial value of the RowVersion property.</param>
-        public static Lab CreateLab(global::System.Int32 id, global::System.Int32 cantPc, global::System.Int32 ordenMant_Lab, global::System.Byte[] rowVersion)
+        public static Lab CreateLab(global::System.Int32 id, global::System.Int32 cantPc, global::System.String nombre, global::System.Byte[] rowVersion)
         {
             Lab lab = new Lab();
             lab.Id = id;
             lab.CantPc = cantPc;
-            lab.OrdenMant_Lab = ordenMant_Lab;
+            lab.nombre = nombre;
             lab.RowVersion = rowVersion;
             return lab;
         }
@@ -562,24 +614,24 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 OrdenMant_Lab
+        public global::System.String nombre
         {
             get
             {
-                return _OrdenMant_Lab;
+                return _nombre;
             }
             set
             {
-                OnOrdenMant_LabChanging(value);
-                ReportPropertyChanging("OrdenMant_Lab");
-                _OrdenMant_Lab = value;
-                ReportPropertyChanged("OrdenMant_Lab");
-                OnOrdenMant_LabChanged();
+                OnnombreChanging(value);
+                ReportPropertyChanging("nombre");
+                _nombre = value;
+                ReportPropertyChanged("nombre");
+                OnnombreChanged();
             }
         }
-        private global::System.Int32 _OrdenMant_Lab;
-        partial void OnOrdenMant_LabChanging(global::System.Int32 value);
-        partial void OnOrdenMant_LabChanged();
+        private global::System.String _nombre;
+        partial void OnnombreChanging(global::System.String value);
+        partial void OnnombreChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -712,56 +764,18 @@ namespace LightSwitchApplication.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "OrdenMant_Lab", "OrdenMant")]
-        public OrdenMant OrdenMant
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Lab_Componente", "Componente")]
+        public EntityCollection<Componente> Componente
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OrdenMant>("LightSwitchApplication.OrdenMant_Lab", "OrdenMant").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OrdenMant>("LightSwitchApplication.OrdenMant_Lab", "OrdenMant").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<OrdenMant> OrdenMantReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OrdenMant>("LightSwitchApplication.OrdenMant_Lab", "OrdenMant");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Componente>("LightSwitchApplication.Lab_Componente", "Componente");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<OrdenMant>("LightSwitchApplication.OrdenMant_Lab", "OrdenMant", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Lab_WorkStation", "WorkStation")]
-        public EntityCollection<WorkStation> WorkStations
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<WorkStation>("LightSwitchApplication.Lab_WorkStation", "WorkStation");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<WorkStation>("LightSwitchApplication.Lab_WorkStation", "WorkStation", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Componente>("LightSwitchApplication.Lab_Componente", "Componente", value);
                 }
             }
         }
@@ -948,28 +962,6 @@ namespace LightSwitchApplication.Implementation
 
     
         #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "OrdenMant_Lab", "Lab")]
-        public EntityCollection<Lab> Labs
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Lab>("LightSwitchApplication.OrdenMant_Lab", "Lab");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Lab>("LightSwitchApplication.OrdenMant_Lab", "Lab", value);
-                }
-            }
-        }
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1375,12 +1367,16 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="nombre">Initial value of the Nombre property.</param>
+        /// <param name="legajo">Initial value of the Legajo property.</param>
+        /// <param name="apellido">Initial value of the Apellido property.</param>
         /// <param name="rowVersion">Initial value of the RowVersion property.</param>
-        public static Tecnico CreateTecnico(global::System.Int32 id, global::System.String nombre, global::System.Byte[] rowVersion)
+        public static Tecnico CreateTecnico(global::System.Int32 id, global::System.String nombre, global::System.String legajo, global::System.String apellido, global::System.Byte[] rowVersion)
         {
             Tecnico tecnico = new Tecnico();
             tecnico.Id = id;
             tecnico.Nombre = nombre;
+            tecnico.Legajo = legajo;
+            tecnico.Apellido = apellido;
             tecnico.RowVersion = rowVersion;
             return tecnico;
         }
@@ -1439,6 +1435,54 @@ namespace LightSwitchApplication.Implementation
         private global::System.String _Nombre;
         partial void OnNombreChanging(global::System.String value);
         partial void OnNombreChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Legajo
+        {
+            get
+            {
+                return _Legajo;
+            }
+            set
+            {
+                OnLegajoChanging(value);
+                ReportPropertyChanging("Legajo");
+                _Legajo = value;
+                ReportPropertyChanged("Legajo");
+                OnLegajoChanged();
+            }
+        }
+        private global::System.String _Legajo;
+        partial void OnLegajoChanging(global::System.String value);
+        partial void OnLegajoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Apellido
+        {
+            get
+            {
+                return _Apellido;
+            }
+            set
+            {
+                OnApellidoChanging(value);
+                ReportPropertyChanging("Apellido");
+                _Apellido = value;
+                ReportPropertyChanged("Apellido");
+                OnApellidoChanged();
+            }
+        }
+        private global::System.String _Apellido;
+        partial void OnApellidoChanging(global::System.String value);
+        partial void OnApellidoChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1599,275 +1643,6 @@ namespace LightSwitchApplication.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<OrdenMant>("LightSwitchApplication.OrdenMant_Tecnico", "OrdenMant", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="WorkStation")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class WorkStation : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new WorkStation object.
-        /// </summary>
-        /// <param name="id">Initial value of the Id property.</param>
-        /// <param name="lab_WorkStation">Initial value of the Lab_WorkStation property.</param>
-        /// <param name="rowVersion">Initial value of the RowVersion property.</param>
-        public static WorkStation CreateWorkStation(global::System.Int32 id, global::System.Int32 lab_WorkStation, global::System.Byte[] rowVersion)
-        {
-            WorkStation workStation = new WorkStation();
-            workStation.Id = id;
-            workStation.Lab_WorkStation = lab_WorkStation;
-            workStation.RowVersion = rowVersion;
-            return workStation;
-        }
-
-        #endregion
-
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Id
-        {
-            get
-            {
-                return _Id;
-            }
-            set
-            {
-                if (_Id != value)
-                {
-                    OnIdChanging(value);
-                    ReportPropertyChanging("Id");
-                    _Id = value;
-                    ReportPropertyChanged("Id");
-                    OnIdChanged();
-                }
-            }
-        }
-        private global::System.Int32 _Id;
-        partial void OnIdChanging(global::System.Int32 value);
-        partial void OnIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Lab_WorkStation
-        {
-            get
-            {
-                return _Lab_WorkStation;
-            }
-            set
-            {
-                OnLab_WorkStationChanging(value);
-                ReportPropertyChanging("Lab_WorkStation");
-                _Lab_WorkStation = value;
-                ReportPropertyChanged("Lab_WorkStation");
-                OnLab_WorkStationChanged();
-            }
-        }
-        private global::System.Int32 _Lab_WorkStation;
-        partial void OnLab_WorkStationChanging(global::System.Int32 value);
-        partial void OnLab_WorkStationChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String CreatedBy
-        {
-            get
-            {
-                return _CreatedBy;
-            }
-            set
-            {
-                OnCreatedByChanging(value);
-                ReportPropertyChanging("CreatedBy");
-                _CreatedBy = value;
-                ReportPropertyChanged("CreatedBy");
-                OnCreatedByChanged();
-            }
-        }
-        private global::System.String _CreatedBy;
-        partial void OnCreatedByChanging(global::System.String value);
-        partial void OnCreatedByChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTimeOffset> Created
-        {
-            get
-            {
-                return _Created;
-            }
-            set
-            {
-                OnCreatedChanging(value);
-                ReportPropertyChanging("Created");
-                _Created = value;
-                ReportPropertyChanged("Created");
-                OnCreatedChanged();
-            }
-        }
-        private Nullable<global::System.DateTimeOffset> _Created;
-        partial void OnCreatedChanging(Nullable<global::System.DateTimeOffset> value);
-        partial void OnCreatedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ModifiedBy
-        {
-            get
-            {
-                return _ModifiedBy;
-            }
-            set
-            {
-                OnModifiedByChanging(value);
-                ReportPropertyChanging("ModifiedBy");
-                _ModifiedBy = value;
-                ReportPropertyChanged("ModifiedBy");
-                OnModifiedByChanged();
-            }
-        }
-        private global::System.String _ModifiedBy;
-        partial void OnModifiedByChanging(global::System.String value);
-        partial void OnModifiedByChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTimeOffset> Modified
-        {
-            get
-            {
-                return _Modified;
-            }
-            set
-            {
-                OnModifiedChanging(value);
-                ReportPropertyChanging("Modified");
-                _Modified = value;
-                ReportPropertyChanged("Modified");
-                OnModifiedChanged();
-            }
-        }
-        private Nullable<global::System.DateTimeOffset> _Modified;
-        partial void OnModifiedChanging(Nullable<global::System.DateTimeOffset> value);
-        partial void OnModifiedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Byte[] RowVersion
-        {
-            get
-            {
-                return StructuralObject.GetValidValue(_RowVersion);
-            }
-            set
-            {
-                OnRowVersionChanging(value);
-                ReportPropertyChanging("RowVersion");
-                _RowVersion = value;
-                ReportPropertyChanged("RowVersion");
-                OnRowVersionChanged();
-            }
-        }
-        private global::System.Byte[] _RowVersion;
-        partial void OnRowVersionChanging(global::System.Byte[] value);
-        partial void OnRowVersionChanged();
-
-        #endregion
-
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "WorkStation_Componente", "Componente")]
-        public EntityCollection<Componente> Componentes
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Componente>("LightSwitchApplication.WorkStation_Componente", "Componente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Componente>("LightSwitchApplication.WorkStation_Componente", "Componente", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Lab_WorkStation", "Lab")]
-        public Lab Lab
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Lab>("LightSwitchApplication.Lab_WorkStation", "Lab").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Lab>("LightSwitchApplication.Lab_WorkStation", "Lab").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Lab> LabReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Lab>("LightSwitchApplication.Lab_WorkStation", "Lab");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Lab>("LightSwitchApplication.Lab_WorkStation", "Lab", value);
                 }
             }
         }
