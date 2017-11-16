@@ -34,12 +34,6 @@
         Target="ServiceInterface:OrdenMant_Pedido" />
     </Association.Attributes>
   </Association>
-  <Association>
-    <Association.Attributes>
-      <Proxy
-        Target="ServiceInterface:Lab_Componente" />
-    </Association.Attributes>
-  </Association>
   <EntityType>
     <EntityType.Attributes>
       <Proxy
@@ -62,6 +56,12 @@
     <Association.Attributes>
       <Proxy
         Target="ServiceInterface:OrdenMant_Tecnico" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:OrdenMant_Lab" />
     </Association.Attributes>
   </Association>
 </Application>

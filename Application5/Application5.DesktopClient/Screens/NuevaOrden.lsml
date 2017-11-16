@@ -91,6 +91,29 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
+              <ContentItem
+                Name="Pedidoes"
+                Kind="Details"
+                DataType="Pedido">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="OrdenMant/Properties[Pedidoes]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="PedidoesTemplate"
+                  Kind="Details"
+                  DataType="Pedido">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem

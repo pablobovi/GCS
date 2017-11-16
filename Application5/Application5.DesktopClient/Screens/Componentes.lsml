@@ -33,29 +33,6 @@
               </ScreenExpressionTree>
             </ContentItem.DataSource>
             <ContentItem
-              Name="Lab"
-              Kind="Details"
-              DataType="Lab">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="Componente/Properties[Lab]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem
-                Name="RowTemplate"
-                Kind="Details"
-                DataType="Lab">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression />
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem>
-            <ContentItem
               Name="nombre"
               Kind="Value"
               DataType=":String">

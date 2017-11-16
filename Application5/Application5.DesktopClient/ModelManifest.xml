@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
-    <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Properties\Client.lsml" Checksum="43A4205FDBF041F73C7341C688FE3E70C64D7744005D6AB685CA1894AF47593E" />
-    <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Properties\Proxies.lsml" Checksum="89AB2C67C1753DD6D4CBD94A06E7FAF121122686AB90811D05442B3BB9F82BD8" />
-    <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Screens\Componentes.lsml" Checksum="728F969A4AC2486041F931CF619D12D3493DE3B7FB344DF4C31287FFEB8DA9E2" />
-    <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Screens\Laboratios.lsml" Checksum="37EBC77730009F27DDF623CEEBFB2A434720886A2260B72CEF2A7B778D582791" />
-    <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Screens\NuevaOrden.lsml" Checksum="B472F62E93C9E1F95CAFD47495D42A08765513730D625E3DCDD78B8D2C20749E" />
-    <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Screens\Pedidos.lsml" Checksum="C836CE3178CCEF1EFA1C71CDE7705257F30804C27CBEBEE88924FD66C97A6BC3" />
-    <Document FullPath="C:\Users\pabloalejandro\Documents\Visual Studio 2013\Projects\Application5\Application5\Application5.DesktopClient\Screens\Tecnicos.lsml" Checksum="D50DA3AC634C27FFFCE5E989037D2D6D6F3B020F36E363D64EA4CAC24439C81D" />
+    <Document FullPath="C:\Users\pablo.navarro\Documents\Visual Studio 2013\Projects\Application5\Application5.DesktopClient\Properties\Client.lsml" Checksum="43A4205FDBF041F73C7341C688FE3E70C64D7744005D6AB685CA1894AF47593E" />
+    <Document FullPath="C:\Users\pablo.navarro\Documents\Visual Studio 2013\Projects\Application5\Application5.DesktopClient\Properties\Proxies.lsml" Checksum="0CC9E891377F4EC35095936496899D640C866685D7D494DE5E7A0101B362FFFB" />
+    <Document FullPath="C:\Users\pablo.navarro\Documents\Visual Studio 2013\Projects\Application5\Application5.DesktopClient\Screens\Componentes.lsml" Checksum="1E784DED571679E3646AD93B1F83C90450CBF5F7B1CF5BE2358C1FE939635440" />
+    <Document FullPath="C:\Users\pablo.navarro\Documents\Visual Studio 2013\Projects\Application5\Application5.DesktopClient\Screens\Laboratios.lsml" Checksum="37EBC77730009F27DDF623CEEBFB2A434720886A2260B72CEF2A7B778D582791" />
+    <Document FullPath="C:\Users\pablo.navarro\Documents\Visual Studio 2013\Projects\Application5\Application5.DesktopClient\Screens\NuevaOrden.lsml" Checksum="50D80E0E1DD444C905E5F6AFCBA7E92CBE1931F0A41C64BCE22715C022AAB5E8" />
+    <Document FullPath="C:\Users\pablo.navarro\Documents\Visual Studio 2013\Projects\Application5\Application5.DesktopClient\Screens\Pedidos.lsml" Checksum="DA19BA266188B49560797C458CA1913CF02042A90435290EEF109343ACC3826B" />
+    <Document FullPath="C:\Users\pablo.navarro\Documents\Visual Studio 2013\Projects\Application5\Application5.DesktopClient\Screens\Tecnicos.lsml" Checksum="D50DA3AC634C27FFFCE5E989037D2D6D6F3B020F36E363D64EA4CAC24439C81D" />
   </Documents>
 </ModelDocumentManifest>

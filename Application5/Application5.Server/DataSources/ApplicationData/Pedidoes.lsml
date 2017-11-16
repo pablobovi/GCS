@@ -52,7 +52,7 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="OrdenMant"
+        Name="Ordenmant"
         Association="OrdenMant_Pedido"
         FromEnd="Pedido"
         ToEnd="OrdenMant" />
@@ -214,13 +214,43 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Pedidoes">
-      <EntitySetMapping.Attributes>
-        <SsdlForeignKeyProperty
-          Name="OrdenMant_Pedido"
-          Nullable="False"
-          Type="int" />
-      </EntitySetMapping.Attributes>
-    </EntitySetMapping>
+      EntitySet="Pedidoes" />
+    <AssociationSetMapping
+      AssociationSet="OrdenMant_Pedidoes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="OrdenMant_Pedidoes" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[OrdenMant_Pedidoes]/Members[OrdenMant]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OrdenMant_Pedido" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[OrdenMant_Pedidoes]/Members[Pedido]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
+  <Association
+    Name="OrdenMant_Pedido">
+    <AssociationEnd
+      Name="OrdenMant"
+      Multiplicity="Many"
+      EntityType="OrdenMant" />
+    <AssociationEnd
+      Name="Pedido"
+      Multiplicity="One"
+      EntityType="Pedido">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
 </ServiceApplication>

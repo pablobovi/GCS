@@ -5,11 +5,9 @@
       <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Componente)">
         <MappingFragment StoreEntitySet="Componentes">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Lab_WorkStation" ColumnName="Lab_WorkStation" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="codigo" ColumnName="codigo" />
           <ScalarProperty Name="tipo" ColumnName="tipo" />
-          <ScalarProperty Name="OrdenMant_Componente" ColumnName="OrdenMant_Componente" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="Created" ColumnName="Created" />
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
@@ -36,7 +34,10 @@
       <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.OrdenMant)">
         <MappingFragment StoreEntitySet="OrdenMants">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrdenMant_Pedido" ColumnName="OrdenMant_Pedido" />
+          <ScalarProperty Name="OrdenMant_Componente" ColumnName="OrdenMant_Componente" />
           <ScalarProperty Name="OrdenMant_Tecnico" ColumnName="OrdenMant_Tecnico" />
+          <ScalarProperty Name="OrdenMant_Lab" ColumnName="OrdenMant_Lab" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="Created" ColumnName="Created" />
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
@@ -52,7 +53,6 @@
           <ScalarProperty Name="NombreSolic" ColumnName="NombreSolic" />
           <ScalarProperty Name="CantPC" ColumnName="CantPC" />
           <ScalarProperty Name="CantLabs" ColumnName="CantLabs" />
-          <ScalarProperty Name="OrdenMant_Pedido" ColumnName="OrdenMant_Pedido" />
           <ScalarProperty Name="software" ColumnName="software" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="Created" ColumnName="Created" />

@@ -91,30 +91,6 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="OrdenMant"
-                IsHidden="True"
-                Kind="Details"
-                DataType="OrdenMant">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Pedido/Properties[OrdenMant]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="RowTemplate1"
-                  Kind="Details"
-                  DataType="OrdenMant">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-              <ContentItem
                 Name="software"
                 Kind="Value"
                 DataType=":String?">

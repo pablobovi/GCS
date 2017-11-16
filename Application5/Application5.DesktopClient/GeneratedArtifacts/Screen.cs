@@ -527,278 +527,6 @@ namespace LightSwitchApplication
         }
     }
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-    public sealed partial class Pedidos
-        : global::Microsoft.LightSwitch.Framework.Client.ScreenObject<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass>
-    {
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private Pedidos() : base("LightSwitchApplication.Application5.DesktopClient:Pedidos")
-        {
-            global::LightSwitchApplication.Pedidos.DetailsClass.Initialize(this);
-        }
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public static Pedidos CreateInstance()
-        {
-            return new global::LightSwitchApplication.Pedidos(
-            );
-        }
-
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Pedidos_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Pedidos_Created();
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Pedidos_Activated();
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Pedidos_Saving(ref bool handled);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Pedidos_Saved();
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Pedidos_Closing(ref bool cancel);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Pedidos_SaveError(global::System.Exception exception, ref bool handled);
-     
-        #region Private Properties
-        
-        /// <summary>
-        /// Gets the Application object for this application.  The Application object provides access to active screens, methods to open screens and access to the current user.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private global::LightSwitchApplication.Application Application
-        {
-            get
-            {
-                return global::LightSwitchApplication.Application.Current;
-            }
-        }
-        
-        /// <summary>
-        /// Gets the containing data workspace.  The data workspace provides access to all data sources in the application.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private global::LightSwitchApplication.DataWorkspace DataWorkspace
-        {
-            get
-            {
-                return (global::LightSwitchApplication.DataWorkspace)((global::Microsoft.LightSwitch.Details.Client.IScreenDetails)this.Details).DataWorkspace;
-            }
-        }
-        
-        #endregion
- 
-        partial void Pedidoes_SelectionChanged();
-
-        partial void Pedidoes_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
-
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Pedidoes_Loaded(bool succeeded);
-
-        /// <summary>
-        /// Gets the Pedidoes visual collection. The collection contains all records currently shown on the respective list or grid control.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.Pedido> Pedidoes
-        {
-            get
-            {
-                return global::LightSwitchApplication.Pedidos.DetailsClass.GetValue(this, global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties.Pedidoes);
-            }
-        }
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Pedidoes_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
- 
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public sealed class DetailsClass
-            : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass, global::LightSwitchApplication.Pedidos.DetailsClass.PropertySet, global::LightSwitchApplication.Pedidos.DetailsClass.CommandSet, global::LightSwitchApplication.Pedidos.DetailsClass.MethodSet>
-        {
-
-            static DetailsClass()
-            {
-                var initializePropertyEntry = global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties.Pedidoes;
-            }
-
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private static global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass>.Entry
-                __PedidosEntry = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass>.Entry(
-                    global::LightSwitchApplication.Pedidos.DetailsClass.__Pedidos_InvokeInitializeDataWorkspace,
-                    global::LightSwitchApplication.Pedidos.DetailsClass.__Pedidos_InvokeSavingEvent,
-                    global::LightSwitchApplication.Pedidos.DetailsClass.__Pedidos_InvokeSavedEvent,
-                    global::LightSwitchApplication.Pedidos.DetailsClass.__Pedidos_InvokeClosingEvent,
-                    global::LightSwitchApplication.Pedidos.DetailsClass.__Pedidos_InvokeCreated,
-                    global::LightSwitchApplication.Pedidos.DetailsClass.__Pedidos_InvokeActivated,
-                    global::LightSwitchApplication.Pedidos.DetailsClass.__Pedidos_InvokeSaveErrorEvent);
-            private static void __Pedidos_InvokeInitializeDataWorkspace(global::LightSwitchApplication.Pedidos s, global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
-            {
-                s.Pedidos_InitializeDataWorkspace(saveChangesTo);
-            }
-            private static bool __Pedidos_InvokeSavingEvent(global::LightSwitchApplication.Pedidos s)
-            {
-                bool handled = false;
-                s.Pedidos_Saving(ref handled);
-                return handled;
-            }
-            private static void __Pedidos_InvokeSavedEvent(global::LightSwitchApplication.Pedidos s)
-            {
-                s.Pedidos_Saved();
-            }
-            private static bool __Pedidos_InvokeClosingEvent(global::LightSwitchApplication.Pedidos s)
-            {
-                bool cancel = false;
-                s.Pedidos_Closing(ref cancel);
-                return cancel;
-            }
-            private static void __Pedidos_InvokeCreated(global::LightSwitchApplication.Pedidos s)
-            {
-                s.Pedidos_Created();
-            }
-            private static void __Pedidos_InvokeActivated(global::LightSwitchApplication.Pedidos s)
-            {
-                s.Pedidos_Activated();
-            }
-            private static bool __Pedidos_InvokeSaveErrorEvent(global::LightSwitchApplication.Pedidos s, global::System.Exception ex)
-            {
-                bool handled = false;
-                s.Pedidos_SaveError(ex, ref handled);
-                return handled;
-            }
-
-            public DetailsClass() : base()
-            {
-            }
-
-            public new global::LightSwitchApplication.Pedidos.DetailsClass.PropertySet Properties
-            {
-                get
-                {
-                    return base.Properties;
-                }
-            }
-
-            public new global::LightSwitchApplication.Pedidos.DetailsClass.CommandSet Commands
-            {
-                get
-                {
-                    return base.Commands;
-                }
-            }
-
-            public new global::LightSwitchApplication.Pedidos.DetailsClass.MethodSet Methods
-            {
-                get
-                {
-                    return base.Methods;
-                }
-            }
-
-            private global::Microsoft.LightSwitch.IDataServiceQueryable PedidoesQuery()
-            {
-                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
-                    this.Screen.DataWorkspace.ApplicationData.Pedidoes,
-                    "OrdenMant");
-            }
-
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass, global::LightSwitchApplication.Pedido>.Data _Pedidoes;
-
-            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public sealed class PropertySet
-                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenPropertySet<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass>
-            {
-
-                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass, global::LightSwitchApplication.Pedido> Pedidoes
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass, global::LightSwitchApplication.Pedido>)base.GetItem(global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties.Pedidoes);
-                    }
-                }
-
-            }
-
-            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public sealed class CommandSet
-                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass>
-            {
-            }
-
-            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public sealed class MethodSet
-                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass>
-            {
-            }
-
-            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal sealed class PropertySetProperties
-            {
-
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass, global::LightSwitchApplication.Pedido>.Entry
-                    Pedidoes = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass, global::LightSwitchApplication.Pedido>.Entry(
-                        "Pedidoes",
-                        global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties._Pedidoes_Stub,
-                        global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties._Pedidoes_Validate,
-                        global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties._Pedidoes_CreateQuery,
-                        global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties._Pedidoes_SelectionChanged,
-                        global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties._Pedidoes_OnCollectionChanged,
-                        global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties._Pedidoes_OnLoaded);
-                private static void _Pedidoes_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Pedidos.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass, global::LightSwitchApplication.Pedido>.Data> c, global::LightSwitchApplication.Pedidos.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Pedidoes, sf);
-                }
-                private static void _Pedidoes_Validate(global::LightSwitchApplication.Pedidos s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
-                {
-                    s.Pedidoes_Validate(r);
-                }
-                private static global::Microsoft.LightSwitch.IDataServiceQueryable _Pedidoes_CreateQuery(global::LightSwitchApplication.Pedidos.DetailsClass d, object[] args)
-                {
-                    return d.PedidoesQuery();
-                }
-                private static void _Pedidoes_SelectionChanged(global::LightSwitchApplication.Pedidos s)
-                {
-                    s.Pedidoes_SelectionChanged();
-                }
-                private static void _Pedidoes_OnCollectionChanged(global::LightSwitchApplication.Pedidos s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-                {
-                    s.Pedidoes_Changed(e);
-                }
-                private static void _Pedidoes_OnLoaded(global::LightSwitchApplication.Pedidos s, bool succeeded)
-                {
-                    s.Pedidoes_Loaded(succeeded);
-                }
-
-            }
-
-            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal sealed class CommandSetProperties
-            {
-            }
-
-            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal sealed class MethodSetProperties
-            {
-            }
-        }
-    }
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
     public sealed partial class NuevaOrden
         : global::Microsoft.LightSwitch.Framework.Client.ScreenObject<global::LightSwitchApplication.NuevaOrden, global::LightSwitchApplication.NuevaOrden.DetailsClass>
     {
@@ -972,7 +700,9 @@ namespace LightSwitchApplication
 
             private global::Microsoft.LightSwitch.IDataServiceQueryable OrdenMantsQuery()
             {
-                return this.Screen.DataWorkspace.ApplicationData.OrdenMants;
+                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                    this.Screen.DataWorkspace.ApplicationData.OrdenMants,
+                    "Pedidoes");
             }
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -1049,6 +779,276 @@ namespace LightSwitchApplication
                 private static void _OrdenMants_OnLoaded(global::LightSwitchApplication.NuevaOrden s, bool succeeded)
                 {
                     s.OrdenMants_Loaded(succeeded);
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class CommandSetProperties
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class MethodSetProperties
+            {
+            }
+        }
+    }
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+    public sealed partial class Pedidos
+        : global::Microsoft.LightSwitch.Framework.Client.ScreenObject<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass>
+    {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private Pedidos() : base("LightSwitchApplication.Application5.DesktopClient:Pedidos")
+        {
+            global::LightSwitchApplication.Pedidos.DetailsClass.Initialize(this);
+        }
+
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static Pedidos CreateInstance()
+        {
+            return new global::LightSwitchApplication.Pedidos(
+            );
+        }
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Pedidos_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Pedidos_Created();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Pedidos_Activated();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Pedidos_Saving(ref bool handled);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Pedidos_Saved();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Pedidos_Closing(ref bool cancel);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Pedidos_SaveError(global::System.Exception exception, ref bool handled);
+     
+        #region Private Properties
+        
+        /// <summary>
+        /// Gets the Application object for this application.  The Application object provides access to active screens, methods to open screens and access to the current user.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.Application Application
+        {
+            get
+            {
+                return global::LightSwitchApplication.Application.Current;
+            }
+        }
+        
+        /// <summary>
+        /// Gets the containing data workspace.  The data workspace provides access to all data sources in the application.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.DataWorkspace DataWorkspace
+        {
+            get
+            {
+                return (global::LightSwitchApplication.DataWorkspace)((global::Microsoft.LightSwitch.Details.Client.IScreenDetails)this.Details).DataWorkspace;
+            }
+        }
+        
+        #endregion
+ 
+        partial void Pedidoes_SelectionChanged();
+
+        partial void Pedidoes_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Pedidoes_Loaded(bool succeeded);
+
+        /// <summary>
+        /// Gets the Pedidoes visual collection. The collection contains all records currently shown on the respective list or grid control.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.Pedido> Pedidoes
+        {
+            get
+            {
+                return global::LightSwitchApplication.Pedidos.DetailsClass.GetValue(this, global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties.Pedidoes);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Pedidoes_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public sealed class DetailsClass
+            : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass, global::LightSwitchApplication.Pedidos.DetailsClass.PropertySet, global::LightSwitchApplication.Pedidos.DetailsClass.CommandSet, global::LightSwitchApplication.Pedidos.DetailsClass.MethodSet>
+        {
+
+            static DetailsClass()
+            {
+                var initializePropertyEntry = global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties.Pedidoes;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass>.Entry
+                __PedidosEntry = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass>.Entry(
+                    global::LightSwitchApplication.Pedidos.DetailsClass.__Pedidos_InvokeInitializeDataWorkspace,
+                    global::LightSwitchApplication.Pedidos.DetailsClass.__Pedidos_InvokeSavingEvent,
+                    global::LightSwitchApplication.Pedidos.DetailsClass.__Pedidos_InvokeSavedEvent,
+                    global::LightSwitchApplication.Pedidos.DetailsClass.__Pedidos_InvokeClosingEvent,
+                    global::LightSwitchApplication.Pedidos.DetailsClass.__Pedidos_InvokeCreated,
+                    global::LightSwitchApplication.Pedidos.DetailsClass.__Pedidos_InvokeActivated,
+                    global::LightSwitchApplication.Pedidos.DetailsClass.__Pedidos_InvokeSaveErrorEvent);
+            private static void __Pedidos_InvokeInitializeDataWorkspace(global::LightSwitchApplication.Pedidos s, global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
+            {
+                s.Pedidos_InitializeDataWorkspace(saveChangesTo);
+            }
+            private static bool __Pedidos_InvokeSavingEvent(global::LightSwitchApplication.Pedidos s)
+            {
+                bool handled = false;
+                s.Pedidos_Saving(ref handled);
+                return handled;
+            }
+            private static void __Pedidos_InvokeSavedEvent(global::LightSwitchApplication.Pedidos s)
+            {
+                s.Pedidos_Saved();
+            }
+            private static bool __Pedidos_InvokeClosingEvent(global::LightSwitchApplication.Pedidos s)
+            {
+                bool cancel = false;
+                s.Pedidos_Closing(ref cancel);
+                return cancel;
+            }
+            private static void __Pedidos_InvokeCreated(global::LightSwitchApplication.Pedidos s)
+            {
+                s.Pedidos_Created();
+            }
+            private static void __Pedidos_InvokeActivated(global::LightSwitchApplication.Pedidos s)
+            {
+                s.Pedidos_Activated();
+            }
+            private static bool __Pedidos_InvokeSaveErrorEvent(global::LightSwitchApplication.Pedidos s, global::System.Exception ex)
+            {
+                bool handled = false;
+                s.Pedidos_SaveError(ex, ref handled);
+                return handled;
+            }
+
+            public DetailsClass() : base()
+            {
+            }
+
+            public new global::LightSwitchApplication.Pedidos.DetailsClass.PropertySet Properties
+            {
+                get
+                {
+                    return base.Properties;
+                }
+            }
+
+            public new global::LightSwitchApplication.Pedidos.DetailsClass.CommandSet Commands
+            {
+                get
+                {
+                    return base.Commands;
+                }
+            }
+
+            public new global::LightSwitchApplication.Pedidos.DetailsClass.MethodSet Methods
+            {
+                get
+                {
+                    return base.Methods;
+                }
+            }
+
+            private global::Microsoft.LightSwitch.IDataServiceQueryable PedidoesQuery()
+            {
+                return this.Screen.DataWorkspace.ApplicationData.Pedidoes;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass, global::LightSwitchApplication.Pedido>.Data _Pedidoes;
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class PropertySet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenPropertySet<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass>
+            {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass, global::LightSwitchApplication.Pedido> Pedidoes
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass, global::LightSwitchApplication.Pedido>)base.GetItem(global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties.Pedidoes);
+                    }
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class CommandSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass>
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class MethodSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass>
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class PropertySetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass, global::LightSwitchApplication.Pedido>.Entry
+                    Pedidoes = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass, global::LightSwitchApplication.Pedido>.Entry(
+                        "Pedidoes",
+                        global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties._Pedidoes_Stub,
+                        global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties._Pedidoes_Validate,
+                        global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties._Pedidoes_CreateQuery,
+                        global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties._Pedidoes_SelectionChanged,
+                        global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties._Pedidoes_OnCollectionChanged,
+                        global::LightSwitchApplication.Pedidos.DetailsClass.PropertySetProperties._Pedidoes_OnLoaded);
+                private static void _Pedidoes_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Pedidos.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Pedidos, global::LightSwitchApplication.Pedidos.DetailsClass, global::LightSwitchApplication.Pedido>.Data> c, global::LightSwitchApplication.Pedidos.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Pedidoes, sf);
+                }
+                private static void _Pedidoes_Validate(global::LightSwitchApplication.Pedidos s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.Pedidoes_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _Pedidoes_CreateQuery(global::LightSwitchApplication.Pedidos.DetailsClass d, object[] args)
+                {
+                    return d.PedidoesQuery();
+                }
+                private static void _Pedidoes_SelectionChanged(global::LightSwitchApplication.Pedidos s)
+                {
+                    s.Pedidoes_SelectionChanged();
+                }
+                private static void _Pedidoes_OnCollectionChanged(global::LightSwitchApplication.Pedidos s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.Pedidoes_Changed(e);
+                }
+                private static void _Pedidoes_OnLoaded(global::LightSwitchApplication.Pedidos s, bool succeeded)
+                {
+                    s.Pedidoes_Loaded(succeeded);
                 }
 
             }

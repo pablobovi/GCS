@@ -174,51 +174,11 @@ namespace LightSwitchApplication.Implementation
     
     {
     
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Componente.DetailsClass.IImplementation.Lab
-        {
-            get
-            {
-                return this.Lab;
-            }
-            set
-            {
-                this.Lab = (global::LightSwitchApplication.Implementation.Lab)value;
-                if (this.__host != null)
-                {
-                    this.__host.RaisePropertyChanged("Lab");
-                }
-            }
-        }
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Componente.DetailsClass.IImplementation.OrdenMant
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Componente.DetailsClass.IImplementation.OrdenMant
         {
             get
             {
                 return this.OrdenMant;
-            }
-            set
-            {
-                this.OrdenMant = (global::LightSwitchApplication.Implementation.OrdenMant)value;
-                if (this.__host != null)
-                {
-                    this.__host.RaisePropertyChanged("OrdenMant");
-                }
-            }
-        }
-        
-        partial void OnLab_WorkStationChanged()
-        {
-            if (this.__host != null)
-            {
-                this.__host.RaisePropertyChanged("Lab");
-            }
-        }
-        
-        partial void OnOrdenMant_ComponenteChanged()
-        {
-            if (this.__host != null)
-            {
-                this.__host.RaisePropertyChanged("OrdenMant");
             }
         }
         
@@ -257,11 +217,11 @@ namespace LightSwitchApplication.Implementation
     
     {
     
-        global::System.Collections.IEnumerable global::LightSwitchApplication.Lab.DetailsClass.IImplementation.Componente
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Lab.DetailsClass.IImplementation.OrdenMant
         {
             get
             {
-                return this.Componente;
+                return this.OrdenMant;
             }
         }
         
@@ -300,19 +260,35 @@ namespace LightSwitchApplication.Implementation
     
     {
     
-        global::System.Collections.IEnumerable global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Pedidoes
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Pedidoes
         {
             get
             {
                 return this.Pedidoes;
             }
+            set
+            {
+                this.Pedidoes = (global::LightSwitchApplication.Implementation.Pedido)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("Pedidoes");
+                }
+            }
         }
         
-        global::System.Collections.IEnumerable global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Componentes
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Componentes
         {
             get
             {
                 return this.Componentes;
+            }
+            set
+            {
+                this.Componentes = (global::LightSwitchApplication.Implementation.Componente)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("Componentes");
+                }
             }
         }
         
@@ -332,11 +308,51 @@ namespace LightSwitchApplication.Implementation
             }
         }
         
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Labs
+        {
+            get
+            {
+                return this.Labs;
+            }
+            set
+            {
+                this.Labs = (global::LightSwitchApplication.Implementation.Lab)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("Labs");
+                }
+            }
+        }
+        
+        partial void OnOrdenMant_PedidoChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("Pedidoes");
+            }
+        }
+        
+        partial void OnOrdenMant_ComponenteChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("Componentes");
+            }
+        }
+        
         partial void OnOrdenMant_TecnicoChanged()
         {
             if (this.__host != null)
             {
                 this.__host.RaisePropertyChanged("Tecnico");
+            }
+        }
+        
+        partial void OnOrdenMant_LabChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("Labs");
             }
         }
         
@@ -375,27 +391,11 @@ namespace LightSwitchApplication.Implementation
     
     {
     
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Pedido.DetailsClass.IImplementation.OrdenMant
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Pedido.DetailsClass.IImplementation.Ordenmant
         {
             get
             {
-                return this.OrdenMant;
-            }
-            set
-            {
-                this.OrdenMant = (global::LightSwitchApplication.Implementation.OrdenMant)value;
-                if (this.__host != null)
-                {
-                    this.__host.RaisePropertyChanged("OrdenMant");
-                }
-            }
-        }
-        
-        partial void OnOrdenMant_PedidoChanged()
-        {
-            if (this.__host != null)
-            {
-                this.__host.RaisePropertyChanged("OrdenMant");
+                return this.Ordenmant;
             }
         }
         

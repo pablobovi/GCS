@@ -41,6 +41,11 @@
         Association="OrdenMant_Tecnico"
         FromEnd="OrdenMant"
         ToEnd="Tecnico" />
+      <NavigationProperty
+        Name="Labs"
+        Association="OrdenMant_Lab"
+        FromEnd="OrdenMant"
+        ToEnd="Lab" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -204,94 +209,42 @@
         Name="Componente"
         EntitySet="Componentes" />
     </AssociationSet>
+    <AssociationSet
+      Name="OrdenMant_Labs"
+      Association="OrdenMant_Lab">
+      <AssociationSetEnd
+        Name="OrdenMant"
+        EntitySet="OrdenMants" />
+      <AssociationSetEnd
+        Name="Lab"
+        EntitySet="Labs" />
+    </AssociationSet>
   </EntityContainer>
   <DataService
     Name="ApplicationDataMapping">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
-    <AssociationSetMapping
-      AssociationSet="OrdenMant_Pedidoes">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="OrdenMant_Pedidoes" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[OrdenMant_Pedidoes]/Members[OrdenMant]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[OrdenMant_Pedidoes]/Members[Pedido]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="OrdenMant_Pedido" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
-    <AssociationSetMapping
-      AssociationSet="OrdenMant_Componentes">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="OrdenMant_Componentes" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[OrdenMant_Componentes]/Members[OrdenMant]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[OrdenMant_Componentes]/Members[Componente]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="OrdenMant_Componente" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
     <EntitySetMapping
       EntitySet="OrdenMants">
       <EntitySetMapping.Attributes>
         <SsdlForeignKeyProperty
+          Name="OrdenMant_Pedido"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
           Name="OrdenMant_Tecnico"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="OrdenMant_Componente"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="OrdenMant_Lab"
           Nullable="False"
           Type="int" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>
-  <Association
-    Name="OrdenMant_Pedido">
-    <AssociationEnd
-      Name="OrdenMant"
-      Multiplicity="One"
-      EntityType="OrdenMant">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="Pedido"
-      Multiplicity="Many"
-      EntityType="Pedido" />
-  </Association>
-  <Association
-    Name="OrdenMant_Componente">
-    <AssociationEnd
-      Name="OrdenMant"
-      Multiplicity="One"
-      EntityType="OrdenMant">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="Componente"
-      Multiplicity="Many"
-      EntityType="Componente" />
-  </Association>
 </ServiceApplication>
