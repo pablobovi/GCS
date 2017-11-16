@@ -69,6 +69,11 @@
             Value="3" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="OrdenMant"
+        Association="OrdenMant_Componente"
+        FromEnd="Componente"
+        ToEnd="OrdenMant" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -223,6 +228,10 @@
       <EntitySetMapping.Attributes>
         <SsdlForeignKeyProperty
           Name="Lab_WorkStation"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="OrdenMant_Componente"
           Nullable="False"
           Type="int" />
       </EntitySetMapping.Attributes>

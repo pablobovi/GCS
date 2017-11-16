@@ -10,15 +10,15 @@ using Microsoft.LightSwitch.Presentation.Extensions;
 
 namespace LightSwitchApplication
 {
-    public partial class CreateNewComponente
+    public partial class Componentes
     {
-        partial void CreateNewComponente_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
+        partial void Componentes_InitializeDataWorkspace(List<IDataService> saveChangesTo)
         {
             // Write your code here.
             this.ComponenteProperty = new Componente();
         }
 
-        partial void CreateNewComponente_Saved()
+        partial void Componentes_Saved()
         {
             // Write your code here.
             this.Close(false);

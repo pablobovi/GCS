@@ -9,6 +9,7 @@
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="codigo" ColumnName="codigo" />
           <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="OrdenMant_Componente" ColumnName="OrdenMant_Componente" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="Created" ColumnName="Created" />
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
@@ -35,6 +36,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.OrdenMant)">
         <MappingFragment StoreEntitySet="OrdenMants">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrdenMant_Tecnico" ColumnName="OrdenMant_Tecnico" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="Created" ColumnName="Created" />
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />

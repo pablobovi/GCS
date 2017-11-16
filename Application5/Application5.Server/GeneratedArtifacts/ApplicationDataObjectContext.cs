@@ -21,7 +21,8 @@ using System.Xml.Serialization;
 
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Lab_Componente", "Lab", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.Lab), "Componente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Componente), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "OrdenMant_Pedido", "OrdenMant", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.OrdenMant), "Pedido", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Pedido), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "OrdenMant_Tecnico", "OrdenMant", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.OrdenMant), "Tecnico", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LightSwitchApplication.Implementation.Tecnico), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "OrdenMant_Componente", "OrdenMant", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.OrdenMant), "Componente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Componente), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "OrdenMant_Tecnico", "Tecnico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.Tecnico), "OrdenMant", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.OrdenMant), true)]
 
 #endregion
 
@@ -220,8 +221,9 @@ namespace LightSwitchApplication.Implementation
         /// <param name="nombre">Initial value of the nombre property.</param>
         /// <param name="codigo">Initial value of the codigo property.</param>
         /// <param name="tipo">Initial value of the tipo property.</param>
+        /// <param name="ordenMant_Componente">Initial value of the OrdenMant_Componente property.</param>
         /// <param name="rowVersion">Initial value of the RowVersion property.</param>
-        public static Componente CreateComponente(global::System.Int32 id, global::System.Int32 lab_WorkStation, global::System.String nombre, global::System.String codigo, global::System.Int16 tipo, global::System.Byte[] rowVersion)
+        public static Componente CreateComponente(global::System.Int32 id, global::System.Int32 lab_WorkStation, global::System.String nombre, global::System.String codigo, global::System.Int16 tipo, global::System.Int32 ordenMant_Componente, global::System.Byte[] rowVersion)
         {
             Componente componente = new Componente();
             componente.Id = id;
@@ -229,6 +231,7 @@ namespace LightSwitchApplication.Implementation
             componente.nombre = nombre;
             componente.codigo = codigo;
             componente.tipo = tipo;
+            componente.OrdenMant_Componente = ordenMant_Componente;
             componente.RowVersion = rowVersion;
             return componente;
         }
@@ -359,6 +362,30 @@ namespace LightSwitchApplication.Implementation
         private global::System.Int16 _tipo;
         partial void OntipoChanging(global::System.Int16 value);
         partial void OntipoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 OrdenMant_Componente
+        {
+            get
+            {
+                return _OrdenMant_Componente;
+            }
+            set
+            {
+                OnOrdenMant_ComponenteChanging(value);
+                ReportPropertyChanging("OrdenMant_Componente");
+                _OrdenMant_Componente = value;
+                ReportPropertyChanged("OrdenMant_Componente");
+                OnOrdenMant_ComponenteChanged();
+            }
+        }
+        private global::System.Int32 _OrdenMant_Componente;
+        partial void OnOrdenMant_ComponenteChanging(global::System.Int32 value);
+        partial void OnOrdenMant_ComponenteChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -519,6 +546,44 @@ namespace LightSwitchApplication.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Lab>("LightSwitchApplication.Lab_Componente", "Lab", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "OrdenMant_Componente", "OrdenMant")]
+        public OrdenMant OrdenMant
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OrdenMant>("LightSwitchApplication.OrdenMant_Componente", "OrdenMant").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OrdenMant>("LightSwitchApplication.OrdenMant_Componente", "OrdenMant").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<OrdenMant> OrdenMantReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OrdenMant>("LightSwitchApplication.OrdenMant_Componente", "OrdenMant");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<OrdenMant>("LightSwitchApplication.OrdenMant_Componente", "OrdenMant", value);
                 }
             }
         }
@@ -798,11 +863,13 @@ namespace LightSwitchApplication.Implementation
         /// Create a new OrdenMant object.
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="ordenMant_Tecnico">Initial value of the OrdenMant_Tecnico property.</param>
         /// <param name="rowVersion">Initial value of the RowVersion property.</param>
-        public static OrdenMant CreateOrdenMant(global::System.Int32 id, global::System.Byte[] rowVersion)
+        public static OrdenMant CreateOrdenMant(global::System.Int32 id, global::System.Int32 ordenMant_Tecnico, global::System.Byte[] rowVersion)
         {
             OrdenMant ordenMant = new OrdenMant();
             ordenMant.Id = id;
+            ordenMant.OrdenMant_Tecnico = ordenMant_Tecnico;
             ordenMant.RowVersion = rowVersion;
             return ordenMant;
         }
@@ -837,6 +904,30 @@ namespace LightSwitchApplication.Implementation
         private global::System.Int32 _Id;
         partial void OnIdChanging(global::System.Int32 value);
         partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 OrdenMant_Tecnico
+        {
+            get
+            {
+                return _OrdenMant_Tecnico;
+            }
+            set
+            {
+                OnOrdenMant_TecnicoChanging(value);
+                ReportPropertyChanging("OrdenMant_Tecnico");
+                _OrdenMant_Tecnico = value;
+                ReportPropertyChanged("OrdenMant_Tecnico");
+                OnOrdenMant_TecnicoChanged();
+            }
+        }
+        private global::System.Int32 _OrdenMant_Tecnico;
+        partial void OnOrdenMant_TecnicoChanging(global::System.Int32 value);
+        partial void OnOrdenMant_TecnicoChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -981,6 +1072,28 @@ namespace LightSwitchApplication.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Pedido>("LightSwitchApplication.OrdenMant_Pedido", "Pedido", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "OrdenMant_Componente", "Componente")]
+        public EntityCollection<Componente> Componentes
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Componente>("LightSwitchApplication.OrdenMant_Componente", "Componente");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Componente>("LightSwitchApplication.OrdenMant_Componente", "Componente", value);
                 }
             }
         }
@@ -1640,33 +1753,17 @@ namespace LightSwitchApplication.Implementation
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "OrdenMant_Tecnico", "OrdenMant")]
-        public OrdenMant OrdenMant
+        public EntityCollection<OrdenMant> OrdenMants
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OrdenMant>("LightSwitchApplication.OrdenMant_Tecnico", "OrdenMant").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OrdenMant>("LightSwitchApplication.OrdenMant_Tecnico", "OrdenMant").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<OrdenMant> OrdenMantReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<OrdenMant>("LightSwitchApplication.OrdenMant_Tecnico", "OrdenMant");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<OrdenMant>("LightSwitchApplication.OrdenMant_Tecnico", "OrdenMant");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<OrdenMant>("LightSwitchApplication.OrdenMant_Tecnico", "OrdenMant", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<OrdenMant>("LightSwitchApplication.OrdenMant_Tecnico", "OrdenMant", value);
                 }
             }
         }

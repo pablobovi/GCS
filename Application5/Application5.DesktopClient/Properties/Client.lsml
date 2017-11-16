@@ -37,38 +37,44 @@
   </GlobalAttributeGroup>
   <Application.Commands>
     <ApplicationCommand
-      Name="ScreenCommandShowEditableTecnicoesGrid"
-      Target="!module/Methods[ShowEditableTecnicoesGrid]" />
+      Name="ScreenCommandShowComponentes"
+      Target="!module/Methods[ShowComponentes]" />
     <ApplicationCommand
-      Name="ScreenCommandShowCreateNewComponente"
-      Target="!module/Methods[ShowCreateNewComponente]" />
+      Name="ScreenCommandShowLaboratios"
+      Target="!module/Methods[ShowLaboratios]" />
     <ApplicationCommand
-      Name="ScreenCommandShowEditableLabsGrid"
-      Target="!module/Methods[ShowEditableLabsGrid]" />
+      Name="ScreenCommandShowPedidos"
+      Target="!module/Methods[ShowPedidos]" />
     <ApplicationCommand
-      Name="ScreenCommandShowEditablePedidoesGrid"
-      Target="!module/Methods[ShowEditablePedidoesGrid]" />
+      Name="ScreenCommandShowNuevaOrden"
+      Target="!module/Methods[ShowNuevaOrden]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowTecnicos"
+      Target="!module/Methods[ShowTecnicos]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
       Name="Tasks"
-      DefaultItem="!module/NavigationItems[Tasks]/Children[EditableTecnicoesGrid]">
+      DefaultItem="!module/NavigationItems[Tasks]/Children[Tecnicos]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="Tasks" />
       </ApplicationNavigationGroup.Attributes>
       <ApplicationNavigationLink
-        Name="EditableTecnicoesGrid"
-        Command="!module/Commands[ScreenCommandShowEditableTecnicoesGrid]" />
+        Name="Componentes"
+        Command="!module/Commands[ScreenCommandShowComponentes]" />
       <ApplicationNavigationLink
-        Name="CreateNewComponente"
-        Command="!module/Commands[ScreenCommandShowCreateNewComponente]" />
+        Name="Laboratios"
+        Command="!module/Commands[ScreenCommandShowLaboratios]" />
       <ApplicationNavigationLink
-        Name="EditableLabsGrid"
-        Command="!module/Commands[ScreenCommandShowEditableLabsGrid]" />
+        Name="Pedidos"
+        Command="!module/Commands[ScreenCommandShowPedidos]" />
       <ApplicationNavigationLink
-        Name="EditablePedidoesGrid"
-        Command="!module/Commands[ScreenCommandShowEditablePedidoesGrid]" />
+        Name="NuevaOrden"
+        Command="!module/Commands[ScreenCommandShowNuevaOrden]" />
+      <ApplicationNavigationLink
+        Name="Tecnicos"
+        Command="!module/Commands[ScreenCommandShowTecnicos]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">

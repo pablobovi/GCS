@@ -32,6 +32,11 @@
         FromEnd="OrdenMant"
         ToEnd="Pedido" />
       <NavigationProperty
+        Name="Componentes"
+        Association="OrdenMant_Componente"
+        FromEnd="OrdenMant"
+        ToEnd="Componente" />
+      <NavigationProperty
         Name="Tecnico"
         Association="OrdenMant_Tecnico"
         FromEnd="OrdenMant"
@@ -190,14 +195,14 @@
         EntitySet="Pedidoes" />
     </AssociationSet>
     <AssociationSet
-      Name="OrdenMant_Tecnicoes"
-      Association="OrdenMant_Tecnico">
+      Name="OrdenMant_Componentes"
+      Association="OrdenMant_Componente">
       <AssociationSetEnd
         Name="OrdenMant"
         EntitySet="OrdenMants" />
       <AssociationSetEnd
-        Name="Tecnico"
-        EntitySet="Tecnicoes" />
+        Name="Componente"
+        EntitySet="Componentes" />
     </AssociationSet>
   </EntityContainer>
   <DataService
@@ -227,26 +232,35 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
     <AssociationSetMapping
-      AssociationSet="OrdenMant_Tecnicoes">
+      AssociationSet="OrdenMant_Componentes">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
-          Name="OrdenMant_Tecnicoes" />
+          Name="OrdenMant_Componentes" />
         <SsdlAssociationSetEnd
-          End="ApplicationData/Members[OrdenMant_Tecnicoes]/Members[OrdenMant]">
+          End="ApplicationData/Members[OrdenMant_Componentes]/Members[OrdenMant]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="ApplicationData/Members[OrdenMant_Tecnicoes]/Members[Tecnico]">
+          End="ApplicationData/Members[OrdenMant_Componentes]/Members[Componente]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="Id" />
+              Name="OrdenMant_Componente" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
+    <EntitySetMapping
+      EntitySet="OrdenMants">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="OrdenMant_Tecnico"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
   </DataService>
   <Association
     Name="OrdenMant_Pedido">
@@ -265,18 +279,19 @@
       EntityType="Pedido" />
   </Association>
   <Association
-    Name="OrdenMant_Tecnico">
+    Name="OrdenMant_Componente">
     <AssociationEnd
       Name="OrdenMant"
       Multiplicity="One"
       EntityType="OrdenMant">
       <AssociationEnd.Attributes>
         <DeleteRule
-          Action="Cascade" />
+          Action="Restrict" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Tecnico"
-      EntityType="Tecnico" />
+      Name="Componente"
+      Multiplicity="Many"
+      EntityType="Componente" />
   </Association>
 </ServiceApplication>

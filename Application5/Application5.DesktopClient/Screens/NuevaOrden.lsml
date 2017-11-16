@@ -5,7 +5,7 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="EditableTecnicoesGrid">
+    Name="NuevaOrden">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
@@ -21,115 +21,72 @@
           <ContentItem
             Name="grid"
             Kind="Collection"
-            DataType="CollectionView$Tecnico">
+            DataType="CollectionView$OrdenMant">
             <ContentItem.DataSource>
               <ScreenExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="EditableTecnicoesGrid/Properties[Tecnicoes]" />
+                    Member="NuevaOrden/Properties[OrdenMants]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
             <ContentItem
               Name="RowTemplate"
               Kind="Details"
-              DataType="Tecnico">
+              DataType="OrdenMant">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression />
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
-                Name="Nombre"
-                Kind="Value"
-                DataType=":String">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Tecnico/Properties[Nombre]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="CreatedBy"
-                IsHidden="True"
+                Name="CreatedBy1"
                 Kind="Value"
                 DataType=":Person?">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Tecnico/Properties[CreatedBy]" />
+                        Member="OrdenMant/Properties[CreatedBy]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="Created"
-                IsHidden="True"
+                Name="Created1"
                 Kind="Value"
                 DataType=":DateTimeOffset?">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Tecnico/Properties[Created]" />
+                        Member="OrdenMant/Properties[Created]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="ModifiedBy"
-                IsHidden="True"
+                Name="ModifiedBy1"
                 Kind="Value"
                 DataType=":Person?">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Tecnico/Properties[ModifiedBy]" />
+                        Member="OrdenMant/Properties[ModifiedBy]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="Modified"
-                IsHidden="True"
+                Name="Modified1"
                 Kind="Value"
                 DataType=":DateTimeOffset?">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Tecnico/Properties[Modified]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Legajo"
-                Kind="Value"
-                DataType=":String">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Tecnico/Properties[Legajo]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Apellido"
-                Kind="Value"
-                DataType=":String">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Tecnico/Properties[Apellido]" />
+                        Member="OrdenMant/Properties[Modified]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -137,13 +94,13 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="Tecnicoes_AddAndEditNew"
+                Name="OrdenMants_AddAndEditNew"
                 Kind="Command">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditableTecnicoesGrid/Properties[Tecnicoes]" />
+                        Member="NuevaOrden/Properties[OrdenMants]" />
                       <CallExpression
                         Target="AddAndEditNew" />
                     </ChainExpression>
@@ -151,13 +108,13 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="Tecnicoes_EditSelected"
+                Name="OrdenMants_EditSelected"
                 Kind="Command">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditableTecnicoesGrid/Properties[Tecnicoes]" />
+                        Member="NuevaOrden/Properties[OrdenMants]" />
                       <CallExpression
                         Target="EditSelected" />
                     </ChainExpression>
@@ -165,13 +122,13 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="Tecnicoes_DeleteSelected"
+                Name="OrdenMants_DeleteSelected"
                 Kind="Command">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditableTecnicoesGrid/Properties[Tecnicoes]" />
+                        Member="NuevaOrden/Properties[OrdenMants]" />
                       <CallExpression
                         Target="DeleteSelected" />
                     </ChainExpression>
@@ -211,7 +168,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="EditableTecnicoesGrid/Methods[Save]" />
+                    Target="NuevaOrden/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -223,7 +180,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="EditableTecnicoesGrid/Methods[Refresh]" />
+                    Target="NuevaOrden/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -263,20 +220,20 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="Tecnicoes"
+        Name="OrdenMants"
         PageSize="45"
-        PropertyType="CollectionView$Tecnico">
+        PropertyType="CollectionView$OrdenMant">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="TecnicoesQuery"
-            ReturnType="Tecnico*">
+            Name="OrdenMantsQuery"
+            ReturnType="OrdenMant*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="ApplicationData/Members[Tecnicoes]" />
+                  Member="ApplicationData/Members[OrdenMants]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -284,7 +241,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="EditableTecnicoesGrid/Properties[Tecnicoes]/Query" />
+              Target="NuevaOrden/Properties[OrdenMants]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -292,10 +249,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowEditableTecnicoesGrid">
+      Name="ShowNuevaOrden">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="EditableTecnicoesGrid" />
+          TargetScreen="NuevaOrden" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

@@ -223,16 +223,6 @@
         Name="Pedido"
         EntitySet="Pedidoes" />
     </AssociationSet>
-    <AssociationSet
-      Name="OrdenMant_Tecnicoes"
-      Association="OrdenMant_Tecnico">
-      <AssociationSetEnd
-        Name="OrdenMant"
-        EntitySet="OrdenMants" />
-      <AssociationSetEnd
-        Name="Tecnico"
-        EntitySet="Tecnicoes" />
-    </AssociationSet>
     <EntitySet
       Name="Pedidoes"
       CanDelete="True"
@@ -337,6 +327,26 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="OrdenMant_Componentes"
+      Association="OrdenMant_Componente">
+      <AssociationSetEnd
+        Name="OrdenMant"
+        EntitySet="OrdenMants" />
+      <AssociationSetEnd
+        Name="Componente"
+        EntitySet="Componentes" />
+    </AssociationSet>
+    <AssociationSet
+      Name="OrdenMant_Tecnicoes"
+      Association="OrdenMant_Tecnico">
+      <AssociationSetEnd
+        Name="OrdenMant"
+        EntitySet="OrdenMants" />
+      <AssociationSetEnd
+        Name="Tecnico"
+        EntitySet="Tecnicoes" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType
     Name="Pedido">
@@ -481,11 +491,6 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <NavigationProperty
-        Name="OrdenMant"
-        Association="OrdenMant_Tecnico"
-        FromEnd="Tecnico"
-        ToEnd="OrdenMant" />
       <EntityProperty
         Name="Legajo"
         PropertyType=":String">
@@ -504,6 +509,11 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="OrdenMants"
+        Association="OrdenMant_Tecnico"
+        FromEnd="Tecnico"
+        ToEnd="OrdenMant" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -717,6 +727,11 @@
             Value="3" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="OrdenMant"
+        Association="OrdenMant_Componente"
+        FromEnd="Componente"
+        ToEnd="OrdenMant" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -829,6 +844,11 @@
         FromEnd="OrdenMant"
         ToEnd="Pedido" />
       <NavigationProperty
+        Name="Componentes"
+        Association="OrdenMant_Componente"
+        FromEnd="OrdenMant"
+        ToEnd="Componente" />
+      <NavigationProperty
         Name="Tecnico"
         Association="OrdenMant_Tecnico"
         FromEnd="OrdenMant"
@@ -885,23 +905,8 @@
       </EntityProperty>
     </EntityType.Properties>
   </EntityType>
-  <Association
-    Name="OrdenMant_Tecnico">
-    <AssociationEnd
-      Name="OrdenMant"
-      Multiplicity="One"
-      EntityType="OrdenMant">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Cascade" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="Tecnico"
-      EntityType="Tecnico" />
-  </Association>
   <Screen
-    Name="CreateNewComponente"
+    Name="Componentes"
     LaunchMode="Multiple">
     <Screen.Attributes>
       <SaveChangesTo
@@ -924,7 +929,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="CreateNewComponente/Properties[ComponenteProperty]" />
+                    Member="Componentes/Properties[ComponenteProperty]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -1076,7 +1081,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="CreateNewComponente/Methods[Save]" />
+                    Target="Componentes/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -1088,7 +1093,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="CreateNewComponente/Methods[Refresh]" />
+                    Target="Componentes/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -1133,7 +1138,7 @@
     </Screen.Properties>
   </Screen>
   <Screen
-    Name="EditableLabsGrid">
+    Name="Laboratios">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
@@ -1154,7 +1159,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="EditableLabsGrid/Properties[Labs]" />
+                    Member="Laboratios/Properties[Labs]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -1258,7 +1263,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditableLabsGrid/Properties[Labs]" />
+                        Member="Laboratios/Properties[Labs]" />
                       <CallExpression
                         Target="AddAndEditNew" />
                     </ChainExpression>
@@ -1272,7 +1277,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditableLabsGrid/Properties[Labs]" />
+                        Member="Laboratios/Properties[Labs]" />
                       <CallExpression
                         Target="EditSelected" />
                     </ChainExpression>
@@ -1286,7 +1291,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditableLabsGrid/Properties[Labs]" />
+                        Member="Laboratios/Properties[Labs]" />
                       <CallExpression
                         Target="DeleteSelected" />
                     </ChainExpression>
@@ -1326,7 +1331,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="EditableLabsGrid/Methods[Save]" />
+                    Target="Laboratios/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -1338,7 +1343,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="EditableLabsGrid/Methods[Refresh]" />
+                    Target="Laboratios/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -1399,300 +1404,14 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="EditableLabsGrid/Properties[Labs]/Query" />
+              Target="Laboratios/Properties[Labs]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
     </Screen.Properties>
   </Screen>
   <Screen
-    Name="EditableTecnicoesGrid">
-    <Screen.Attributes>
-      <SaveChangesTo
-        EntityContainer="ApplicationData" />
-    </Screen.Attributes>
-    <Screen.RootContentItem>
-      <ContentItem
-        Name="RootContentItem"
-        Kind="Screen"
-        View="Microsoft.LightSwitch.RichClient:Screen">
-        <ContentItem
-          Name="ScreenLayout"
-          Kind="Group">
-          <ContentItem
-            Name="grid"
-            Kind="Collection"
-            DataType="CollectionView$Tecnico">
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="EditableTecnicoesGrid/Properties[Tecnicoes]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-            <ContentItem
-              Name="RowTemplate"
-              Kind="Details"
-              DataType="Tecnico">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression />
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem
-                Name="Nombre"
-                Kind="Value"
-                DataType=":String">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Tecnico/Properties[Nombre]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="CreatedBy"
-                IsHidden="True"
-                Kind="Value"
-                DataType=":Person?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Tecnico/Properties[CreatedBy]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Created"
-                IsHidden="True"
-                Kind="Value"
-                DataType=":DateTimeOffset?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Tecnico/Properties[Created]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="ModifiedBy"
-                IsHidden="True"
-                Kind="Value"
-                DataType=":Person?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Tecnico/Properties[ModifiedBy]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Modified"
-                IsHidden="True"
-                Kind="Value"
-                DataType=":DateTimeOffset?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Tecnico/Properties[Modified]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Legajo"
-                Kind="Value"
-                DataType=":String">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Tecnico/Properties[Legajo]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Apellido"
-                Kind="Value"
-                DataType=":String">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Tecnico/Properties[Apellido]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem>
-            <ContentItem.CommandItems>
-              <ContentItem
-                Name="Tecnicoes_AddAndEditNew"
-                Kind="Command">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="EditableTecnicoesGrid/Properties[Tecnicoes]" />
-                      <CallExpression
-                        Target="AddAndEditNew" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Tecnicoes_EditSelected"
-                Kind="Command">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="EditableTecnicoesGrid/Properties[Tecnicoes]" />
-                      <CallExpression
-                        Target="EditSelected" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Tecnicoes_DeleteSelected"
-                Kind="Command">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="EditableTecnicoesGrid/Properties[Tecnicoes]" />
-                      <CallExpression
-                        Target="DeleteSelected" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem.CommandItems>
-            <ContentItem.PropertySources>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="Stretch"
-                      ResultType=":String" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="Collapsed"
-                      ResultType=":String" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-            </ContentItem.PropertySources>
-          </ContentItem>
-        </ContentItem>
-        <ContentItem.CommandItems>
-          <ContentItem
-            Name="Save"
-            Kind="Command">
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <CallExpression
-                    Target="EditableTecnicoesGrid/Methods[Save]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-          </ContentItem>
-          <ContentItem
-            Name="Refresh"
-            Kind="Command">
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <CallExpression
-                    Target="EditableTecnicoesGrid/Methods[Refresh]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-          </ContentItem>
-        </ContentItem.CommandItems>
-      </ContentItem>
-    </Screen.RootContentItem>
-    <Screen.Methods>
-      <ScreenMethod
-        Name="Save">
-        <ScreenMethod.Attributes>
-          <DisplayMethodByDefault
-            Display="True" />
-          <Generated />
-          <ImageResource
-            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Save.png" />
-        </ScreenMethod.Attributes>
-      </ScreenMethod>
-      <ScreenMethod
-        Name="Refresh">
-        <ScreenMethod.Attributes>
-          <DisplayMethodByDefault
-            Display="True" />
-          <Generated />
-          <ImageResource
-            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Refresh.png" />
-        </ScreenMethod.Attributes>
-      </ScreenMethod>
-      <ScreenMethod
-        Name="Close">
-        <ScreenMethod.Attributes>
-          <DisplayMethodByDefault
-            Display="True" />
-          <Generated />
-        </ScreenMethod.Attributes>
-      </ScreenMethod>
-    </Screen.Methods>
-    <Screen.Properties>
-      <ScreenCollectionProperty
-        Name="Tecnicoes"
-        PageSize="45"
-        PropertyType="CollectionView$Tecnico">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="TecnicoesQuery"
-            ReturnType="Tecnico*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="ApplicationData/Members[Tecnicoes]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="EditableTecnicoesGrid/Properties[Tecnicoes]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-    </Screen.Properties>
-  </Screen>
-  <Screen
-    Name="EditablePedidoesGrid">
+    Name="Pedidos">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
@@ -1713,7 +1432,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="EditablePedidoesGrid/Properties[Pedidoes]" />
+                    Member="Pedidos/Properties[Pedidoes]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -1879,7 +1598,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditablePedidoesGrid/Properties[Pedidoes]" />
+                        Member="Pedidos/Properties[Pedidoes]" />
                       <CallExpression
                         Target="AddAndEditNew" />
                     </ChainExpression>
@@ -1893,7 +1612,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditablePedidoesGrid/Properties[Pedidoes]" />
+                        Member="Pedidos/Properties[Pedidoes]" />
                       <CallExpression
                         Target="EditSelected" />
                     </ChainExpression>
@@ -1907,7 +1626,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditablePedidoesGrid/Properties[Pedidoes]" />
+                        Member="Pedidos/Properties[Pedidoes]" />
                       <CallExpression
                         Target="DeleteSelected" />
                     </ChainExpression>
@@ -1947,7 +1666,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="EditablePedidoesGrid/Methods[Save]" />
+                    Target="Pedidos/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -1959,7 +1678,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="EditablePedidoesGrid/Methods[Refresh]" />
+                    Target="Pedidos/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -2020,76 +1739,646 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="EditablePedidoesGrid/Properties[Pedidoes]/Query" />
+              Target="Pedidos/Properties[Pedidoes]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
     </Screen.Properties>
   </Screen>
+  <Screen
+    Name="NuevaOrden">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="ApplicationData" />
+    </Screen.Attributes>
+    <Screen.RootContentItem>
+      <ContentItem
+        Name="RootContentItem"
+        Kind="Screen"
+        View="Microsoft.LightSwitch.RichClient:Screen">
+        <ContentItem
+          Name="ScreenLayout"
+          Kind="Group">
+          <ContentItem
+            Name="grid"
+            Kind="Collection"
+            DataType="CollectionView$OrdenMant">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="NuevaOrden/Properties[OrdenMants]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+            <ContentItem
+              Name="RowTemplate"
+              Kind="Details"
+              DataType="OrdenMant">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression />
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="CreatedBy1"
+                Kind="Value"
+                DataType=":Person?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="OrdenMant/Properties[CreatedBy]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Created1"
+                Kind="Value"
+                DataType=":DateTimeOffset?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="OrdenMant/Properties[Created]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="ModifiedBy1"
+                Kind="Value"
+                DataType=":Person?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="OrdenMant/Properties[ModifiedBy]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Modified1"
+                Kind="Value"
+                DataType=":DateTimeOffset?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="OrdenMant/Properties[Modified]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem.CommandItems>
+              <ContentItem
+                Name="OrdenMants_AddAndEditNew"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="NuevaOrden/Properties[OrdenMants]" />
+                      <CallExpression
+                        Target="AddAndEditNew" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="OrdenMants_EditSelected"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="NuevaOrden/Properties[OrdenMants]" />
+                      <CallExpression
+                        Target="EditSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="OrdenMants_DeleteSelected"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="NuevaOrden/Properties[OrdenMants]" />
+                      <CallExpression
+                        Target="DeleteSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem.CommandItems>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="Stretch"
+                      ResultType=":String" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="Collapsed"
+                      ResultType=":String" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+        </ContentItem>
+        <ContentItem.CommandItems>
+          <ContentItem
+            Name="Save"
+            Kind="Command">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="NuevaOrden/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Name="Refresh"
+            Kind="Command">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="NuevaOrden/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+        </ContentItem.CommandItems>
+      </ContentItem>
+    </Screen.RootContentItem>
+    <Screen.Methods>
+      <ScreenMethod
+        Name="Save">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Save.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Refresh">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Refresh.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Close">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+    </Screen.Methods>
+    <Screen.Properties>
+      <ScreenCollectionProperty
+        Name="OrdenMants"
+        PageSize="45"
+        PropertyType="CollectionView$OrdenMant">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="OrdenMantsQuery"
+            ReturnType="OrdenMant*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="ApplicationData/Members[OrdenMants]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="NuevaOrden/Properties[OrdenMants]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+    </Screen.Properties>
+  </Screen>
+  <Association
+    Name="OrdenMant_Componente">
+    <AssociationEnd
+      Name="OrdenMant"
+      Multiplicity="One"
+      EntityType="OrdenMant">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Componente"
+      Multiplicity="Many"
+      EntityType="Componente" />
+  </Association>
+  <Screen
+    Name="Tecnicos">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="ApplicationData" />
+    </Screen.Attributes>
+    <Screen.RootContentItem>
+      <ContentItem
+        Name="RootContentItem"
+        Kind="Screen"
+        View="Microsoft.LightSwitch.RichClient:Screen">
+        <ContentItem
+          Name="ScreenLayout"
+          Kind="Group">
+          <ContentItem
+            Name="grid"
+            Kind="Collection"
+            DataType="CollectionView$Tecnico">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="Tecnicos/Properties[Tecnicoes]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+            <ContentItem
+              Name="RowTemplate"
+              Kind="Details"
+              DataType="Tecnico">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression />
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="Nombre"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Tecnico/Properties[Nombre]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Apellido"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Tecnico/Properties[Apellido]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Legajo"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Tecnico/Properties[Legajo]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="CreatedBy"
+                Kind="Value"
+                DataType=":Person?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Tecnico/Properties[CreatedBy]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Created"
+                Kind="Value"
+                DataType=":DateTimeOffset?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Tecnico/Properties[Created]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="ModifiedBy"
+                Kind="Value"
+                DataType=":Person?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Tecnico/Properties[ModifiedBy]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Modified"
+                Kind="Value"
+                DataType=":DateTimeOffset?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Tecnico/Properties[Modified]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem.CommandItems>
+              <ContentItem
+                Name="Tecnicoes_AddAndEditNew"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Tecnicos/Properties[Tecnicoes]" />
+                      <CallExpression
+                        Target="AddAndEditNew" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Tecnicoes_EditSelected"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Tecnicos/Properties[Tecnicoes]" />
+                      <CallExpression
+                        Target="EditSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Tecnicoes_DeleteSelected"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Tecnicos/Properties[Tecnicoes]" />
+                      <CallExpression
+                        Target="DeleteSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem.CommandItems>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="Stretch"
+                      ResultType=":String" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="Collapsed"
+                      ResultType=":String" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+        </ContentItem>
+        <ContentItem.CommandItems>
+          <ContentItem
+            Name="Save"
+            Kind="Command">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="Tecnicos/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Name="Refresh"
+            Kind="Command">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="Tecnicos/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+        </ContentItem.CommandItems>
+      </ContentItem>
+    </Screen.RootContentItem>
+    <Screen.Methods>
+      <ScreenMethod
+        Name="Save">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Save.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Refresh">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Refresh.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Close">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+    </Screen.Methods>
+    <Screen.Properties>
+      <ScreenCollectionProperty
+        Name="Tecnicoes"
+        PageSize="45"
+        PropertyType="CollectionView$Tecnico">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="TecnicoesQuery"
+            ReturnType="Tecnico*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="ApplicationData/Members[Tecnicoes]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="Tecnicos/Properties[Tecnicoes]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+    </Screen.Properties>
+  </Screen>
+  <Association
+    Name="OrdenMant_Tecnico">
+    <AssociationEnd
+      Name="OrdenMant"
+      Multiplicity="Many"
+      EntityType="OrdenMant" />
+    <AssociationEnd
+      Name="Tecnico"
+      Multiplicity="One"
+      EntityType="Tecnico">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
   <Application.Commands>
     <ApplicationCommand
-      Name="ScreenCommandShowEditableTecnicoesGrid"
-      Target="!module/Methods[ShowEditableTecnicoesGrid]" />
+      Name="ScreenCommandShowComponentes"
+      Target="!module/Methods[ShowComponentes]" />
     <ApplicationCommand
-      Name="ScreenCommandShowCreateNewComponente"
-      Target="!module/Methods[ShowCreateNewComponente]" />
+      Name="ScreenCommandShowLaboratios"
+      Target="!module/Methods[ShowLaboratios]" />
     <ApplicationCommand
-      Name="ScreenCommandShowEditableLabsGrid"
-      Target="!module/Methods[ShowEditableLabsGrid]" />
+      Name="ScreenCommandShowPedidos"
+      Target="!module/Methods[ShowPedidos]" />
     <ApplicationCommand
-      Name="ScreenCommandShowEditablePedidoesGrid"
-      Target="!module/Methods[ShowEditablePedidoesGrid]" />
+      Name="ScreenCommandShowNuevaOrden"
+      Target="!module/Methods[ShowNuevaOrden]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowTecnicos"
+      Target="!module/Methods[ShowTecnicos]" />
   </Application.Commands>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowCreateNewComponente">
+      Name="ShowComponentes">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="CreateNewComponente" />
+          TargetScreen="Componentes" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
     <ApplicationMethod
-      Name="ShowEditableLabsGrid">
+      Name="ShowLaboratios">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="EditableLabsGrid" />
+          TargetScreen="Laboratios" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
     <ApplicationMethod
-      Name="ShowEditableTecnicoesGrid">
+      Name="ShowPedidos">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="EditableTecnicoesGrid" />
+          TargetScreen="Pedidos" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
     <ApplicationMethod
-      Name="ShowEditablePedidoesGrid">
+      Name="ShowNuevaOrden">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="EditablePedidoesGrid" />
+          TargetScreen="NuevaOrden" />
+      </ApplicationMethod.Attributes>
+    </ApplicationMethod>
+    <ApplicationMethod
+      Name="ShowTecnicos">
+      <ApplicationMethod.Attributes>
+        <ShowScreenMethod
+          TargetScreen="Tecnicos" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
       Name="Tasks"
-      DefaultItem="!module/NavigationItems[Tasks]/Children[EditableTecnicoesGrid]">
+      DefaultItem="!module/NavigationItems[Tasks]/Children[Tecnicos]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="Tasks" />
       </ApplicationNavigationGroup.Attributes>
       <ApplicationNavigationLink
-        Name="EditableTecnicoesGrid"
-        Command="!module/Commands[ScreenCommandShowEditableTecnicoesGrid]" />
+        Name="Componentes"
+        Command="!module/Commands[ScreenCommandShowComponentes]" />
       <ApplicationNavigationLink
-        Name="CreateNewComponente"
-        Command="!module/Commands[ScreenCommandShowCreateNewComponente]" />
+        Name="Laboratios"
+        Command="!module/Commands[ScreenCommandShowLaboratios]" />
       <ApplicationNavigationLink
-        Name="EditableLabsGrid"
-        Command="!module/Commands[ScreenCommandShowEditableLabsGrid]" />
+        Name="Pedidos"
+        Command="!module/Commands[ScreenCommandShowPedidos]" />
       <ApplicationNavigationLink
-        Name="EditablePedidoesGrid"
-        Command="!module/Commands[ScreenCommandShowEditablePedidoesGrid]" />
+        Name="NuevaOrden"
+        Command="!module/Commands[ScreenCommandShowNuevaOrden]" />
+      <ApplicationNavigationLink
+        Name="Tecnicos"
+        Command="!module/Commands[ScreenCommandShowTecnicos]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">

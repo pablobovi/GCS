@@ -19,12 +19,6 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Tecnico" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
         Target="ServiceInterface:Lab" />
     </EntityType.Attributes>
   </EntityType>
@@ -50,6 +44,18 @@
     <EntityType.Attributes>
       <Proxy
         Target="ServiceInterface:OrdenMant" />
+    </EntityType.Attributes>
+  </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:OrdenMant_Componente" />
+    </Association.Attributes>
+  </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Tecnico" />
     </EntityType.Attributes>
   </EntityType>
   <Association>

@@ -5,7 +5,7 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="EditablePedidoesGrid">
+    Name="Pedidos">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
@@ -26,7 +26,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="EditablePedidoesGrid/Properties[Pedidoes]" />
+                    Member="Pedidos/Properties[Pedidoes]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -192,7 +192,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditablePedidoesGrid/Properties[Pedidoes]" />
+                        Member="Pedidos/Properties[Pedidoes]" />
                       <CallExpression
                         Target="AddAndEditNew" />
                     </ChainExpression>
@@ -206,7 +206,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditablePedidoesGrid/Properties[Pedidoes]" />
+                        Member="Pedidos/Properties[Pedidoes]" />
                       <CallExpression
                         Target="EditSelected" />
                     </ChainExpression>
@@ -220,7 +220,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditablePedidoesGrid/Properties[Pedidoes]" />
+                        Member="Pedidos/Properties[Pedidoes]" />
                       <CallExpression
                         Target="DeleteSelected" />
                     </ChainExpression>
@@ -260,7 +260,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="EditablePedidoesGrid/Methods[Save]" />
+                    Target="Pedidos/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -272,7 +272,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="EditablePedidoesGrid/Methods[Refresh]" />
+                    Target="Pedidos/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -333,7 +333,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="EditablePedidoesGrid/Properties[Pedidoes]/Query" />
+              Target="Pedidos/Properties[Pedidoes]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -341,10 +341,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowEditablePedidoesGrid">
+      Name="ShowPedidos">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="EditablePedidoesGrid" />
+          TargetScreen="Pedidos" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

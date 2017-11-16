@@ -5,7 +5,7 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="CreateNewComponente"
+    Name="Componentes"
     LaunchMode="Multiple">
     <Screen.Attributes>
       <SaveChangesTo
@@ -28,7 +28,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="CreateNewComponente/Properties[ComponenteProperty]" />
+                    Member="Componentes/Properties[ComponenteProperty]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -180,7 +180,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="CreateNewComponente/Methods[Save]" />
+                    Target="Componentes/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -192,7 +192,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="CreateNewComponente/Methods[Refresh]" />
+                    Target="Componentes/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -238,10 +238,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowCreateNewComponente">
+      Name="ShowComponentes">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="CreateNewComponente" />
+          TargetScreen="Componentes" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

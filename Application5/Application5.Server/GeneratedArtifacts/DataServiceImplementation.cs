@@ -190,11 +190,35 @@ namespace LightSwitchApplication.Implementation
             }
         }
         
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Componente.DetailsClass.IImplementation.OrdenMant
+        {
+            get
+            {
+                return this.OrdenMant;
+            }
+            set
+            {
+                this.OrdenMant = (global::LightSwitchApplication.Implementation.OrdenMant)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("OrdenMant");
+                }
+            }
+        }
+        
         partial void OnLab_WorkStationChanged()
         {
             if (this.__host != null)
             {
                 this.__host.RaisePropertyChanged("Lab");
+            }
+        }
+        
+        partial void OnOrdenMant_ComponenteChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("OrdenMant");
             }
         }
         
@@ -284,6 +308,14 @@ namespace LightSwitchApplication.Implementation
             }
         }
         
+        global::System.Collections.IEnumerable global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Componentes
+        {
+            get
+            {
+                return this.Componentes;
+            }
+        }
+        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Tecnico
         {
             get
@@ -297,6 +329,14 @@ namespace LightSwitchApplication.Implementation
                 {
                     this.__host.RaisePropertyChanged("Tecnico");
                 }
+            }
+        }
+        
+        partial void OnOrdenMant_TecnicoChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("Tecnico");
             }
         }
         
@@ -394,27 +434,11 @@ namespace LightSwitchApplication.Implementation
     
     {
     
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Tecnico.DetailsClass.IImplementation.OrdenMant
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Tecnico.DetailsClass.IImplementation.OrdenMants
         {
             get
             {
-                return this.OrdenMant;
-            }
-            set
-            {
-                this.OrdenMant = (global::LightSwitchApplication.Implementation.OrdenMant)value;
-                if (this.__host != null)
-                {
-                    this.__host.RaisePropertyChanged("OrdenMant");
-                }
-            }
-        }
-        
-        partial void OnIdChanged()
-        {
-            if (this.__host != null)
-            {
-                this.__host.RaisePropertyChanged("OrdenMant");
+                return this.OrdenMants;
             }
         }
         

@@ -5,7 +5,7 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="EditableLabsGrid">
+    Name="Laboratios">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
@@ -26,7 +26,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="EditableLabsGrid/Properties[Labs]" />
+                    Member="Laboratios/Properties[Labs]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -130,7 +130,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditableLabsGrid/Properties[Labs]" />
+                        Member="Laboratios/Properties[Labs]" />
                       <CallExpression
                         Target="AddAndEditNew" />
                     </ChainExpression>
@@ -144,7 +144,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditableLabsGrid/Properties[Labs]" />
+                        Member="Laboratios/Properties[Labs]" />
                       <CallExpression
                         Target="EditSelected" />
                     </ChainExpression>
@@ -158,7 +158,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="EditableLabsGrid/Properties[Labs]" />
+                        Member="Laboratios/Properties[Labs]" />
                       <CallExpression
                         Target="DeleteSelected" />
                     </ChainExpression>
@@ -198,7 +198,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="EditableLabsGrid/Methods[Save]" />
+                    Target="Laboratios/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -210,7 +210,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="EditableLabsGrid/Methods[Refresh]" />
+                    Target="Laboratios/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -271,7 +271,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="EditableLabsGrid/Properties[Labs]/Query" />
+              Target="Laboratios/Properties[Labs]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -279,10 +279,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowEditableLabsGrid">
+      Name="ShowLaboratios">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="EditableLabsGrid" />
+          TargetScreen="Laboratios" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

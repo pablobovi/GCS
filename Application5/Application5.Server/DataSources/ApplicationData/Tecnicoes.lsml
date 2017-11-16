@@ -35,11 +35,6 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <NavigationProperty
-        Name="OrdenMant"
-        Association="OrdenMant_Tecnico"
-        FromEnd="Tecnico"
-        ToEnd="OrdenMant" />
       <EntityProperty
         Name="Legajo"
         PropertyType=":String">
@@ -58,6 +53,11 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="OrdenMants"
+        Association="OrdenMant_Tecnico"
+        FromEnd="Tecnico"
+        ToEnd="OrdenMant" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -201,6 +201,16 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="OrdenMant_Tecnicoes"
+      Association="OrdenMant_Tecnico">
+      <AssociationSetEnd
+        Name="OrdenMant"
+        EntitySet="OrdenMants" />
+      <AssociationSetEnd
+        Name="Tecnico"
+        EntitySet="Tecnicoes" />
+    </AssociationSet>
   </EntityContainer>
   <DataService
     Name="ApplicationDataMapping">
@@ -215,10 +225,47 @@
           Nullable="False"
           Type="int" />
         <SsdlForeignKeyProperty
-          Name="Id"
+          Name="Tecnico_OrdenMant"
           Nullable="False"
           Type="int" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="OrdenMant_Tecnicoes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="OrdenMant_Tecnicoes" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[OrdenMant_Tecnicoes]/Members[OrdenMant]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OrdenMant_Tecnico" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[OrdenMant_Tecnicoes]/Members[Tecnico]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
+  <Association
+    Name="OrdenMant_Tecnico">
+    <AssociationEnd
+      Name="OrdenMant"
+      Multiplicity="Many"
+      EntityType="OrdenMant" />
+    <AssociationEnd
+      Name="Tecnico"
+      Multiplicity="One"
+      EntityType="Tecnico">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
 </ServiceApplication>

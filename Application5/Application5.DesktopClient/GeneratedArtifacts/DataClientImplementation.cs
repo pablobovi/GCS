@@ -23,6 +23,12 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Lab");
         }
         
+        partial void OnOrdenMant_ComponenteChanged()
+        {
+            this.___OnPropertyChanged("OrdenMant_Componente");
+            this.___OnPropertyChanged("OrdenMant");
+        }
+        
         partial void OnIdChanged()
         {
             this.___OnPropertyChanged("Id");
@@ -99,6 +105,38 @@ namespace LightSwitchApplication.Implementation
         }
         
         private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Lab> ___Lab;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Componente.DetailsClass.IImplementation.OrdenMant
+        {
+            get
+            {
+                return this.OrdenMant;
+            }
+            set
+            {
+                this.OrdenMant = (global::LightSwitchApplication.Implementation.OrdenMant)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.OrdenMant> __OrdenMant
+        {
+            get
+            {
+                if (this.___OrdenMant == null)
+                {
+                    this.___OrdenMant = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.OrdenMant>(
+                        this,
+                        "OrdenMant",
+                        new string[] { "OrdenMant_Componente" },
+                        e => global::System.Object.Equals(e.Id, this.OrdenMant_Componente),
+                        () => this._OrdenMant,
+                        e => this._OrdenMant = e);
+                }
+                return this.___OrdenMant;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.OrdenMant> ___OrdenMant;
         
     }
     #endregion
@@ -186,6 +224,12 @@ namespace LightSwitchApplication.Implementation
     public partial class OrdenMant :
         global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation
     {
+        partial void OnOrdenMant_TecnicoChanged()
+        {
+            this.___OnPropertyChanged("OrdenMant_Tecnico");
+            this.___OnPropertyChanged("Tecnico");
+        }
+        
         partial void OnIdChanged()
         {
             this.___OnPropertyChanged("Id");
@@ -242,6 +286,32 @@ namespace LightSwitchApplication.Implementation
         
         private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Pedido> ___Pedidoes;
         
+        global::System.Collections.IEnumerable global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Componentes
+        {
+            get
+            {
+                return this.Componentes;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Componente> __Componentes
+        {
+            get
+            {
+                if (this.___Componentes == null)
+                {
+                    this.___Componentes = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Componente>(
+                        this,
+                        "Componentes",
+                        () => this._Componentes,
+                        e => global::System.Object.Equals(e.OrdenMant_Componente, this.Id));
+                }
+                return this.___Componentes;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Componente> ___Componentes;
+        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Tecnico
         {
             get
@@ -263,8 +333,8 @@ namespace LightSwitchApplication.Implementation
                     this.___Tecnico = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Tecnico>(
                         this,
                         "Tecnico",
-                        new string[] { "Id" },
-                        e => global::System.Object.Equals(e.Id, this.Id),
+                        new string[] { "OrdenMant_Tecnico" },
+                        e => global::System.Object.Equals(e.Id, this.OrdenMant_Tecnico),
                         () => this._Tecnico,
                         e => this._Tecnico = e);
                 }
@@ -385,7 +455,6 @@ namespace LightSwitchApplication.Implementation
         partial void OnIdChanged()
         {
             this.___OnPropertyChanged("Id");
-            this.___OnPropertyChanged("OrdenMant");
         }
         
         partial void OnNombreChanged()
@@ -428,37 +497,31 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("RowVersion");
         }
         
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Tecnico.DetailsClass.IImplementation.OrdenMant
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Tecnico.DetailsClass.IImplementation.OrdenMants
         {
             get
             {
-                return this.OrdenMant;
-            }
-            set
-            {
-                this.OrdenMant = (global::LightSwitchApplication.Implementation.OrdenMant)value;
+                return this.OrdenMants;
             }
         }
         
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.OrdenMant> __OrdenMant
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.OrdenMant> __OrdenMants
         {
             get
             {
-                if (this.___OrdenMant == null)
+                if (this.___OrdenMants == null)
                 {
-                    this.___OrdenMant = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.OrdenMant>(
+                    this.___OrdenMants = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.OrdenMant>(
                         this,
-                        "OrdenMant",
-                        new string[] { "Id" },
-                        e => global::System.Object.Equals(e.Id, this.Id),
-                        () => this._OrdenMant,
-                        e => this._OrdenMant = e);
+                        "OrdenMants",
+                        () => this._OrdenMants,
+                        e => global::System.Object.Equals(e.OrdenMant_Tecnico, this.Id));
                 }
-                return this.___OrdenMant;
+                return this.___OrdenMants;
             }
         }
         
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.OrdenMant> ___OrdenMant;
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.OrdenMant> ___OrdenMants;
         
     }
     #endregion
