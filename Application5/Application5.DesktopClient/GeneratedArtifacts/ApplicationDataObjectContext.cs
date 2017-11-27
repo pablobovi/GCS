@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 11/16/2017 10:55:15 AM
+// Generation date: 11/16/2017 3:25:06 PM
 namespace LightSwitchApplication.Implementation
 {
     
@@ -201,92 +201,92 @@ namespace LightSwitchApplication.Implementation
                 "dPattern=\"Identity\" /><Property Name=\"nombre\" Type=\"Edm.String\" Nullable=\"false\"" +
                 " MaxLength=\"255\" /><Property Name=\"codigo\" Type=\"Edm.String\" Nullable=\"false\" Ma" +
                 "xLength=\"255\" /><Property Name=\"tipo\" Type=\"Edm.Int16\" Nullable=\"false\" /><Prope" +
-                "rty Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created" +
-                "\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxL" +
-                "ength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Na" +
-                "me=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annot" +
-                "ation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"OrdenMant\" Re" +
-                "lationship=\"LightSwitchApplication.OrdenMant_Componente\" ToRole=\"OrdenMant\" From" +
-                "Role=\"Componente\" /></EntityType><EntityType Name=\"Lab\"><Key><PropertyRef Name=\"" +
-                "Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:Sto" +
-                "reGeneratedPattern=\"Identity\" /><Property Name=\"CantPc\" Type=\"Edm.Int32\" Nullabl" +
-                "e=\"false\" /><Property Name=\"nombre\" Type=\"Edm.String\" Nullable=\"false\" MaxLength" +
-                "=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Propert" +
-                "y Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"E" +
-                "dm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\"" +
-                " /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMod" +
-                "e=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name" +
-                "=\"OrdenMant\" Relationship=\"LightSwitchApplication.OrdenMant_Lab\" ToRole=\"OrdenMa" +
-                "nt\" FromRole=\"Lab\" /></EntityType><EntityType Name=\"OrdenMant\"><Key><PropertyRef" +
-                " Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotat" +
-                "ion:StoreGeneratedPattern=\"Identity\" /><Property Name=\"OrdenMant_Pedido\" Type=\"E" +
-                "dm.Int32\" Nullable=\"false\" /><Property Name=\"OrdenMant_Componente\" Type=\"Edm.Int" +
-                "32\" Nullable=\"false\" /><Property Name=\"OrdenMant_Tecnico\" Type=\"Edm.Int32\" Nulla" +
-                "ble=\"false\" /><Property Name=\"OrdenMant_Lab\" Type=\"Edm.Int32\" Nullable=\"false\" /" +
-                "><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"" +
-                "Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.Strin" +
-                "g\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Prop" +
-                "erty Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed" +
-                "\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"Pedido" +
-                "es\" Relationship=\"LightSwitchApplication.OrdenMant_Pedido\" ToRole=\"Pedido\" FromR" +
-                "ole=\"OrdenMant\" /><NavigationProperty Name=\"Componentes\" Relationship=\"LightSwit" +
-                "chApplication.OrdenMant_Componente\" ToRole=\"Componente\" FromRole=\"OrdenMant\" /><" +
-                "NavigationProperty Name=\"Tecnico\" Relationship=\"LightSwitchApplication.OrdenMant" +
-                "_Tecnico\" ToRole=\"Tecnico\" FromRole=\"OrdenMant\" /><NavigationProperty Name=\"Labs" +
-                "\" Relationship=\"LightSwitchApplication.OrdenMant_Lab\" ToRole=\"Lab\" FromRole=\"Ord" +
-                "enMant\" /></EntityType><EntityType Name=\"Pedido\"><Key><PropertyRef Name=\"Id\" /><" +
-                "/Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGener" +
-                "atedPattern=\"Identity\" /><Property Name=\"NombreSolic\" Type=\"Edm.String\" Nullable" +
-                "=\"false\" MaxLength=\"255\" /><Property Name=\"CantPC\" Type=\"Edm.Int32\" Nullable=\"fa" +
-                "lse\" /><Property Name=\"CantLabs\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property N" +
-                "ame=\"software\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" Ty" +
+                "rty Name=\"OrdenMant_Componente\" Type=\"Edm.Int32\" /><Property Name=\"CreatedBy\" Ty" +
                 "pe=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOff" +
                 "set\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property" +
                 " Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"E" +
                 "dm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPat" +
-                "tern=\"Computed\" /><NavigationProperty Name=\"Ordenmant\" Relationship=\"LightSwitch" +
-                "Application.OrdenMant_Pedido\" ToRole=\"OrdenMant\" FromRole=\"Pedido\" /></EntityTyp" +
-                "e><EntityType Name=\"Tecnico\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=" +
-                "\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identit" +
-                "y\" /><Property Name=\"Nombre\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" " +
-                "/><Property Name=\"Legajo\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><" +
-                "Property Name=\"Apellido\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><P" +
-                "roperty Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Cre" +
-                "ated\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" " +
-                "MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Propert" +
-                "y Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" a" +
-                "nnotation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"OrdenMant" +
-                "s\" Relationship=\"LightSwitchApplication.OrdenMant_Tecnico\" ToRole=\"OrdenMant\" Fr" +
-                "omRole=\"Tecnico\" /></EntityType><Association Name=\"OrdenMant_Pedido\"><End Role=\"" +
-                "Pedido\" Type=\"LightSwitchApplication.Pedido\" Multiplicity=\"1\" /><End Role=\"Orden" +
-                "Mant\" Type=\"LightSwitchApplication.OrdenMant\" Multiplicity=\"*\" /><ReferentialCon" +
-                "straint><Principal Role=\"Pedido\"><PropertyRef Name=\"Id\" /></Principal><Dependent" +
-                " Role=\"OrdenMant\"><PropertyRef Name=\"OrdenMant_Pedido\" /></Dependent></Referenti" +
-                "alConstraint></Association><Association Name=\"OrdenMant_Componente\"><End Role=\"C" +
-                "omponente\" Type=\"LightSwitchApplication.Componente\" Multiplicity=\"1\" /><End Role" +
-                "=\"OrdenMant\" Type=\"LightSwitchApplication.OrdenMant\" Multiplicity=\"*\" /><Referen" +
-                "tialConstraint><Principal Role=\"Componente\"><PropertyRef Name=\"Id\" /></Principal" +
-                "><Dependent Role=\"OrdenMant\"><PropertyRef Name=\"OrdenMant_Componente\" /></Depend" +
-                "ent></ReferentialConstraint></Association><Association Name=\"OrdenMant_Lab\"><End" +
-                " Role=\"Lab\" Type=\"LightSwitchApplication.Lab\" Multiplicity=\"1\" /><End Role=\"Orde" +
-                "nMant\" Type=\"LightSwitchApplication.OrdenMant\" Multiplicity=\"*\" /><ReferentialCo" +
-                "nstraint><Principal Role=\"Lab\"><PropertyRef Name=\"Id\" /></Principal><Dependent R" +
-                "ole=\"OrdenMant\"><PropertyRef Name=\"OrdenMant_Lab\" /></Dependent></ReferentialCon" +
-                "straint></Association><Association Name=\"OrdenMant_Tecnico\"><End Role=\"Tecnico\" " +
-                "Type=\"LightSwitchApplication.Tecnico\" Multiplicity=\"1\" /><End Role=\"OrdenMant\" T" +
-                "ype=\"LightSwitchApplication.OrdenMant\" Multiplicity=\"*\" /><ReferentialConstraint" +
-                "><Principal Role=\"Tecnico\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=" +
-                "\"OrdenMant\"><PropertyRef Name=\"OrdenMant_Tecnico\" /></Dependent></ReferentialCon" +
-                "straint></Association><EntityContainer Name=\"ApplicationData\" m:IsDefaultEntityC" +
-                "ontainer=\"true\"><EntitySet Name=\"Componentes\" EntityType=\"LightSwitchApplication" +
-                ".Componente\" /><EntitySet Name=\"Labs\" EntityType=\"LightSwitchApplication.Lab\" />" +
-                "<EntitySet Name=\"OrdenMants\" EntityType=\"LightSwitchApplication.OrdenMant\" /><En" +
-                "titySet Name=\"Pedidoes\" EntityType=\"LightSwitchApplication.Pedido\" /><EntitySet " +
-                "Name=\"Tecnicoes\" EntityType=\"LightSwitchApplication.Tecnico\" /><AssociationSet N" +
-                "ame=\"OrdenMant_Pedido\" Association=\"LightSwitchApplication.OrdenMant_Pedido\"><En" +
-                "d Role=\"Pedido\" EntitySet=\"Pedidoes\" /><End Role=\"OrdenMant";
+                "tern=\"Computed\" /><NavigationProperty Name=\"OrdenMant\" Relationship=\"LightSwitch" +
+                "Application.OrdenMant_Componente\" ToRole=\"OrdenMant\" FromRole=\"Componente\" /></E" +
+                "ntityType><EntityType Name=\"Lab\"><Key><PropertyRef Name=\"Id\" /></Key><Property N" +
+                "ame=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Ide" +
+                "ntity\" /><Property Name=\"CantPc\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property N" +
+                "ame=\"nombre\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name" +
+                "=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"" +
+                "Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"2" +
+                "55\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowV" +
+                "ersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:St" +
+                "oreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"OrdenMant\" Relationsh" +
+                "ip=\"LightSwitchApplication.OrdenMant_Lab\" ToRole=\"OrdenMant\" FromRole=\"Lab\" /></" +
+                "EntityType><EntityType Name=\"OrdenMant\"><Key><PropertyRef Name=\"Id\" /></Key><Pro" +
+                "perty Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPatte" +
+                "rn=\"Identity\" /><Property Name=\"OrdenMant_Pedido\" Type=\"Edm.Int32\" Nullable=\"fal" +
+                "se\" /><Property Name=\"OrdenMant_Tecnico\" Type=\"Edm.Int32\" Nullable=\"false\" /><Pr" +
+                "operty Name=\"OrdenMant_Lab\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"" +
+                "CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Ed" +
+                "m.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255" +
+                "\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVer" +
+                "sion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:Stor" +
+                "eGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"Pedidoes\" Relationship=" +
+                "\"LightSwitchApplication.OrdenMant_Pedido\" ToRole=\"Pedido\" FromRole=\"OrdenMant\" /" +
+                "><NavigationProperty Name=\"Componentes\" Relationship=\"LightSwitchApplication.Ord" +
+                "enMant_Componente\" ToRole=\"Componente\" FromRole=\"OrdenMant\" /><NavigationPropert" +
+                "y Name=\"Tecnico\" Relationship=\"LightSwitchApplication.OrdenMant_Tecnico\" ToRole=" +
+                "\"Tecnico\" FromRole=\"OrdenMant\" /><NavigationProperty Name=\"Labs\" Relationship=\"L" +
+                "ightSwitchApplication.OrdenMant_Lab\" ToRole=\"Lab\" FromRole=\"OrdenMant\" /></Entit" +
+                "yType><EntityType Name=\"Pedido\"><Key><PropertyRef Name=\"Id\" /></Key><Property Na" +
+                "me=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Iden" +
+                "tity\" /><Property Name=\"NombreSolic\" Type=\"Edm.String\" Nullable=\"false\" MaxLengt" +
+                "h=\"255\" /><Property Name=\"CantPC\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property " +
+                "Name=\"CantLabs\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"software\" Ty" +
+                "pe=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" M" +
+                "axLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property " +
+                "Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" " +
+                "Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullab" +
+                "le=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /" +
+                "><NavigationProperty Name=\"Ordenmant\" Relationship=\"LightSwitchApplication.Orden" +
+                "Mant_Pedido\" ToRole=\"OrdenMant\" FromRole=\"Pedido\" /></EntityType><EntityType Nam" +
+                "e=\"Tecnico\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.In" +
+                "t32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Na" +
+                "me=\"Nombre\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=" +
+                "\"Legajo\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Ap" +
+                "ellido\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Cre" +
+                "atedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.D" +
+                "ateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /" +
+                "><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersio" +
+                "n\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGe" +
+                "neratedPattern=\"Computed\" /><NavigationProperty Name=\"OrdenMants\" Relationship=\"" +
+                "LightSwitchApplication.OrdenMant_Tecnico\" ToRole=\"OrdenMant\" FromRole=\"Tecnico\" " +
+                "/></EntityType><Association Name=\"OrdenMant_Pedido\"><End Role=\"Pedido\" Type=\"Lig" +
+                "htSwitchApplication.Pedido\" Multiplicity=\"1\" /><End Role=\"OrdenMant\" Type=\"Light" +
+                "SwitchApplication.OrdenMant\" Multiplicity=\"*\" /><ReferentialConstraint><Principa" +
+                "l Role=\"Pedido\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"OrdenMant\"" +
+                "><PropertyRef Name=\"OrdenMant_Pedido\" /></Dependent></ReferentialConstraint></As" +
+                "sociation><Association Name=\"OrdenMant_Componente\"><End Role=\"OrdenMant\" Type=\"L" +
+                "ightSwitchApplication.OrdenMant\" Multiplicity=\"0..1\" /><End Role=\"Componente\" Ty" +
+                "pe=\"LightSwitchApplication.Componente\" Multiplicity=\"*\" /><ReferentialConstraint" +
+                "><Principal Role=\"OrdenMant\"><PropertyRef Name=\"Id\" /></Principal><Dependent Rol" +
+                "e=\"Componente\"><PropertyRef Name=\"OrdenMant_Componente\" /></Dependent></Referent" +
+                "ialConstraint></Association><Association Name=\"OrdenMant_Lab\"><End Role=\"Lab\" Ty" +
+                "pe=\"LightSwitchApplication.Lab\" Multiplicity=\"1\" /><End Role=\"OrdenMant\" Type=\"L" +
+                "ightSwitchApplication.OrdenMant\" Multiplicity=\"*\" /><ReferentialConstraint><Prin" +
+                "cipal Role=\"Lab\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"OrdenMant" +
+                "\"><PropertyRef Name=\"OrdenMant_Lab\" /></Dependent></ReferentialConstraint></Asso" +
+                "ciation><Association Name=\"OrdenMant_Tecnico\"><End Role=\"Tecnico\" Type=\"LightSwi" +
+                "tchApplication.Tecnico\" Multiplicity=\"1\" /><End Role=\"OrdenMant\" Type=\"LightSwit" +
+                "chApplication.OrdenMant\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Ro" +
+                "le=\"Tecnico\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"OrdenMant\"><P" +
+                "ropertyRef Name=\"OrdenMant_Tecnico\" /></Dependent></ReferentialConstraint></Asso" +
+                "ciation><EntityContainer Name=\"ApplicationData\" m:IsDefaultEntityContainer=\"true" +
+                "\"><EntitySet Name=\"Componentes\" EntityType=\"LightSwitchApplication.Componente\" /" +
+                "><EntitySet Name=\"Labs\" EntityType=\"LightSwitchApplication.Lab\" /><EntitySet Nam" +
+                "e=\"OrdenMants\" EntityType=\"LightSwitchApplication.OrdenMant\" /><EntitySet Name=\"" +
+                "Pedidoes\" EntityType=\"LightSwitchApplication.Pedido\" /><EntitySet Name=\"Tecnicoe" +
+                "s\" EntityType=\"LightSwitchApplication.Tecnico\" /><AssociationSet Name=\"OrdenMant" +
+                "_Pedido\" Association=\"LightSwitchApplication.OrdenMant_Pedido\"><End Role=\"Pedido" +
+                "\" EntitySet=\"Pedidoes\" /><End Role=\"OrdenMant\" EntitySet=\"O";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart1 = @""" EntitySet=""OrdenMants"" /></AssociationSet><AssociationSet Name=""OrdenMant_Componente"" Association=""LightSwitchApplication.OrdenMant_Componente""><End Role=""Componente"" EntitySet=""Componentes"" /><End Role=""OrdenMant"" EntitySet=""OrdenMants"" /></AssociationSet><AssociationSet Name=""OrdenMant_Lab"" Association=""LightSwitchApplication.OrdenMant_Lab""><End Role=""Lab"" EntitySet=""Labs"" /><End Role=""OrdenMant"" EntitySet=""OrdenMants"" /></AssociationSet><AssociationSet Name=""OrdenMant_Tecnico"" Association=""LightSwitchApplication.OrdenMant_Tecnico""><End Role=""Tecnico"" EntitySet=""Tecnicoes"" /><End Role=""OrdenMant"" EntitySet=""OrdenMants"" /></AssociationSet><FunctionImport Name=""Microsoft_LightSwitch_GetCanInformation"" ReturnType=""Edm.String"" m:HttpMethod=""GET""><Parameter Name=""dataServiceMembers"" Type=""Edm.String"" Mode=""In"" /></FunctionImport></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
+            private const string ModelPart1 = @"rdenMants"" /></AssociationSet><AssociationSet Name=""OrdenMant_Componente"" Association=""LightSwitchApplication.OrdenMant_Componente""><End Role=""OrdenMant"" EntitySet=""OrdenMants"" /><End Role=""Componente"" EntitySet=""Componentes"" /></AssociationSet><AssociationSet Name=""OrdenMant_Lab"" Association=""LightSwitchApplication.OrdenMant_Lab""><End Role=""Lab"" EntitySet=""Labs"" /><End Role=""OrdenMant"" EntitySet=""OrdenMants"" /></AssociationSet><AssociationSet Name=""OrdenMant_Tecnico"" Association=""LightSwitchApplication.OrdenMant_Tecnico""><End Role=""Tecnico"" EntitySet=""Tecnicoes"" /><End Role=""OrdenMant"" EntitySet=""OrdenMants"" /></AssociationSet><FunctionImport Name=""Microsoft_LightSwitch_GetCanInformation"" ReturnType=""Edm.String"" m:HttpMethod=""GET""><Parameter Name=""dataServiceMembers"" Type=""Edm.String"" Mode=""In"" /></FunctionImport></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {
@@ -452,6 +452,32 @@ namespace LightSwitchApplication.Implementation
         partial void OntipoChanging(short value);
         partial void OntipoChanged();
         /// <summary>
+        /// There are no comments for Property OrdenMant_Componente in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<int> OrdenMant_Componente
+        {
+            get
+            {
+                return this._OrdenMant_Componente;
+            }
+            set
+            {
+                this.OnOrdenMant_ComponenteChanging(value);
+                if (object.Equals(this.OrdenMant_Componente, value))
+                {
+                    return;
+                }
+                this._OrdenMant_Componente = value;
+                this.OnOrdenMant_ComponenteChanged();
+                this.OnPropertyChanged("OrdenMant_Componente");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<int> _OrdenMant_Componente;
+        partial void OnOrdenMant_ComponenteChanging(global::System.Nullable<int> value);
+        partial void OnOrdenMant_ComponenteChanged();
+        /// <summary>
         /// There are no comments for Property CreatedBy in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -592,7 +618,7 @@ namespace LightSwitchApplication.Implementation
         /// There are no comments for OrdenMant in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<OrdenMant> OrdenMant
+        public OrdenMant OrdenMant
         {
             get
             {
@@ -601,12 +627,40 @@ namespace LightSwitchApplication.Implementation
             }
             set
             {
+                OrdenMant previous = this.OrdenMant;
+                if ((previous == value))
+                {
+                    return;
+                }
+                if ((previous != null))
+                {
+                    this._OrdenMant = null;
+                    this.@__OrdenMant.OnValueSet();
+                    previous.Componentes.Remove(this);
+                }
+                if ((this.___Host != null))
+                {
+                    if ((value != null))
+                    {
+                        this.OrdenMant_Componente = value.Id;
+                    }
+                    else
+                    {
+                        this.OrdenMant_Componente = default(global::System.Nullable<int>);
+                    }
+                }
                 this._OrdenMant = value;
+                this.@__OrdenMant.OnValueSet();
+                if ((value != null))
+                {
+                    value.@__Componentes.Add(this);
+                }
+                this.___OnPropertyChanged("OrdenMant");
                 this.OnPropertyChanged("OrdenMant");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<OrdenMant> _OrdenMant = new global::System.Data.Services.Client.DataServiceCollection<OrdenMant>(null, global::System.Data.Services.Client.TrackingMode.None);
+        private OrdenMant _OrdenMant;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -905,17 +959,15 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         /// <param name="ID">Initial value of Id.</param>
         /// <param name="ordenMant_Pedido">Initial value of OrdenMant_Pedido.</param>
-        /// <param name="ordenMant_Componente">Initial value of OrdenMant_Componente.</param>
         /// <param name="ordenMant_Tecnico">Initial value of OrdenMant_Tecnico.</param>
         /// <param name="ordenMant_Lab">Initial value of OrdenMant_Lab.</param>
         /// <param name="rowVersion">Initial value of RowVersion.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static OrdenMant CreateOrdenMant(int ID, int ordenMant_Pedido, int ordenMant_Componente, int ordenMant_Tecnico, int ordenMant_Lab, byte[] rowVersion)
+        public static OrdenMant CreateOrdenMant(int ID, int ordenMant_Pedido, int ordenMant_Tecnico, int ordenMant_Lab, byte[] rowVersion)
         {
             OrdenMant ordenMant = new OrdenMant();
             ordenMant.Id = ID;
             ordenMant.OrdenMant_Pedido = ordenMant_Pedido;
-            ordenMant.OrdenMant_Componente = ordenMant_Componente;
             ordenMant.OrdenMant_Tecnico = ordenMant_Tecnico;
             ordenMant.OrdenMant_Lab = ordenMant_Lab;
             ordenMant.RowVersion = rowVersion;
@@ -973,32 +1025,6 @@ namespace LightSwitchApplication.Implementation
         private int _OrdenMant_Pedido;
         partial void OnOrdenMant_PedidoChanging(int value);
         partial void OnOrdenMant_PedidoChanged();
-        /// <summary>
-        /// There are no comments for Property OrdenMant_Componente in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int OrdenMant_Componente
-        {
-            get
-            {
-                return this._OrdenMant_Componente;
-            }
-            set
-            {
-                this.OnOrdenMant_ComponenteChanging(value);
-                if (object.Equals(this.OrdenMant_Componente, value))
-                {
-                    return;
-                }
-                this._OrdenMant_Componente = value;
-                this.OnOrdenMant_ComponenteChanged();
-                this.OnPropertyChanged("OrdenMant_Componente");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _OrdenMant_Componente;
-        partial void OnOrdenMant_ComponenteChanging(int value);
-        partial void OnOrdenMant_ComponenteChanged();
         /// <summary>
         /// There are no comments for Property OrdenMant_Tecnico in the schema.
         /// </summary>
@@ -1239,7 +1265,7 @@ namespace LightSwitchApplication.Implementation
         /// There are no comments for Componentes in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Componente Componentes
+        public global::System.Data.Services.Client.DataServiceCollection<Componente> Componentes
         {
             get
             {
@@ -1248,40 +1274,12 @@ namespace LightSwitchApplication.Implementation
             }
             set
             {
-                Componente previous = this.Componentes;
-                if ((previous == value))
-                {
-                    return;
-                }
-                if ((previous != null))
-                {
-                    this._Componentes = null;
-                    this.@__Componentes.OnValueSet();
-                    previous.OrdenMant.Remove(this);
-                }
-                if ((this.___Host != null))
-                {
-                    if ((value != null))
-                    {
-                        this.OrdenMant_Componente = value.Id;
-                    }
-                    else
-                    {
-                        this.OrdenMant_Componente = default(int);
-                    }
-                }
                 this._Componentes = value;
-                this.@__Componentes.OnValueSet();
-                if ((value != null))
-                {
-                    value.@__OrdenMant.Add(this);
-                }
-                this.___OnPropertyChanged("Componentes");
                 this.OnPropertyChanged("Componentes");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Componente _Componentes;
+        private global::System.Data.Services.Client.DataServiceCollection<Componente> _Componentes = new global::System.Data.Services.Client.DataServiceCollection<Componente>(null, global::System.Data.Services.Client.TrackingMode.None);
         /// <summary>
         /// There are no comments for Tecnico in the schema.
         /// </summary>

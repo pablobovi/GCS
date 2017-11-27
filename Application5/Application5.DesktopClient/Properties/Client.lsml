@@ -51,6 +51,12 @@
     <ApplicationCommand
       Name="ScreenCommandShowTecnicos"
       Target="!module/Methods[ShowTecnicos]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowLitadeOrdenes"
+      Target="!module/Methods[ShowLitadeOrdenes]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowReporte"
+      Target="!module/Methods[ShowReporte]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -75,6 +81,12 @@
       <ApplicationNavigationLink
         Name="Tecnicos"
         Command="!module/Commands[ScreenCommandShowTecnicos]" />
+      <ApplicationNavigationLink
+        Name="LitadeOrdenes"
+        Command="!module/Commands[ScreenCommandShowLitadeOrdenes]" />
+      <ApplicationNavigationLink
+        Name="Reporte"
+        Command="!module/Commands[ScreenCommandShowReporte]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">

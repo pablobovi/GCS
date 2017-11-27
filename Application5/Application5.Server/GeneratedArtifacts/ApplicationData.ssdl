@@ -11,8 +11,8 @@
       <End Role="OrdenMant" EntitySet="OrdenMants" />
     </AssociationSet>
     <AssociationSet Name="OrdenMant_Componente" Association="ApplicationDataStore.OrdenMant_Componente">
-      <End Role="Componente" EntitySet="Componentes" />
       <End Role="OrdenMant" EntitySet="OrdenMants" />
+      <End Role="Componente" EntitySet="Componentes" />
     </AssociationSet>
     <AssociationSet Name="OrdenMant_Lab" Association="ApplicationDataStore.OrdenMant_Lab">
       <End Role="Lab" EntitySet="Labs" />
@@ -36,6 +36,7 @@
     <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
     <Property Name="Modified" Type="datetimeoffset" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="OrdenMant_Componente" Type="int" />
   </EntityType>
   <EntityType Name="Lab">
     <Key>
@@ -61,7 +62,6 @@
     <Property Name="Modified" Type="datetimeoffset" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="OrdenMant_Pedido" Type="int" Nullable="false" />
-    <Property Name="OrdenMant_Componente" Type="int" Nullable="false" />
     <Property Name="OrdenMant_Lab" Type="int" Nullable="false" />
     <Property Name="OrdenMant_Tecnico" Type="int" Nullable="false" />
   </EntityType>
@@ -109,15 +109,15 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="OrdenMant_Componente">
-    <End Role="Componente" Type="ApplicationDataStore.Componente" Multiplicity="1">
+    <End Role="OrdenMant" Type="ApplicationDataStore.OrdenMant" Multiplicity="0..1">
       <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
     </End>
-    <End Role="OrdenMant" Type="ApplicationDataStore.OrdenMant" Multiplicity="*" />
+    <End Role="Componente" Type="ApplicationDataStore.Componente" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Componente">
+      <Principal Role="OrdenMant">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="OrdenMant">
+      <Dependent Role="Componente">
         <PropertyRef Name="OrdenMant_Componente" />
       </Dependent>
     </ReferentialConstraint>

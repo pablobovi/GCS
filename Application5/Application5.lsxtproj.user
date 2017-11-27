@@ -4,7 +4,7 @@
     <EnableENC>False</EnableENC>
     <ProjectView>ProjectFiles</ProjectView>
     <StartUpClientProject>Application5.DesktopClient</StartUpClientProject>
-    <SchemaManagementLastSsdlWriteTime>636464373161710728</SchemaManagementLastSsdlWriteTime>
-    <SchemaManagementSchemaBuildState>1</SchemaManagementSchemaBuildState>
+    <SchemaManagementLastSsdlWriteTime>636464535067942825</SchemaManagementLastSsdlWriteTime>
+    <SchemaManagementSchemaBuildState>0</SchemaManagementSchemaBuildState>
   </PropertyGroup>
 </Project>

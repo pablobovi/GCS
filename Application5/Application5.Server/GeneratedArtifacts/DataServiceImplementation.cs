@@ -174,11 +174,27 @@ namespace LightSwitchApplication.Implementation
     
     {
     
-        global::System.Collections.IEnumerable global::LightSwitchApplication.Componente.DetailsClass.IImplementation.OrdenMant
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Componente.DetailsClass.IImplementation.OrdenMant
         {
             get
             {
                 return this.OrdenMant;
+            }
+            set
+            {
+                this.OrdenMant = (global::LightSwitchApplication.Implementation.OrdenMant)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("OrdenMant");
+                }
+            }
+        }
+        
+        partial void OnOrdenMant_ComponenteChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("OrdenMant");
             }
         }
         
@@ -276,19 +292,11 @@ namespace LightSwitchApplication.Implementation
             }
         }
         
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Componentes
+        global::System.Collections.IEnumerable global::LightSwitchApplication.OrdenMant.DetailsClass.IImplementation.Componentes
         {
             get
             {
                 return this.Componentes;
-            }
-            set
-            {
-                this.Componentes = (global::LightSwitchApplication.Implementation.Componente)value;
-                if (this.__host != null)
-                {
-                    this.__host.RaisePropertyChanged("Componentes");
-                }
             }
         }
         
@@ -329,14 +337,6 @@ namespace LightSwitchApplication.Implementation
             if (this.__host != null)
             {
                 this.__host.RaisePropertyChanged("Pedidoes");
-            }
-        }
-        
-        partial void OnOrdenMant_ComponenteChanged()
-        {
-            if (this.__host != null)
-            {
-                this.__host.RaisePropertyChanged("Componentes");
             }
         }
         

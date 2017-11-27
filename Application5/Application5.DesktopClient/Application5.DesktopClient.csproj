@@ -244,6 +244,8 @@
     <LightSwitchModel Include="Screens\Pedidos.lsml" />
     <LightSwitchModel Include="Screens\NuevaOrden.lsml" />
     <LightSwitchModel Include="Screens\Tecnicos.lsml" />
+    <LightSwitchModel Include="Screens\LitadeOrdenes.lsml" />
+    <LightSwitchModel Include="Screens\Reporte.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\ApplicationData\" />

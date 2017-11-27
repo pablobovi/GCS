@@ -237,14 +237,46 @@
           Nullable="False"
           Type="int" />
         <SsdlForeignKeyProperty
-          Name="OrdenMant_Componente"
-          Nullable="False"
-          Type="int" />
-        <SsdlForeignKeyProperty
           Name="OrdenMant_Lab"
           Nullable="False"
           Type="int" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="OrdenMant_Componentes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="OrdenMant_Componentes" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[OrdenMant_Componentes]/Members[OrdenMant]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[OrdenMant_Componentes]/Members[Componente]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OrdenMant_Componente" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
+  <Association
+    Name="OrdenMant_Componente">
+    <AssociationEnd
+      Name="OrdenMant"
+      EntityType="OrdenMant">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Componente"
+      Multiplicity="Many"
+      EntityType="Componente" />
+  </Association>
 </ServiceApplication>
