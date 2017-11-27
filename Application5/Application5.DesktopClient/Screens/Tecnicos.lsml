@@ -9,6 +9,8 @@
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
+      <DisplayName
+        Value="Axuliares" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -22,6 +24,10 @@
             Name="grid"
             Kind="Collection"
             DataType="CollectionView$Tecnico">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Auxiliares" />
+            </ContentItem.Attributes>
             <ContentItem.DataSource>
               <ScreenExpressionTree>
                 <ChainExpression>

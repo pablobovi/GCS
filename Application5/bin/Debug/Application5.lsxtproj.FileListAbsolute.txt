@@ -72,3 +72,40 @@ C:\Users\pablo.navarro\Documents\Visual Studio 2013\Projects\Application5\bin\De
 C:\Users\pablo.navarro\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\DesktopClient\default.htm
 C:\Users\pablo.navarro\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\DesktopClient\Silverlight.js
 C:\Users\pablo.navarro\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\DesktopClient\web\Application5.DesktopClient.xap
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\vslshost.exe
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\vslshost.exe.config
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\vslshost.exe.manifest
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\ClientAccessPolicy.xml
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\Microsoft.LightSwitch.Design.svc
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\Microsoft.LightSwitch.SecurityData.svc
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\web.config
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\default.aspx
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\diagnostics.wadcfg
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\Web\Manifests\Microsoft.LightSwitch.Server.Manifest.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Microsoft.LightSwitch.Server.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\System.ServiceModel.PollingDuplex.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Application.Server.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Microsoft.Data.Edm.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Microsoft.Data.OData.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Microsoft.Data.Services.Client.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Microsoft.Data.Services.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Microsoft.LightSwitch.AppBridge.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Microsoft.LightSwitch.CodeMarker.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Microsoft.LightSwitch.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Microsoft.LightSwitch.ExportProvider.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Microsoft.LightSwitch.Extensions.Server.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Microsoft.LightSwitch.ManifestService.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Microsoft.LightSwitch.Model.Xaml.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Microsoft.LightSwitch.Server.Host.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\System.ServiceModel.DomainServices.EntityFramework.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\System.ServiceModel.DomainServices.Hosting.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\System.ServiceModel.DomainServices.Hosting.OData.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\System.ServiceModel.DomainServices.Server.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\System.Spatial.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\bin\Microsoft.WindowsAzure.ServiceRuntime.dll
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\packages.config
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\ApplicationData.svc
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\DesktopClient\default.htm
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\DesktopClient\Silverlight.js
+C:\Users\ana belen\Documents\Visual Studio 2013\Projects\Application5\bin\Debug\DesktopClient\web\Application5.DesktopClient.xap
