@@ -9,6 +9,8 @@
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
+      <DisplayName
+        Value="Lita de Ordenes" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -169,6 +171,7 @@
               <ContentItem.CommandItems>
                 <ContentItem
                   Name="OrdenMants_AddAndEditNew"
+                  IsHidden="True"
                   Kind="Command">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
@@ -183,6 +186,7 @@
                 </ContentItem>
                 <ContentItem
                   Name="OrdenMants_EditSelected"
+                  IsHidden="True"
                   Kind="Command">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
@@ -197,6 +201,7 @@
                 </ContentItem>
                 <ContentItem
                   Name="OrdenMants_DeleteSelected"
+                  IsHidden="True"
                   Kind="Command">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
@@ -271,6 +276,10 @@
                 Name="Pedidoes1"
                 Kind="Details"
                 DataType="Pedido">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Pedidos" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -518,6 +527,7 @@
               <ContentItem.CommandItems>
                 <ContentItem
                   Name="Componentes_AddAndEditNew"
+                  IsHidden="True"
                   Kind="Command">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
@@ -532,6 +542,7 @@
                 </ContentItem>
                 <ContentItem
                   Name="Componentes_EditSelected"
+                  IsHidden="True"
                   Kind="Command">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
@@ -546,6 +557,7 @@
                 </ContentItem>
                 <ContentItem
                   Name="Componentes_DeleteSelected"
+                  IsHidden="True"
                   Kind="Command">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>

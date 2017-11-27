@@ -80,6 +80,7 @@
               </ContentItem>
               <ContentItem
                 Name="CreatedBy"
+                IsHidden="True"
                 Kind="Value"
                 DataType=":Person?">
                 <ContentItem.DataSource>
@@ -93,6 +94,7 @@
               </ContentItem>
               <ContentItem
                 Name="Created"
+                IsHidden="True"
                 Kind="Value"
                 DataType=":DateTimeOffset?">
                 <ContentItem.DataSource>
@@ -106,6 +108,7 @@
               </ContentItem>
               <ContentItem
                 Name="ModifiedBy"
+                IsHidden="True"
                 Kind="Value"
                 DataType=":Person?">
                 <ContentItem.DataSource>
@@ -119,6 +122,7 @@
               </ContentItem>
               <ContentItem
                 Name="Modified"
+                IsHidden="True"
                 Kind="Value"
                 DataType=":DateTimeOffset?">
                 <ContentItem.DataSource>

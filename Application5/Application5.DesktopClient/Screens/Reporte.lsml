@@ -43,6 +43,10 @@
                 Name="Pedidoes"
                 Kind="Details"
                 DataType="Pedido">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Pedidos" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
