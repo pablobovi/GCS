@@ -209,6 +209,16 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Id");
         }
         
+        partial void OnEstadoChanged()
+        {
+            this.___OnPropertyChanged("Estado");
+        }
+        
+        partial void OnTipoChanged()
+        {
+            this.___OnPropertyChanged("Tipo");
+        }
+        
         partial void OnCreatedByChanged()
         {
             this.___OnPropertyChanged("CreatedBy");

@@ -37,9 +37,6 @@
   </GlobalAttributeGroup>
   <Application.Commands>
     <ApplicationCommand
-      Name="ScreenCommandShowComponentes"
-      Target="!module/Methods[ShowComponentes]" />
-    <ApplicationCommand
       Name="ScreenCommandShowLaboratios"
       Target="!module/Methods[ShowLaboratios]" />
     <ApplicationCommand
@@ -57,6 +54,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowReporte"
       Target="!module/Methods[ShowReporte]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowSearchComponentes"
+      Target="!module/Methods[ShowSearchComponentes]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -66,9 +66,6 @@
         <DisplayName
           Value="Tasks" />
       </ApplicationNavigationGroup.Attributes>
-      <ApplicationNavigationLink
-        Name="Componentes"
-        Command="!module/Commands[ScreenCommandShowComponentes]" />
       <ApplicationNavigationLink
         Name="Laboratios"
         Command="!module/Commands[ScreenCommandShowLaboratios]" />
@@ -87,6 +84,9 @@
       <ApplicationNavigationLink
         Name="Reporte"
         Command="!module/Commands[ScreenCommandShowReporte]" />
+      <ApplicationNavigationLink
+        Name="SearchComponentes"
+        Command="!module/Commands[ScreenCommandShowSearchComponentes]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">

@@ -22,12 +22,6 @@
         Target="ServiceInterface:Lab" />
     </EntityType.Attributes>
   </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:Componente" />
-    </EntityType.Attributes>
-  </EntityType>
   <Association>
     <Association.Attributes>
       <Proxy
@@ -64,4 +58,10 @@
         Target="ServiceInterface:OrdenMant_Lab" />
     </Association.Attributes>
   </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Componente" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>

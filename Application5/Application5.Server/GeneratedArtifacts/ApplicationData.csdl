@@ -38,6 +38,8 @@
     <Property Name="OrdenMant_Pedido" Type="Edm.Int32" Nullable="false" />
     <Property Name="OrdenMant_Tecnico" Type="Edm.Int32" Nullable="false" />
     <Property Name="OrdenMant_Lab" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Estado" Type="Edm.Int16" Nullable="false" />
+    <Property Name="Tipo" Type="Edm.Int16" Nullable="false" />
     <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
     <Property Name="Created" Type="Edm.DateTimeOffset" />
     <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />

@@ -227,9 +227,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Screens\Componentes.lsml.cs">
-      <DependentUpon>Componentes.lsml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\Client.lsml">
@@ -239,13 +236,13 @@
     <None Include="Properties\OutOfBrowserSettings.xml" />
     <ClientResource Include="Properties\Config.xml" />
     <LightSwitchModel Include="Properties\Proxies.lsml" />
-    <LightSwitchModel Include="Screens\Componentes.lsml" />
     <LightSwitchModel Include="Screens\Laboratios.lsml" />
     <LightSwitchModel Include="Screens\Pedidos.lsml" />
     <LightSwitchModel Include="Screens\NuevaOrden.lsml" />
     <LightSwitchModel Include="Screens\Tecnicos.lsml" />
     <LightSwitchModel Include="Screens\LitadeOrdenes.lsml" />
     <LightSwitchModel Include="Screens\Reporte.lsml" />
+    <LightSwitchModel Include="Screens\SearchComponentes.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\ApplicationData\" />

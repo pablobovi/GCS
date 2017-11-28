@@ -5,10 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="Reporte">
+    Name="SearchComponentes">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
+      <DisplayName
+        Value="Lista Componentes" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -21,135 +23,97 @@
           <ContentItem
             Name="grid"
             Kind="Collection"
-            DataType="CollectionView$OrdenMant">
+            DataType="CollectionView$Componente">
             <ContentItem.DataSource>
               <ScreenExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="Reporte/Properties[OrdenMants]" />
+                    Member="SearchComponentes/Properties[Componentes]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
             <ContentItem
               Name="RowTemplate"
               Kind="Details"
-              DataType="OrdenMant">
+              DataType="Componente">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression />
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
-                Name="Id"
+                Name="nombre"
                 Kind="Value"
-                DataType=":Int32">
+                DataType=":String">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="OrdenMant/Properties[Id]" />
+                        Member="Componente/Properties[nombre]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[ShowAsLink]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="True"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="codigo"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Componente/Properties[codigo]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="Pedidoes"
-                Kind="Details"
-                DataType="Pedido">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Pedidos" />
-                </ContentItem.Attributes>
+                Name="tipo"
+                Kind="Value"
+                DataType=":Int16">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="OrdenMant/Properties[Pedidoes]" />
+                        Member="Componente/Properties[tipo]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="OrdenMant"
+                Kind="Details"
+                DataType="OrdenMant">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Componente/Properties[OrdenMant]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
                   Name="RowTemplate1"
                   Kind="Details"
-                  DataType="Pedido">
+                  DataType="OrdenMant">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression />
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
-              </ContentItem>
-              <ContentItem
-                Name="Tecnico"
-                Kind="Details"
-                DataType="Tecnico">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="OrdenMant/Properties[Tecnico]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="RowTemplate2"
-                  Kind="Details"
-                  DataType="Tecnico">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-              <ContentItem
-                Name="Labs"
-                Kind="Details"
-                DataType="Lab">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="OrdenMant/Properties[Labs]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="RowTemplate3"
-                  Kind="Details"
-                  DataType="Lab">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-              <ContentItem
-                Name="Tipo"
-                Kind="Value"
-                DataType=":Int16">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="OrdenMant/Properties[Tipo]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Estado"
-                Kind="Value"
-                DataType=":Int16">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="OrdenMant/Properties[Estado]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
                 Name="CreatedBy"
@@ -159,7 +123,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="OrdenMant/Properties[CreatedBy]" />
+                        Member="Componente/Properties[CreatedBy]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -172,7 +136,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="OrdenMant/Properties[Created]" />
+                        Member="Componente/Properties[Created]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -185,7 +149,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="OrdenMant/Properties[ModifiedBy]" />
+                        Member="Componente/Properties[ModifiedBy]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -198,7 +162,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="OrdenMant/Properties[Modified]" />
+                        Member="Componente/Properties[Modified]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -258,7 +222,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="Reporte/Methods[Save]" />
+                    Target="SearchComponentes/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -270,7 +234,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="Reporte/Methods[Refresh]" />
+                    Target="SearchComponentes/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -310,20 +274,20 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="OrdenMants"
+        Name="Componentes"
         PageSize="45"
-        PropertyType="CollectionView$OrdenMant">
+        PropertyType="CollectionView$Componente">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="OrdenMantsQuery"
-            ReturnType="OrdenMant*">
+            Name="ComponentesQuery"
+            ReturnType="Componente*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="ApplicationData/Members[OrdenMants]" />
+                  Member="ApplicationData/Members[Componentes]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -331,7 +295,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="Reporte/Properties[OrdenMants]/Query" />
+              Target="SearchComponentes/Properties[Componentes]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -339,10 +303,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowReporte">
+      Name="ShowSearchComponentes">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="Reporte" />
+          TargetScreen="SearchComponentes" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

@@ -167,6 +167,32 @@
                   </ContentItem.DataSource>
                 </ContentItem>
               </ContentItem>
+              <ContentItem
+                Name="Estado"
+                Kind="Value"
+                DataType=":Int16">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="OrdenMant/Properties[Estado]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Tipo1"
+                Kind="Value"
+                DataType=":Int16">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="OrdenMant/Properties[Tipo]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
@@ -238,7 +264,8 @@
           <ContentItem
             Name="Componentes"
             Kind="Collection"
-            DataType="CollectionView$Componente">
+            DataType="CollectionView$Componente"
+            View="Microsoft.LightSwitch.RichClient:DataGrid">
             <ContentItem.DataSource>
               <ScreenExpressionTree>
                 <ChainExpression>
@@ -392,6 +419,7 @@
               </ContentItem>
               <ContentItem
                 Name="Componentes_EditSelected"
+                IsHidden="True"
                 Kind="Command">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
@@ -406,6 +434,7 @@
               </ContentItem>
               <ContentItem
                 Name="Componentes_DeleteSelected"
+                IsHidden="True"
                 Kind="Command">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>

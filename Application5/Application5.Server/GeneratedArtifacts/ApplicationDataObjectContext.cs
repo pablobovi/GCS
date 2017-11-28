@@ -800,14 +800,18 @@ namespace LightSwitchApplication.Implementation
         /// <param name="ordenMant_Pedido">Initial value of the OrdenMant_Pedido property.</param>
         /// <param name="ordenMant_Tecnico">Initial value of the OrdenMant_Tecnico property.</param>
         /// <param name="ordenMant_Lab">Initial value of the OrdenMant_Lab property.</param>
+        /// <param name="estado">Initial value of the Estado property.</param>
+        /// <param name="tipo">Initial value of the Tipo property.</param>
         /// <param name="rowVersion">Initial value of the RowVersion property.</param>
-        public static OrdenMant CreateOrdenMant(global::System.Int32 id, global::System.Int32 ordenMant_Pedido, global::System.Int32 ordenMant_Tecnico, global::System.Int32 ordenMant_Lab, global::System.Byte[] rowVersion)
+        public static OrdenMant CreateOrdenMant(global::System.Int32 id, global::System.Int32 ordenMant_Pedido, global::System.Int32 ordenMant_Tecnico, global::System.Int32 ordenMant_Lab, global::System.Int16 estado, global::System.Int16 tipo, global::System.Byte[] rowVersion)
         {
             OrdenMant ordenMant = new OrdenMant();
             ordenMant.Id = id;
             ordenMant.OrdenMant_Pedido = ordenMant_Pedido;
             ordenMant.OrdenMant_Tecnico = ordenMant_Tecnico;
             ordenMant.OrdenMant_Lab = ordenMant_Lab;
+            ordenMant.Estado = estado;
+            ordenMant.Tipo = tipo;
             ordenMant.RowVersion = rowVersion;
             return ordenMant;
         }
@@ -914,6 +918,54 @@ namespace LightSwitchApplication.Implementation
         private global::System.Int32 _OrdenMant_Lab;
         partial void OnOrdenMant_LabChanging(global::System.Int32 value);
         partial void OnOrdenMant_LabChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int16 Estado
+        {
+            get
+            {
+                return _Estado;
+            }
+            set
+            {
+                OnEstadoChanging(value);
+                ReportPropertyChanging("Estado");
+                _Estado = value;
+                ReportPropertyChanged("Estado");
+                OnEstadoChanged();
+            }
+        }
+        private global::System.Int16 _Estado;
+        partial void OnEstadoChanging(global::System.Int16 value);
+        partial void OnEstadoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int16 Tipo
+        {
+            get
+            {
+                return _Tipo;
+            }
+            set
+            {
+                OnTipoChanging(value);
+                ReportPropertyChanging("Tipo");
+                _Tipo = value;
+                ReportPropertyChanged("Tipo");
+                OnTipoChanged();
+            }
+        }
+        private global::System.Int16 _Tipo;
+        partial void OnTipoChanging(global::System.Int16 value);
+        partial void OnTipoChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

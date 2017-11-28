@@ -38,6 +38,8 @@
           <ScalarProperty Name="OrdenMant_Pedido" ColumnName="OrdenMant_Pedido" />
           <ScalarProperty Name="OrdenMant_Tecnico" ColumnName="OrdenMant_Tecnico" />
           <ScalarProperty Name="OrdenMant_Lab" ColumnName="OrdenMant_Lab" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="Created" ColumnName="Created" />
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />

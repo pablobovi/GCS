@@ -47,6 +47,37 @@
         FromEnd="OrdenMant"
         ToEnd="Lab" />
       <EntityProperty
+        Name="Estado"
+        PropertyType=":Int16">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <SupportedValue
+            DisplayName=" En Progreso"
+            Value="1" />
+          <SupportedValue
+            DisplayName="Pendiente"
+            Value="2" />
+          <SupportedValue
+            DisplayName="Terminado"
+            Value="3" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Tipo"
+        PropertyType=":Int16">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <SupportedValue
+            DisplayName="Mantenimiento"
+            Value="1" />
+          <SupportedValue
+            DisplayName="Puesta a punto"
+            Value="2" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
         PropertyType=":Person?">
